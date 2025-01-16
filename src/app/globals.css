@@ -143,3 +143,12 @@
     transform: scale(1);
   }
 }
+
+.aboutContainer {
+  background-image: url(/images/monir_with_laptop.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  min-height: 500px;
+}

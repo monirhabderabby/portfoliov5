@@ -1,13 +1,15 @@
 "use client";
+// Packages
+import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 
+// Local imports
 import { socialData } from "@/data/data";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { ChevronRight, Download } from "lucide-react";
-import Image from "next/image";
 import profileImage from "../../../public/images/profile.jpg";
 import AnimatedGradientText from "../ui/animated-gradient-text";
-import { Button } from "../ui/button";
+import CVDownloadButton from "../ui/CVDownloadButton";
 
 const Hero = () => {
   const fadeInStragger = {
@@ -19,7 +21,7 @@ const Hero = () => {
     }),
   };
   return (
-    <header className="min-h-[calc(100vh-80px)]  w-full flex justify-center items-center relative px-4 md:px-0">
+    <header className="min-h-screen  w-full flex justify-center items-center relative px-4 md:px-0">
       <div className="absolute inset-0 dark:bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-10 h-[150vh]" />
       <Image
         src="/images/hero.svg"
@@ -147,20 +149,7 @@ const Hero = () => {
             }}
             className="flex items-center gap-x-4"
           >
-            <Button
-              size="sm"
-              className="rounded-full  lg:flex border border-foreground/20"
-              asChild
-            >
-              <a
-                target="_blank"
-                href="Monir_Hossain_Resume_2025.pdf"
-                download="Monir_Hossain_Resume_2025.pdf"
-              >
-                Download CV
-                <Download className="w-4 h-4 ml-1" />
-              </a>
-            </Button>
+            <CVDownloadButton />
           </motion.div>
           <div className="mt-10 flex justify-center">
             <div className="flex gap-x-6 max-w-max mx-auto lg:mx-0">
