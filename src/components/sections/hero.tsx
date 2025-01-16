@@ -11,28 +11,15 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   const fadeInStragger = {
-    initial: {
-      opacity: 0,
-      y: 20,
-      scale: 0.8,
-      transition: {
-        delay: 3,
-      },
-    },
+    initial: { opacity: 0, y: 20 },
     animate: (index: number) => ({
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        delay: 0.5 * index,
-        duration: 0.5,
-        type: "tween",
-        stiffness: 125,
-      },
+      transition: { delay: 0.5 * index, duration: 0.4 },
     }),
   };
   return (
-    <div className="min-h-[calc(100vh-80px)]  w-full flex justify-center items-center relative px-4 md:px-0">
+    <header className="min-h-[calc(100vh-80px)]  w-full flex justify-center items-center relative px-4 md:px-0">
       <div className="absolute inset-0 dark:bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-10 h-[150vh]" />
       <Image
         src="/images/hero.svg"
@@ -177,15 +164,15 @@ const Hero = () => {
           </motion.div>
           <div className="mt-10 flex justify-center">
             <div className="flex gap-x-6 max-w-max mx-auto lg:mx-0">
-              {socialData.map(({ href, icon: Icon, id, target }, index) => (
+              {socialData.map(({ href, icon: Icon, id, target }) => (
                 <motion.a
+                  key={id}
+                  href={href}
                   variants={fadeInStragger}
                   initial="initial"
                   animate="animate"
-                  custom={index}
-                  key={id}
-                  href={href}
-                  target={target}
+                  aria-label={`Link to ${id}`}
+                  target={`_blank_${target}`}
                 >
                   <Icon className="hover:text-white text-gray-500 text-xl hover:scale-110  transition-all duration-500" />
                 </motion.a>
@@ -194,7 +181,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-    </div>
+    </header>
   );
 };
 
