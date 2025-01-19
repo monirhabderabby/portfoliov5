@@ -9,13 +9,15 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "0.5rem",
       screens: {
         lg: "1000px",
       },
     },
     extend: {
       colors: {
+        brand: "hsl(var(--brand))",
+        "brand-foreground": "hsl(var(--brand-foreground))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,16 +59,28 @@ module.exports = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
         "automation-zoom-in": {
-          "0%": { transform: "translateY(-30px) scale(0.2)" },
-          "100%": { transform: "transform: translateY(0px) scale(1)" },
+          "0%": {
+            transform: "translateY(-30px) scale(0.2)",
+          },
+          "100%": {
+            transform: "transform: translateY(0px) scale(1)",
+          },
         },
         flip: {
           to: {
@@ -79,8 +93,12 @@ module.exports = {
           },
         },
         "rotate-new": {
-          "0%": { transform: "rotate(0deg) scale(10)" },
-          "100%": { transform: "rotate(-360deg) scale(10)" },
+          "0%": {
+            transform: "rotate(0deg) scale(10)",
+          },
+          "100%": {
+            transform: "rotate(-360deg) scale(10)",
+          },
         },
         shimmer: {
           from: {
@@ -95,12 +113,46 @@ module.exports = {
             "offset-distance": "100%",
           },
         },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(12px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "pulse-hover": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-2%)",
+          },
+        },
         marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(calc(-100% - var(--gap)))",
+          },
         },
         gradient: {
-          to: { backgroundPosition: "var(--bg-size) 0" },
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
+        orbit: {
+          "0%": {
+            transform:
+              "rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))",
+          },
+          "100%": {
+            transform:
+              "rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))",
+          },
         },
       },
       animation: {
@@ -114,6 +166,9 @@ module.exports = {
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         marquee: "marquee var(--duration) linear infinite",
         gradient: "gradient 8s linear infinite",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "pulse-hover": "pulse-hover 8s ease-in-out infinite",
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
       },
     },
   },
