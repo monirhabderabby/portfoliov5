@@ -24,7 +24,7 @@ const AboutMe = () => {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.3 }}
-              className={`aboutContainer h-[640px] mix-blend-lighten flex-1`}
+              className={`aboutContainer h-[640px] mix-blend-lighten flex-1 hidden md:block`}
             ></motion.div>
             {/* text */}
             <motion.div
