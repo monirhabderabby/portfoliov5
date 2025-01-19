@@ -11,7 +11,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
 import { Loader } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -45,16 +44,7 @@ export default function ContactForm() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0.5, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: 0.3,
-        duration: 0.8,
-        ease: "easeInOut",
-      }}
-      className="p-4 bg-white/10  rounded-xl max-w-[500px] mx-auto"
-    >
+    <div className="p-4 bg-white/10  rounded-xl max-w-[500px] mx-auto">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -123,6 +113,6 @@ export default function ContactForm() {
           </div>
         </form>
       </Form>
-    </motion.div>
+    </div>
   );
 }
