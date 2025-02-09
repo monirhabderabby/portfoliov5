@@ -41,9 +41,7 @@
     --ring: 220 100% 44%;
 
     --radius: 0.5rem;
-  }
 
-  :root {
     --brand: 210 100% 50%;
     --brand-foreground: 213 100% 60%;
   }
@@ -51,9 +49,6 @@
   .dark {
     --brand: 213 100% 60%;
     --brand-foreground: 210 100% 50%;
-  }
-
-  .dark {
     --background: 216 100% 98.04%;
     --foreground: 213.6 100% 4.9%;
 

@@ -1,0 +1,39 @@
+.loader {
+    font-size: 48px;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+    animation: animloader 1s ease-in infinite alternate;
+}
+
+@keyframes animloader {
+    0% {
+        filter: blur(0px);
+        transform: skew(0deg);
+    }
+    100% {
+        filter: blur(3px);
+        transform: skew(-4deg);
+    }
+}
+
+.slide-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #1e0b39;
+    transform-origin: top;
+}
+.slide-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #1e0b39;
+    transform-origin: bottom;
+}
