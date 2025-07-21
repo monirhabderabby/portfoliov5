@@ -2,10 +2,12 @@
 // Packages
 import { fadeIn } from "@/components/animation/variant";
 import { motion } from "framer-motion";
+
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 // Local imports
+import { cn } from "@/lib/utils";
 import CVDownloadButton from "../ui/CVDownloadButton";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 
@@ -36,13 +38,15 @@ const AboutMe = () => {
             >
               <h1 className="sr-only">About Me</h1>
               <h2 className="h2 text-white bg-primary w-fit">About me.</h2>
-              <h3 className="h3 mb-4 font-aldrich text-white mt-1">
-                I&apos;m Front end developer with 2+ years of Experinces
+              <h3 className={cn("h3 mb-4 font-aldrich text-white mt-1")}>
+                Hi, I&apos;m a Full-Stack Developer with 2+ Years of Hands-On
+                Experience
               </h3>
-              <p className="mb-6 font-rajdhani text-white/90">
-                Front End Web Developer with background knowledge of MERN stacks
-                with redux, along with a knack of building applications with
-                utmost efficiency.
+              <p className={cn("mb-6  text-white/95")}>
+                A results-driven Full-Stack Developer with expertise in Next.js,
+                Prisma, and MongoDB. I help teams and businesses build
+                full-stack applications that are optimized for speed,
+                maintainability, and user satisfaction.
               </p>
               {/* states */}
               <div className="flex gap-x-6 lg:gap-x-10 mb-12">
@@ -51,7 +55,7 @@ const AboutMe = () => {
                     {inView ? <CountUp start={0} end={2} duration={3} /> : null}
                     +
                   </div>
-                  <div className="font-orbitron text-sm tracking-[2px] text-white/90">
+                  <div className=" text-sm tracking-[2px] text-white/90">
                     Years of <br />
                     Experinces
                   </div>

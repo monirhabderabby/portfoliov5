@@ -1,10 +1,10 @@
 import { Navbar } from "@/components/navigation/navbar";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  weight: ["300", "400", "500", "600", "700", "800"],
+const lexend = Lexend({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
+        className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
       >
         <Navbar />
         {children}

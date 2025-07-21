@@ -120,7 +120,7 @@ const Hero = () => {
             }}
             className={`${
               true
-                ? `text-[24px] md:text-[30px] lg:textxl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent`
+                ? `text-[24px] md:text-[30px] lg:textxl md:!leading-snug font-medium text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent`
                 : `text-base md:text-lg text-foreground/80 mt-6 text-center`
             }`}
           >

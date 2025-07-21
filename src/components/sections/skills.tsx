@@ -14,7 +14,7 @@ const Skills = () => {
           {skillData?.map((item: SkillData) => {
             return (
               <div key={item.id} className="my-[30px]">
-                <h1 className="text-[16px]">{item.title}</h1>
+                <h1 className="text-[16px] font-normal">{item.title}</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] mt-2">
                   {item.icons?.map((item) => {
                     return <SkillCard key={item.id} data={item} />;
