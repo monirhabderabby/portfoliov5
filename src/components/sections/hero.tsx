@@ -120,12 +120,13 @@ const Hero = () => {
             }}
             className={`${
               true
-                ? `text-[24px] md:text-[36px] lg:textxl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent`
+                ? `text-[24px] md:text-[30px] lg:textxl md:!leading-snug font-semibold text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent`
                 : `text-base md:text-lg text-foreground/80 mt-6 text-center`
             }`}
           >
-            Hi, I&apos;m Monir, a full-stack developer with 2 years of
-            experience, specializing in React and Next.js.
+            Hi, I’m Monir — a full-stack developer with 2 years of experience
+            building modern, scalable apps with Next.js, Prisma & MongoDB. Let’s
+            bring your idea to life!
           </motion.h1>
         </div>
 
