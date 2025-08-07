@@ -6,6 +6,10 @@ const nextConfig = {
         hostname: "aceternity.com",
         protocol: "https",
       },
+      {
+        hostname: "files.edgestore.dev",
+        protocol: "https",
+      },
     ],
   },
 };

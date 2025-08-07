@@ -124,7 +124,7 @@ const Hero = () => {
                 : `text-base md:text-lg text-foreground/80 mt-6 text-center`
             }`}
           >
-            Hi, I’m Monir — a full-stack developer with 2 years of experience
+            Hi, I’m Monir — a full-stack developer with 2+ years of experience
             building modern, scalable apps with Next.js, Prisma & MongoDB. Let’s
             bring your idea to life!
           </motion.h1>

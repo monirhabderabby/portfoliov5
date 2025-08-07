@@ -1,9 +1,9 @@
 export const projects = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
+    title: "Biblioteca Legal - Virtual Law Library",
+    link: "https://bibliotecalegalhn.com",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+      "https://files.edgestore.dev/ln9m9j3kr2yibrue/promotional/_public/collections%20page_p.webp",
   },
   {
     title: "Cursor",
