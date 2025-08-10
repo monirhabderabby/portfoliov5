@@ -8,6 +8,12 @@ import dynamic from "next/dynamic";
 const AboutMe = dynamic(() => import("@/components/sections/about-me"), {
   ssr: false,
 });
+const Achievements = dynamic(
+  () => import("@/components/sections/achivements"),
+  {
+    ssr: false,
+  }
+);
 export default function Home() {
   return (
     <div>
@@ -22,6 +28,8 @@ export default function Home() {
         <Experiences />
 
         <Educations />
+
+        <Achievements />
       </div>
 
       <Contact />
