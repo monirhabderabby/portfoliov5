@@ -10,11 +10,13 @@ const AboutMe = dynamic(() => import("@/components/sections/about-me"), {
 });
 export default function Home() {
   return (
-    <div className=" px-4 md:px-0 py-8">
-      <Hero />
-      <AboutMe />
-      <Skills />
-      <Projects />
+    <div>
+      <div className="px-4 md:px-0 py-8">
+        <Hero />
+        <AboutMe />
+        <Skills />
+        <Projects />
+      </div>
 
       <div className="py-[80px] bg-black">
         <Experiences />
