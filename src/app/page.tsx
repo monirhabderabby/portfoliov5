@@ -1,4 +1,5 @@
 import Contact from "@/components/sections/contact";
+import Educations from "@/components/sections/educations";
 import Experiences from "@/components/sections/experiences";
 import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
@@ -15,7 +16,11 @@ export default function Home() {
       <Skills />
       <Projects />
 
-      <Experiences />
+      <div className="py-[80px] bg-black">
+        <Experiences />
+
+        <Educations />
+      </div>
 
       <Contact />
     </div>

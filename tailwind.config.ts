@@ -11,7 +11,7 @@ module.exports = {
       center: true,
       padding: "0.5rem",
       screens: {
-        lg: "1000px",
+        lg: "1200px",
       },
     },
     extend: {
