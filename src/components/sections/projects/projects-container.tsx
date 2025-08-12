@@ -11,10 +11,15 @@ const animateDirectionDecisionMaker = (index: number) => {
   return "right";
 };
 
-const ProjectsContainer = () => {
+interface Props {
+  isSliced: boolean;
+}
+
+const ProjectsContainer = ({ isSliced }: Props) => {
+  const visibleProjects = isSliced ? projects.slice(0, 6) : projects;
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {projects.slice(0, 6).map((p, index) => (
+      {visibleProjects.map((p, index) => (
         <motion.div
           variants={fadeIn(animateDirectionDecisionMaker(index), 0.3)}
           initial="hidden"

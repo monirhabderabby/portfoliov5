@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navigation/navbar";
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
 const lexend = Lexend({
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <NextTopLoader showSpinner={false} color="#fcf8f7" />
       </body>
     </html>
   );
