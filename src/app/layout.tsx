@@ -10,7 +10,7 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Monir Hossain | Full Stack Web Developer",
+  title: "Monir Hossain Rabbyy | Full Stack Web Developer",
   description:
     "Experienced Full Stack Developer specializing in building modern, scalable web applications with Next.js, Prisma, and MongoDB. Focused on clean code, performance, and user experience.",
   keywords:

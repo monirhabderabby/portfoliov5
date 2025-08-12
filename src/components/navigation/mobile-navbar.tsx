@@ -38,7 +38,9 @@ const MobileNavbar = () => {
           <Menu />
         </Button>
       ) : (
-        <Button>Contact</Button>
+        <Button asChild>
+          <Link href="/contact">Contact</Link>
+        </Button>
       )}
 
       <ResponsiveDialog

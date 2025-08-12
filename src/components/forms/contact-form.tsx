@@ -44,7 +44,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="p-4 bg-white/10  rounded-xl max-w-[500px] mx-auto">
+    <div className="p-4 bg-white/10  rounded-xl  mx-auto">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
