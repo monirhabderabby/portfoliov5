@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Button } from "../ui/button";
+import MobileNavbar from "./mobile-navbar";
 
 export async function Navbar() {
   return (
@@ -7,13 +9,6 @@ export async function Navbar() {
         <div className="flex items-center justify-between  h-full">
           <div className="flex items-start">
             <Link href="/" className="flex items-center gap-2">
-              {/* <Image
-              src="/icons/A-logo.png"
-              alt="Logo"
-              width={30}
-              height={30}
-              priority
-            /> */}
               <span className="text-lg font-medium">Monir Hossain</span>
             </Link>
           </div>
@@ -22,26 +17,32 @@ export async function Navbar() {
           <nav className="hidden md:flex">
             <ul className="flex items-center justify-center gap-8">
               <li className="hover:text-foreground/80 text-sm">
-                <Link href="/#pricing">Pricing</Link>
+                <Link href="/about">About Me</Link>
               </li>
               <li className="hover:text-foreground/80 text-sm">
-                <Link href="/#about">About</Link>
+                <Link href="/projects" prefetch={false}>
+                  Projects
+                </Link>
               </li>
               <li className="hover:text-foreground/80 text-sm">
-                <Link href="/#features">Features</Link>
+                <Link href="/achievements" prefetch={false}>
+                  Achievements
+                </Link>
               </li>
               <li className="hover:text-foreground/80 text-sm">
-                <Link href="/blog">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </nav>
 
-          <Link
-            href="/contact"
-            className="hover:text-foreground/80 text-sm md:hidden bg-primary  text-white px-3 py-2 rounded-[4px]"
-          >
-            Contact
-          </Link>
+          <div>
+            <div className="hidden md:block">
+              <Button>Contact</Button>
+            </div>
+            <div className="md:hidden">
+              <MobileNavbar />
+            </div>
+          </div>
         </div>
       </section>
     </header>
