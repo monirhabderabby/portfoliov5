@@ -1,15 +1,23 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Menu } from "lucide-react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import ResponsiveDialog from "../ui/responsive-dialog";
+const ResponsiveDialog = dynamic(
+  () => import("@/components//ui/responsive-dialog"),
+  {
+    ssr: false,
+  }
+);
 
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
   const pathName = usePathname();
+  const isMobile = useIsMobile();
 
   const onClose = () => {
     setOpen((p) => !p);
@@ -20,9 +28,18 @@ const MobileNavbar = () => {
 
   return (
     <div>
-      <Button variant="outline" size="icon" onClick={() => setOpen((p) => !p)}>
-        <Menu />
-      </Button>
+      {isMobile ? (
+        <Button
+          variant="outline"
+          size="icon"
+          className="flex-shrink-0"
+          onClick={() => setOpen((p) => !p)}
+        >
+          <Menu />
+        </Button>
+      ) : (
+        <Button>Contact</Button>
+      )}
 
       <ResponsiveDialog
         open={open}
