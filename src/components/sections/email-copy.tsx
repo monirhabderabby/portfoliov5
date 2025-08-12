@@ -16,8 +16,8 @@ const EmailCopy = () => {
   };
   return (
     <div className="flex- flex-col items-center mx-auto">
-      <div className="flex items-center gap-[10px] md:gap-x-[20px] text-[20px] md:text-[20px] font-rajdhani text-white/80">
-        <Mail />
+      <div className="flex items-center gap-[10px] md:gap-x-[15px] text-[15px] md:text-[17px] font-rajdhani text-white/80">
+        <Mail className="h-5 w-5" />
         <p>monirhrabby.personal@gmail.com</p>
         <button onClick={onCopy} disabled={isCopied}>
           {isCopied ? (

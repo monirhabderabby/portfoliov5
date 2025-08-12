@@ -7,9 +7,7 @@ const DesktopMenus = () => {
   const pathName = usePathname();
 
   const getActiveClass = (href: string) =>
-    pathName === href
-      ? "text-primary hover:text-primary/80 font-medium"
-      : "hover:text-foreground/80 font-normal"; // active page gets 'default'
+    pathName === href ? " font-medium" : "hover:text-foreground/80 font-light"; // active page gets 'default'
   return (
     <nav className="hidden md:flex">
       <ul className="flex items-center justify-center gap-8">
