@@ -153,6 +153,11 @@
   }
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .aboutContainer {
   background-image: url(/images/monir_with_laptop.webp);
   background-size: contain;
