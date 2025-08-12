@@ -4,8 +4,15 @@ import hackerRank from "../../public/certificates/hackerRank.webp";
 import lws from "../../public/certificates/lws.webp";
 import ostad from "../../public/certificates/ostad.webp";
 import ph from "../../public/certificates/ph.webp";
+import ra from "../../public/certificates/ra.webp";
 
 const certificateData = [
+  {
+    id: Math.floor(Math.random() * 100000),
+    school: "Learn With Sumit",
+    certificate: ra,
+    name: "Reactive Accelerator",
+  },
   {
     id: Math.floor(Math.random() * 100000),
     school: "Ostad",
