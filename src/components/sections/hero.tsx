@@ -1,7 +1,6 @@
 "use client";
 // Packages
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 // Local imports
@@ -91,7 +90,6 @@ const Hero = () => {
             >
               Introducing Me
             </span>
-            <ChevronRight className="ml-2 w-4 h-4" />
           </AnimatedGradientText>
         </motion.button>
 

@@ -5,12 +5,12 @@ const CVDownloadButton = () => {
   return (
     <Button
       size="sm"
-      className="rounded-full  lg:flex border border-foreground/20"
+      className="rounded-full lg:flex border border-foreground/20"
       asChild
     >
       <a
         target="_blank"
-        href="Monir_Hossain_Resume_2025.pdf"
+        href="https://drive.google.com/uc?export=download&id=1e-1vgUY1l5Zy7DPHkVRJ4vBC811JEidn"
         download="Monir_Hossain_Resume_2025.pdf"
       >
         Download CV
