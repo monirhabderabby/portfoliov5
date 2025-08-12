@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
 import MobileNavbar from "./mobile-navbar";
 
 export async function Navbar() {
@@ -35,14 +34,7 @@ export async function Navbar() {
             </ul>
           </nav>
 
-          <div>
-            <div className="hidden md:block">
-              <Button>Contact</Button>
-            </div>
-            <div className="md:hidden">
-              <MobileNavbar />
-            </div>
-          </div>
+          <MobileNavbar />
         </div>
       </section>
     </header>
