@@ -5,7 +5,7 @@ import MobileNavbar from "./mobile-navbar";
 export async function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 h-[60px]  bg-background/40 backdrop-blur-lg border-b-[1px] border-white/20 rounded-2xl shadow-xl z-50 w-full px-4">
-      <section className="max-w-[1200px] mx-auto h-full ">
+      <section className="max-w-[1200px] mx-auto h-full overflow-hidden">
         <div className="flex items-center justify-between  h-full">
           <div className="flex items-start">
             <Link href="/" className="flex items-center gap-2">
