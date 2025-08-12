@@ -10,7 +10,12 @@ const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <Button variant="outline" size="icon" onClick={() => setOpen((p) => !p)}>
+      <Button
+        variant="outline"
+        size="icon"
+        className="flex-shrink-0"
+        onClick={() => setOpen((p) => !p)}
+      >
         <Menu />
       </Button>
 
