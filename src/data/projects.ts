@@ -46,4 +46,13 @@ export const projects = [
     technologies: ["Next.js", "Tailwind CSS", "Prisma", "Typescript"],
     github: "https://github.com/monirhabderabby/budget-tracker",
   },
+  {
+    title: "Tasty Bite",
+    link: "https://tasty-bite-web.vercel.app",
+    thumbnail:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/tasty%20bite.webp",
+    short_description: "Track, analyze & manage your finances easily",
+    technologies: ["Next.js", "Tailwind CSS", "Express.js", "Typescript"],
+    github: "https://github.com/monirhabderabby/TastyBite-Website",
+  },
 ];
