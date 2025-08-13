@@ -10,28 +10,28 @@ export const projects = [
   {
     title: "Biblioteca Legal",
     link: "https://bibliotecalegalhn.com",
+    github: "https://github.com/monirhabderabby/Biblioteca-Legal",
     thumbnail:
-      "https://files.edgestore.dev/ln9m9j3kr2yibrue/promotional/_public/collections%20page_p.webp",
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/14665e75-507d-43c0-801e-6d4296dc4f0e.webp",
     short_description:
       "Legal resource platform for Honduran laws and regulations.",
-    technologies: ["Next.js", "Tailwind CSS", "Prisma", "MongoDB", "Vercel"],
+    technologies: ["Next.js", "Tailwind CSS", "Prisma", "MongoDB"],
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
+    title: "TourHub",
+    link: "https://tour-hub-frontend.vercel.app",
+    github: "https://github.com/monirhabderabby/TourHub-Frontend",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
-    short_description:
-      "AI-powered code editor for faster, smarter development.",
-    technologies: ["Electron", "React", "TypeScript", "Node.js", "OpenAI API"],
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/eb7f7350-0282-48d2-80a8-f5079ee40180.webp",
+    short_description: "Explore & Book Tours with Ease",
+    technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Express.js"],
   },
   {
     title: "Rogue",
     link: "https://userogue.com",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-    short_description:
-      "Privacy-first browser with built-in ad and tracker blocking.",
+    short_description: "Explore & Book Tours with Ease",
     technologies: ["JavaScript", "HTML5", "CSS3", "WebAssembly", "Node.js"],
   },
   {

@@ -1,5 +1,5 @@
 "use client";
-import ProjectCard from "@/components/cards/project-card";
+import CardFlip from "@/components/kokonutui/card-flip";
 import { projects } from "@/data/projects";
 import { fadeIn } from "@/lib/variant";
 import { motion } from "framer-motion";
@@ -16,9 +16,9 @@ interface Props {
 }
 
 const ProjectsContainer = ({ isSliced }: Props) => {
-  const visibleProjects = isSliced ? projects.slice(0, 6) : projects;
+  const visibleProjects = isSliced ? projects.slice(0, 8) : projects;
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {visibleProjects.map((p, index) => (
         <motion.div
           variants={fadeIn(animateDirectionDecisionMaker(index), 0.3)}
@@ -27,9 +27,18 @@ const ProjectsContainer = ({ isSliced }: Props) => {
           viewport={{ once: false, amount: 0.3 }}
           key={p.title}
         >
-          <ProjectCard
+          {/* <ProjectCard
             height="h-[234px] md:h-[230px] lg:h-[313px]"
             project={p}
+          /> */}
+          <CardFlip
+            title={p.title}
+            description={p.short_description}
+            features={p.technologies}
+            subtitle={p.short_description}
+            thumbnail={p.thumbnail}
+            github={p.github!}
+            liveLink={p.link}
           />
         </motion.div>
       ))}
