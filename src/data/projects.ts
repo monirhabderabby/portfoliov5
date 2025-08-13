@@ -51,7 +51,7 @@ export const projects = [
     link: "https://tasty-bite-web.vercel.app",
     thumbnail:
       "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/tasty%20bite.webp",
-    short_description: "Track, analyze & manage your finances easily",
+    short_description: "Delicious meals, fast delivery",
     technologies: ["Next.js", "Tailwind CSS", "Express.js", "Typescript"],
     github: "https://github.com/monirhabderabby/TastyBite-Website",
   },
