@@ -6,6 +6,8 @@ export interface Project {
   technologies: string[];
 }
 
+// thumbnail recomended size: 640 × 480
+// short_description: within 48 characters
 export const projects = [
   {
     title: "Biblioteca Legal",
@@ -27,18 +29,19 @@ export const projects = [
     technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Express.js"],
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
+    title: "Budget Tracker",
+    link: "https://budget-tracker-v1.vercel.app",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-    short_description: "Explore & Book Tours with Ease",
-    technologies: ["JavaScript", "HTML5", "CSS3", "WebAssembly", "Node.js"],
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/Budget%20Tracker%20(1).webp",
+    short_description: "Track, analyze & manage your finances easily",
+    technologies: ["Next.js", "Tailwind CSS", "Prisma", "Typescript"],
+    github: "https://github.com/monirhabderabby/budget-tracker",
   },
   {
     title: "Editorially",
     link: "https://editorially.org",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/budget%20tracker.webp",
     short_description:
       "Collaborative writing platform for editors and authors.",
     technologies: [
