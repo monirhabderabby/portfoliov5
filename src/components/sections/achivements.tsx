@@ -3,8 +3,17 @@ import certificateData from "@/data/achivements";
 import { Tooltip } from "@material-tailwind/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
-const Achievements = () => {
+interface Props {
+  isSliced?: boolean;
+}
+
+const Achievements = ({ isSliced }: Props) => {
+  const visibleCertificates = isSliced
+    ? certificateData.slice(0, 6)
+    : certificateData;
   return (
     <section className="w-full py-12 bg-black/95  text-white flex justify-center items-center">
       <div className="container px-4 md:px-6">
@@ -22,7 +31,7 @@ const Achievements = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] gap-y-[40px] lg:gap-y-[60px] mt-[50px]">
-          {certificateData?.map(({ id, certificate, name }) => {
+          {visibleCertificates?.map(({ id, certificate, name }) => {
             return (
               <Tooltip
                 key={id}
@@ -60,6 +69,12 @@ const Achievements = () => {
               </Tooltip>
             );
           })}
+        </div>
+
+        <div className="w-full mt-10 flex items-center justify-center">
+          <Button variant="ghost" asChild>
+            <Link href="/achievements">See More</Link>
+          </Button>
         </div>
       </div>
     </section>
