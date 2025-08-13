@@ -20,6 +20,15 @@ export const projects = [
     technologies: ["Next.js", "Tailwind CSS", "Prisma", "MongoDB"],
   },
   {
+    title: "The Freelance PM",
+    link: "https://thefreelancepmclub.com",
+    github: "https://github.com/monirhabderabby/Biblioteca-Legal",
+    thumbnail:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/the%20freelance%20pm.webp",
+    short_description: "Your hub for freelance project success",
+    technologies: ["Next.js", "Tailwind CSS", "Prisma", "MongoDB"],
+  },
+  {
     title: "TourHub",
     link: "https://tour-hub-frontend.vercel.app",
     github: "https://github.com/monirhabderabby/TourHub-Frontend",
@@ -36,61 +45,5 @@ export const projects = [
     short_description: "Track, analyze & manage your finances easily",
     technologies: ["Next.js", "Tailwind CSS", "Prisma", "Typescript"],
     github: "https://github.com/monirhabderabby/budget-tracker",
-  },
-  {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/budget%20tracker.webp",
-    short_description:
-      "Collaborative writing platform for editors and authors.",
-    technologies: [
-      "Next.js",
-      "Tailwind CSS",
-      "Supabase",
-      "TypeScript",
-      "Vercel",
-    ],
-  },
-  {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-    short_description:
-      "AI tool for editing and improving your written content.",
-    technologies: ["React", "Next.js", "OpenAI API", "Tailwind CSS", "Vercel"],
-  },
-  {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
-    short_description:
-      "Game to test and improve your pixel-perfect design skills.",
-    technologies: ["React", "Canvas API", "JavaScript", "CSS3", "Vercel"],
-  },
-  {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
-    short_description: "Platform to practice coding interviews and algorithms.",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Prisma", "Vercel"],
-  },
-  {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
-    short_description:
-      "Modern UI components library for sleek, responsive designs.",
-    technologies: [
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "Framer Motion",
-      "Vercel",
-    ],
   },
 ];
