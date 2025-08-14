@@ -55,4 +55,13 @@ export const projects = [
     technologies: ["Next.js", "Tailwind CSS", "Express.js", "Typescript"],
     github: "https://github.com/monirhabderabby/TastyBite-Website",
   },
+  {
+    title: "Edumentor",
+    link: "https://edu-mentor-lms.vercel.app",
+    thumbnail:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/lms%20(1).webp",
+    short_description: "A complete platform for teaching and learning",
+    technologies: ["Next.js", "Tailwind CSS", "Prisma", "Javascript"],
+    github: "https://github.com/monirhabderabby/EduMentor",
+  },
 ];
