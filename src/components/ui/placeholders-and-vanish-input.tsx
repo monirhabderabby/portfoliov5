@@ -93,12 +93,14 @@ export function PlaceholdersAndVanishInput({
       }
     }
 
-    newDataRef.current = newData.map(({ x, y, color }) => ({
+    newDataRef.current = newData.map(({ x, y }) => ({
       x,
       y,
       r: 1,
-      color: `rgba(${color[0]}, ${color[1]}, ${color[2]}, ${color[3]})`,
+      // fixed HSL color
+      color: `hsl(220, 100%, 44%)`,
     }));
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value, handleVisibilityChange, startAnimation]);
 
@@ -179,7 +181,7 @@ export function PlaceholdersAndVanishInput({
   return (
     <form
       className={cn(
-        "w-full relative min-w-[300px] md:min-w-[400px] mx-auto bg-white/20 dark:bg-zinc-800 h-10 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200",
+        "w-full relative min-w-[300px] md:min-w-[400px] mx-auto bg-white/20  h-10 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200",
         value && "bg-white/10"
       )}
       onSubmit={handleSubmit}
