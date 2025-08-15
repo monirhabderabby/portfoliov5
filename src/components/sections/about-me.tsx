@@ -21,7 +21,7 @@ const AboutMe = () => {
     <section
       ref={ref}
       id="about"
-      className="relative overflow-hidden container min-h-screen"
+      className="relative overflow-hidden container md:min-h-screen py-[100px] md:py-0"
     >
       <div className="mx-auto relative bg-background">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-20 lg:gap-y-0">
