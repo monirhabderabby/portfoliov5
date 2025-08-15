@@ -1,14 +1,101 @@
-import Contact from "@/components/sections/contact";
-import { TracingBeamDemo } from "./_components/tracy-beam-content";
+import { Timeline } from "@/components/ui/timeline";
+import { journeySteps } from "@/data/journeySteps";
+import type { Metadata } from "next";
 
-const Page = () => {
-  return (
-    <div className="py-[80px] px-6">
-      <TracingBeamDemo />
-
-      <Contact />
-    </div>
-  );
+export const metadata: Metadata = {
+  title: "About Monir Hossain - From Accounting Student to Tech Leader",
+  description:
+    "Discover Monir Hossain's inspiring journey from accounting student to Head of Web Development. A story of dedication, perseverance, and continuous learning in the tech industry.",
+  keywords:
+    "Monir Hossain About, Career Journey, Accounting to Tech, Web Developer Story, Programming Journey, Tech Leader, Career Transformation, Self-taught Developer",
+  authors: [{ name: "Monir Hossain" }],
+  creator: "Monir Hossain",
+  publisher: "Monir Hossain",
+  openGraph: {
+    title: "About Monir Hossain - From Accounting Student to Tech Leader",
+    description:
+      "An inspiring transformation story: From struggling accounting student to successful Head of Web Development. Learn about dedication, hard work, and commitment to excellence.",
+    url: "https://monirhossain.dev/about",
+    siteName: "Monir Hossain Portfolio",
+    images: [
+      {
+        url: "/about-og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Monir Hossain Career Journey - From Accounting to Tech Leadership",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Monir Hossain - From Accounting Student to Tech Leader",
+    description:
+      "An inspiring transformation story: From struggling accounting student to successful Head of Web Development.",
+    images: ["/about-og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
-export default Page;
+export default function AboutPage() {
+  return (
+    <main className="min-h-screen bg-background">
+      <section className="relative py-28 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-[30px] font-bold tracking-tighter text-foreground mb-6">
+            From Accounting Student to{" "}
+            <span className="bg-primary text-white">Tech Leader</span>
+          </h1>
+          <p className="text-white/60 font-light  max-w-3xl mx-auto leading-relaxed">
+            A journey of transformation, dedication, and unwavering commitment
+            to excellence. Discover how perseverance and continuous learning
+            shaped my path from struggling student to successful web development
+            leader.
+          </p>
+        </div>
+      </section>
+
+      <div>
+        <Timeline data={journeySteps} />
+      </div>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-6">
+            Ready to Work Together?
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            My journey proves that with dedication and hard work, any challenge
+            can be overcome. Let&apos;s bring that same commitment to your next
+            project.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
+            >
+              Get In Touch
+            </a>
+            <a
+              href="/projects"
+              className="inline-flex items-center justify-center px-8 py-3 border border-input text-base font-medium rounded-md text-foreground bg-background hover:bg-accent transition-colors"
+            >
+              View My Work
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

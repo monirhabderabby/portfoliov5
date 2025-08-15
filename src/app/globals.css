@@ -86,7 +86,7 @@
   color: hsl(var(--primary-foreground));
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 5px;
   background-color: hsl(var(--background));
   border-radius: 8px;
@@ -101,6 +101,24 @@
 
 ::-webkit-scrollbar-track {
   background-color: hsl(var(--background));
+} */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
 }
 
 .dotPattern {
@@ -165,4 +183,10 @@ body {
   background-position: center;
   overflow: hidden;
   min-height: 500px;
+}
+
+.carrer-card {
+  position: sticky;
+  top: 2rem; /* starts sticking earlier */
+  align-self: flex-start; /* important if in flex layout */
 }
