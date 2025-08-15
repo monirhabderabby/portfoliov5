@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { JourneySteps } from "@/data/journeySteps";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface Props {
@@ -65,6 +66,15 @@ export const Timeline = ({ data }: Props) => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {item.description}
               </p>
+              <div className="aspect-video max-w-[400px] relative mt-3 hidden md:block">
+                <Image
+                  src={item.image}
+                  fill
+                  alt={item.company}
+                  title={item.role}
+                  className="rounded-xl"
+                />
+              </div>
             </div>
           </div>
         ))}

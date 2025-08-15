@@ -6,7 +6,8 @@ export const journeySteps = [
     company: "National University",
     description:
       "Started my academic journey in accounting, building analytical and problem-solving skills that would later prove invaluable in programming.",
-    image: "/university-campus-studying.png",
+    image:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/bhawal%20badre%20alam%20(1).webp",
     achievements: [
       "Completed 2nd year successfully",
       "Developed analytical thinking",
@@ -21,7 +22,8 @@ export const journeySteps = [
     company: "Personal Journey",
     description:
       "During COVID-19, faced financial challenges and worked as an Uber rider. A pivotal moment under Dhaka Kuril flyover led me to discover my true passion for technology.",
-    image: "/important-life-decision.png",
+    image:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/uber-rider.png",
     achievements: [
       "Overcame financial hardships",
       "Discovered passion for technology",
@@ -33,7 +35,7 @@ export const journeySteps = [
     year: "2021",
     title: "Learning Journey Begins",
     role: "Programming Student",
-    company: "Programming Hero & Learn with Sumit",
+    company: "Programming Hero",
     description:
       "Invested 5500 Taka from my father to join Programming Hero. Faced initial struggles with JavaScript but persevered and fell in love with React.js.",
     image: "/programming-learner.png",
@@ -77,11 +79,12 @@ export const journeySteps = [
   {
     year: "2023",
     title: "Career Breakthrough",
-    role: "Frontend Developer → Team Leader",
+    role: "Frontend Developer",
     company: "ScaleUp Ads Agency",
     description:
       "Joined as frontend developer and quickly progressed to unofficial team leadership within 3 months, demonstrating natural leadership abilities.",
-    image: "/professional-team-meeting.png",
+    image:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/Joined%20Scale%20Up%20(1).webp",
     achievements: [
       "Rapid promotion to team lead",
       "Led frontend development team",
