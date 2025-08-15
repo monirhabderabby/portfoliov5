@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 // Local imports
+import { socialData } from "@/data/data";
 import { cn } from "@/lib/utils";
+import { fadeInStragger } from "@/lib/variant";
 import { useAiSearchStore } from "@/state/chat";
 import { useRouter } from "next/navigation";
 import profileImage from "../../../public/images/profile.webp";
@@ -151,7 +153,7 @@ const Hero = () => {
             />
             {/* <CVDownloadButton /> */}
           </motion.div>
-          {/* <div className="mt-10 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <div className="flex gap-x-6 max-w-max mx-auto lg:mx-0">
               {socialData.map(({ href, icon: Icon, id, target }) => (
                 <motion.a
@@ -167,7 +169,7 @@ const Hero = () => {
                 </motion.a>
               ))}
             </div>
-          </div> */}
+          </div>
         </div>
       </section>
     </header>
