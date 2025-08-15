@@ -4,21 +4,24 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 // Local imports
-import { socialData } from "@/data/data";
 import { cn } from "@/lib/utils";
+import { useAiSearchStore } from "@/state/chat";
+import { useRouter } from "next/navigation";
 import profileImage from "../../../public/images/profile.webp";
 import AnimatedGradientText from "../ui/animated-gradient-text";
-import CVDownloadButton from "../ui/CVDownloadButton";
+import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
 
 const Hero = () => {
-  const fadeInStragger = {
-    initial: { opacity: 0, y: 20 },
-    animate: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: 0.5 * index, duration: 0.4 },
-    }),
-  };
+  const router = useRouter();
+  const { setAiSearchValue } = useAiSearchStore();
+  const placeholders = [
+    "What's the first rule of Fight Club?",
+    "Who is Tyler Durden?",
+    "Where is Andrew Laeddis Hiding?",
+    "Write a Javascript method to reverse a string",
+    "How to assemble your own PC?",
+  ];
+
   return (
     <header className="min-h-[100vh]  w-full flex justify-center flex-col items-center relative px-4 md:px-0">
       <div className="absolute inset-0 dark:bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[linear-gradient(to_right,#161616_1px,transparent_1px),linear-gradient(to_bottom,#161616_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] -z-10 h-[150vh]" />
@@ -141,9 +144,14 @@ const Hero = () => {
             }}
             className="flex items-center gap-x-4"
           >
-            <CVDownloadButton />
+            <PlaceholdersAndVanishInput
+              placeholders={placeholders}
+              onChange={(e) => setAiSearchValue(e.target.value)}
+              onSubmit={() => router.push(`/chat`)}
+            />
+            {/* <CVDownloadButton /> */}
           </motion.div>
-          <div className="mt-10 flex justify-center">
+          {/* <div className="mt-10 flex justify-center">
             <div className="flex gap-x-6 max-w-max mx-auto lg:mx-0">
               {socialData.map(({ href, icon: Icon, id, target }) => (
                 <motion.a
@@ -159,7 +167,7 @@ const Hero = () => {
                 </motion.a>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </header>

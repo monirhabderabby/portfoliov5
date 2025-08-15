@@ -28,23 +28,23 @@ const Contact = () => {
         </p>
         <div className="flex items-center gap-[20px] mt-1">
           <a href="https://github.com/monirhabderabby" target="_github">
-            <AiFillGithub className="text-white/80 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+            <AiFillGithub className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
           </a>
           <a
             href="https://www.linkedin.com/in/monirhabderabby/"
             target="_linkedIN"
           >
-            <AiOutlineLinkedin className="text-white/80 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+            <AiOutlineLinkedin className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
           </a>
 
           <a
             href="https://www.facebook.com/monirhabderabby/"
             target="_facebook"
           >
-            <AiOutlineFacebook className="text-white/80 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+            <AiOutlineFacebook className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
           </a>
           <a href="https://leetcode.com/u/monirhrabby" target="_leetcode">
-            <AiOutlineCode className="text-white/80 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+            <AiOutlineCode className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
           </a>
         </div>
       </div>
