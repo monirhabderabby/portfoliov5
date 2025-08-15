@@ -8,7 +8,7 @@ import EmailCopy from "./email-copy";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen lg:min-h-[80vh]  flex flex-col justify-center gap-y-[30px]  px-[20px]">
+    <div className="py-[100px] lg:min-h-[60vh]  flex flex-col justify-center gap-y-[30px]  px-[20px]">
       <div className="flex justify-center items-center">
         <p className="bg-[#E5E7EB]/10 text-white/90 font-light px-[20px] py-[4px] rounded-[50px] ">
           Get in touch

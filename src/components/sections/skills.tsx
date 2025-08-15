@@ -20,13 +20,12 @@ const Skills = () => {
           </h2> */}
 
           <h1 className="text-[30px] font-bold tracking-tighter ">
-            My Secret{" "}
             <PointerHighlight
               rectangleClassName="bg-primary/30  border-blue-300  "
               pointerClassName="text-blue-500 h-3 w-3"
               containerClassName="inline-block mr-1"
             >
-              <span>Sauce</span>
+              <span>My Secret Sauce</span>
             </PointerHighlight>
           </h1>
         </div>
