@@ -1,28 +1,39 @@
-import { SkillData, skillData } from "@/data/skill";
+import { PointerHighlight } from "@/components/ui/pointer-highlight";
+import { skills } from "@/data/skill";
+import Image from "next/image";
 import SkillCard from "../cards/skill-card";
 
 const Skills = () => {
   return (
-    <section className="min-h-screen py-[100px]">
+    <section className="">
       <div className="container mx-auto">
-        <div className="flex justify-center flex-col items-center">
-          <h2 className="text-[25px] text-white bg-primary text-center">
-            Technologies
-          </h2>
+        <div className="flex justify-center flex-col items-center relative">
+          <Image
+            src="/images/steel-flower.webp"
+            alt="steel-flower"
+            width={200}
+            height={200}
+            className="absolute bottom-3 opacity-20 mix-blend-normal"
+          />
+          {/* <h2 className="text-xs text-white font-light text-center z-50 tracking-widest mb-3 bg-primary">
+            My Skills
+          </h2> */}
+
+          <h1 className="text-[30px] font-bold tracking-tighter ">
+            My Secret{" "}
+            <PointerHighlight
+              rectangleClassName="bg-primary/30  border-blue-300  "
+              pointerClassName="text-blue-500 h-3 w-3"
+              containerClassName="inline-block mr-1"
+            >
+              <span>Sauce</span>
+            </PointerHighlight>
+          </h1>
         </div>
-        <div className="pt-3">
-          {skillData?.map((item: SkillData) => {
-            return (
-              <div key={item.id} className="my-[30px]">
-                <h1 className="text-[16px] font-normal">{item.title}</h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[20px] mt-2">
-                  {item.icons?.map((item) => {
-                    return <SkillCard key={item.id} data={item} />;
-                  })}
-                </div>
-              </div>
-            );
-          })}
+        <div className="mt-10 flex flex-wrap justify-center items-center gap-5 max-w-[800px] mx-auto">
+          {skills.map((item, i) => (
+            <SkillCard key={item.id} data={item} index={i} />
+          ))}
         </div>
       </div>
     </section>

@@ -17,19 +17,20 @@ const Achievements = dynamic(
 export default function Home() {
   return (
     <div>
-      <div className="px-4 md:px-0 py-8">
+      <div className="px-4 md:px-0 py-8 ">
         <Hero />
         <AboutMe />
-        <Skills />
-        <Projects />
-      </div>
+        <div className="space-y-[100px] md:space-y-[200px] mt-[200px] md:mt-0">
+          <Skills />
+          <Projects />
+          <div className="py-[80px] bg-black">
+            <Experiences />
 
-      <div className="py-[80px] bg-black">
-        <Experiences />
+            <Educations />
 
-        <Educations />
-
-        <Achievements isSliced />
+            <Achievements isSliced />
+          </div>
+        </div>
       </div>
 
       <Contact />

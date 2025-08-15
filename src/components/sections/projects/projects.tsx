@@ -2,7 +2,7 @@ import ProjectsContainer from "./projects-container";
 
 const Projects = () => {
   return (
-    <section className="w-full py-12   text-white flex justify-center items-center">
+    <section className="w-full  text-white flex justify-center items-center">
       <div className="container px-4 md:px-6">
         <div className="mb-8">
           <h2 className="text-[30px] font-bold tracking-tighter  ">Projects</h2>
