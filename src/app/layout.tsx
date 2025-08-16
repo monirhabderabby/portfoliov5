@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navigation/navbar";
+import SmoothScrolling from "@/providers/smooth-scroll";
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
@@ -48,8 +49,10 @@ export default function RootLayout({
       <body
         className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
       >
-        <Navbar />
-        {children}
+        <SmoothScrolling>
+          <Navbar />
+          {children}
+        </SmoothScrolling>
         <NextTopLoader showSpinner={false} color="#fcf8f7" />
         <Toaster />
       </body>
