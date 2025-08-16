@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navigation/navbar";
+import { BASE_URL, ogImage } from "@/lib/utils";
 import SmoothScrolling from "@/providers/smooth-scroll";
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
@@ -21,19 +22,16 @@ export const metadata: Metadata = {
     title: "Monir Hossain Rabby | Full Stack Developer & Tech Leader",
     description:
       "Explore the portfolio of Monir Hossain Rabby, a skilled Full Stack Developer building fast, scalable, and modern web applications using Next.js, Prisma, and MongoDB.",
-    images:
-      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/og-image.webp",
+    images: ogImage,
     type: "website",
-    url: "https://www.monirhrabby.info", // replace with your domain
+    url: BASE_URL, // replace with your domain
   },
   twitter: {
     card: "summary_large_image",
     title: "Monir Hossain Rabby | Full Stack Developer & Tech Leader",
     description:
       "Creating modern, high-performance web apps with Next.js, Prisma, and MongoDB. Explore the journey and projects of Monir Hossain Rabby.",
-    images: [
-      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/og-image.webp",
-    ],
+    images: [ogImage],
     creator: "@monirhabderabby", // optional
   },
   publisher: "Monir Hossain Rabby",

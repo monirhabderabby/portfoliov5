@@ -2,6 +2,7 @@ import GitHubActivity from "@/components/sections/github-activity";
 import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { journeySteps } from "@/data/journeySteps";
+import { BASE_URL, ogImage } from "@/lib/utils";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -18,11 +19,11 @@ export const metadata: Metadata = {
     title: "Monir Hossain Rabby - Full Stack Developer & Tech Leader",
     description:
       "Explore Monir Hossain Rabby's inspiring journey from accounting student to Head of Web Development. Discover his skills in modern web development and leadership in tech projects.",
-    url: "https://monirhrabby.info/about-me",
+    url: `${BASE_URL}/about-me`,
     siteName: "Monir Hossain Portfolio",
     images: [
       {
-        url: "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/og-image.webp",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "Monir Hossain Rabby - Full Stack Developer & Web Development Leader",
@@ -36,9 +37,7 @@ export const metadata: Metadata = {
     title: "Monir Hossain Rabby - Full Stack Developer & Tech Leader",
     description:
       "From accounting student to Head of Web Development: Monir Hossain Rabby's story of dedication and expertise in modern web technologies.",
-    images: [
-      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/og-image.webp",
-    ],
+    images: [ogImage],
   },
   robots: {
     index: true,
