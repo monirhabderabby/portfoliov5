@@ -6,37 +6,39 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Monir Hossain - From Accounting Student to Tech Leader",
+  title: "Monir Hossain Rabby - Full Stack Developer | Web Development Leader",
   description:
-    "Discover Monir Hossain's inspiring journey from accounting student to Head of Web Development. A story of dedication, perseverance, and continuous learning in the tech industry.",
+    "Monir Hossain Rabby, a professional Full Stack Developer with 2+ years of experience, transformed from an accounting student to Head of Web Development. Explore his journey, skills, and projects in Next.js, TypeScript, Prisma, and MongoDB.",
   keywords:
-    "Monir Hossain About, Career Journey, Accounting to Tech, Web Developer Story, Programming Journey, Tech Leader, Career Transformation, Self-taught Developer",
-  authors: [{ name: "Monir Hossain" }],
-  creator: "Monir Hossain",
-  publisher: "Monir Hossain",
+    "Monir Hossain Rabby, Full Stack Developer, Next.js Developer, Web Developer, TypeScript, Prisma, MongoDB, Frontend Leader, Tech Journey, Web Development Portfolio",
+  authors: [{ name: "Monir Hossain Rabby" }],
+  creator: "Monir Hossain Rabby",
+  publisher: "Monir Hossain Rabby",
   openGraph: {
-    title: "About Monir Hossain - From Accounting Student to Tech Leader",
+    title: "Monir Hossain Rabby - Full Stack Developer & Tech Leader",
     description:
-      "An inspiring transformation story: From struggling accounting student to successful Head of Web Development. Learn about dedication, hard work, and commitment to excellence.",
-    url: "https://monirhossain.dev/about",
+      "Explore Monir Hossain Rabby's inspiring journey from accounting student to Head of Web Development. Discover his skills in modern web development and leadership in tech projects.",
+    url: "https://monirhrabby.info/about-me",
     siteName: "Monir Hossain Portfolio",
     images: [
       {
-        url: "/about-og-image.jpg",
+        url: "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Monir Hossain Career Journey - From Accounting to Tech Leadership",
+        alt: "Monir Hossain Rabby - Full Stack Developer & Web Development Leader",
       },
     ],
     locale: "en_US",
-    type: "article",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Monir Hossain - From Accounting Student to Tech Leader",
+    title: "Monir Hossain Rabby - Full Stack Developer & Tech Leader",
     description:
-      "An inspiring transformation story: From struggling accounting student to successful Head of Web Development.",
-    images: ["/about-og-image.jpg"],
+      "From accounting student to Head of Web Development: Monir Hossain Rabby's story of dedication and expertise in modern web technologies.",
+    images: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/og-image.webp",
+    ],
   },
   robots: {
     index: true,
