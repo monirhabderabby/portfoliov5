@@ -1,4 +1,4 @@
-export const journeySteps = [
+export const journeySteps: JourneySteps[] = [
   {
     year: "2018",
     title: "Academic Foundation",
@@ -6,8 +6,9 @@ export const journeySteps = [
     company: "National University",
     description:
       "Started my academic journey in accounting, building analytical and problem-solving skills that would later prove invaluable in programming.",
-    image:
+    image: [
       "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/bhawal%20badre%20alam%20(1).webp",
+    ],
     achievements: [
       "Completed 2nd year successfully",
       "Developed analytical thinking",
@@ -22,8 +23,9 @@ export const journeySteps = [
     company: "Personal Journey",
     description:
       "During COVID-19, faced financial challenges and worked as an Uber rider. A pivotal moment under Dhaka Kuril flyover led me to discover my true passion for technology.",
-    image:
+    image: [
       "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/uber-rider.png",
+    ],
     achievements: [
       "Overcame financial hardships",
       "Discovered passion for technology",
@@ -38,7 +40,9 @@ export const journeySteps = [
     company: "Programming Hero",
     description:
       "Invested 5500 Taka from my father to join Programming Hero. Faced initial struggles with JavaScript but persevered and fell in love with React.js.",
-    image: "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/ph.webp",
+    image: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/ph.webp",
+    ],
     achievements: [
       "Completed Programming Hero Batch 5",
       "Mastered React.js fundamentals",
@@ -53,8 +57,9 @@ export const journeySteps = [
     company: "Learn with Sumit",
     description:
       "Enrolled in the 'Think in a Redux Way' program to enhance my expertise in state management. Achieved an average score of 79.2%, solidifying my understanding of Redux patterns and best practices.",
-    image:
+    image: [
       "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/lws.webp",
+    ],
     achievements: [
       "Completed Think in a Redux Way program",
       "Enhanced state management skills",
@@ -69,7 +74,7 @@ export const journeySteps = [
     company: "ITCO BD",
     description:
       "Landed my first job but faced challenges due to lack of senior guidance. This failure became a valuable learning experience about software development lifecycle.",
-    image: "/startup-developers-working.png",
+    image: ["/startup-developers-working.png"],
     achievements: [
       "First professional role",
       "Learned from failure",
@@ -84,7 +89,7 @@ export const journeySteps = [
     company: "Learn with Sumit Platform",
     description:
       "Returned to learning with renewed focus. Completed 'Think In a Redux Way' and 'Reactive Accelerator' courses. Collaborated with fellow developers on practice projects.",
-    image: "/developer-learning-advanced-web.png",
+    image: ["/developer-learning-advanced-web.png"],
     achievements: [
       "Mastered Redux patterns",
       "Learned Next.js & TypeScript",
@@ -99,8 +104,9 @@ export const journeySteps = [
     company: "ScaleUp Ads Agency",
     description:
       "Joined as frontend developer and quickly progressed to unofficial team leadership within 3 months, demonstrating natural leadership abilities.",
-    image:
+    image: [
       "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/Joined%20Scale%20Up%20(1).webp",
+    ],
     achievements: [
       "Rapid promotion to team lead",
       "Led frontend development team",
@@ -115,7 +121,7 @@ export const journeySteps = [
     company: "ScaleUp Ads Agency",
     description:
       "Promoted to handle end-to-end project management with a 12-member team including frontend, backend developers, and UI/UX designers.",
-    image: "/placeholder-dv3it.png",
+    image: ["/placeholder-dv3it.png"],
     achievements: [
       "Managed 12-member team",
       "End-to-end project delivery",
@@ -130,7 +136,7 @@ export const journeySteps = [
     company: "ScaleUp Ads Agency",
     description:
       "Selected for the Extended Leadership Forum, recognizing my contribution to the company's growth and my leadership potential.",
-    image: "/recognition-ceremony.png",
+    image: ["/recognition-ceremony.png"],
     achievements: [
       "Leadership forum selection",
       "Company-wide recognition",
@@ -145,7 +151,7 @@ export const journeySteps = [
     company: "ScaleUp Ads Agency",
     description:
       "Promoted to Head of Web Development, overseeing both day and night shift operations. Leading the entire web development division with strategic oversight.",
-    image: "/executive-web-development-team.png",
+    image: ["/executive-web-development-team.png"],
     achievements: [
       "Head of department role",
       "24/7 operations oversight",
@@ -161,7 +167,7 @@ export interface JourneySteps {
   role: string;
   company: string;
   description: string;
-  image: string;
+  image: string[];
   achievements: string[];
   type: string;
 }
