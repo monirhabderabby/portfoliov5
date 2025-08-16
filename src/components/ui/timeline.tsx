@@ -42,8 +42,8 @@ export const Timeline = ({ data }: Props) => {
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-10 items-center top-40 self-start max-w-xs lg:max-w-sm ">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-primary/50  dark:bg-black flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-primary/10 dark:bg-neutral-800 border border-primary/5 dark:border-neutral-700 p-2" />
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-primary/50   flex items-center justify-center">
+                <div className="h-4 w-4 rounded-full bg-primary/10  border border-primary/5  p-2" />
               </div>
               <h3 className="hidden md:block  text-xl md:pl-20 md:text-2xl font-bold text-neutral-500 dark:text-neutral-500 ">
                 {item.role}
@@ -69,7 +69,10 @@ export const Timeline = ({ data }: Props) => {
               </p>
               <div className={cn(`mt-3 hidden md:grid grid-cols-3 gap-5`)}>
                 {item.image.map((img, i) => (
-                  <div className="aspect-video max-w-[300px] relative " key={i}>
+                  <div
+                    className="aspect-[16/11] max-w-[300px] relative"
+                    key={i}
+                  >
                     <Image
                       src={img}
                       fill

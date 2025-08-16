@@ -74,7 +74,9 @@ export const journeySteps: JourneySteps[] = [
     company: "ITCO BD",
     description:
       "Landed my first job but faced challenges due to lack of senior guidance. This failure became a valuable learning experience about software development lifecycle.",
-    image: ["/startup-developers-working.png"],
+    image: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/itco.webp",
+    ],
     achievements: [
       "First professional role",
       "Learned from failure",
@@ -86,14 +88,21 @@ export const journeySteps: JourneySteps[] = [
     year: "2022-2023",
     title: "Skill Enhancement",
     role: "Continuous Learner",
-    company: "Learn with Sumit Platform",
+    company: "Learn with Sumit, HackerRank & Ostad",
     description:
-      "Returned to learning with renewed focus. Completed 'Think In a Redux Way' and 'Reactive Accelerator' courses. Collaborated with fellow developers on practice projects.",
-    image: ["/developer-learning-advanced-web.png"],
+      "This period was a turning point in my growth as a developer. I successfully completed the 'Reactive Accelerator' program from Learn with Sumit with an overall score of 89.5%, where I mastered clean code practices, SSR, CSR, SSG, server actions, API routes, middleware, and advanced React concepts such as snapshots and the nuanced behavior of useEffect. At the same time, I completed a free course on HackerRank and earned the Basic (CSS) certificate, further strengthening my frontend foundation. Additionally, I joined the Ostad platform to learn Prisma ORM, which significantly boosted my confidence in full-stack development and motivated me to start applying for jobs.",
+    image: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/ra.webp",
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/hackerRank.webp",
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/ostad.webp",
+    ],
     achievements: [
-      "Mastered Redux patterns",
-      "Learned Next.js & TypeScript",
-      "Built collaborative projects",
+      "Completed Reactive Accelerator program with 89.5% score",
+      "Mastered clean code, SSR, CSR, SSG, server actions, API routes, and middleware",
+      "Developed deep expertise in React (snapshots, useEffect behavior)",
+      "Earned Basic (CSS) certificate from HackerRank",
+      "Learned Prisma ORM from Ostad, achieving 100% confidence in full-stack development",
+      "Began applying for professional jobs",
     ],
     type: "learning",
   },
@@ -106,6 +115,7 @@ export const journeySteps: JourneySteps[] = [
       "Joined as frontend developer and quickly progressed to unofficial team leadership within 3 months, demonstrating natural leadership abilities.",
     image: [
       "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/Joined%20Scale%20Up%20(1).webp",
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/second%20job.webp",
     ],
     achievements: [
       "Rapid promotion to team lead",
@@ -116,12 +126,14 @@ export const journeySteps: JourneySteps[] = [
   },
   {
     year: "2023",
-    title: "Project Leadership",
-    role: "Project Leader",
+    title: "Team Leadership",
+    role: "Team Leader",
     company: "ScaleUp Ads Agency",
     description:
       "Promoted to handle end-to-end project management with a 12-member team including frontend, backend developers, and UI/UX designers.",
-    image: ["/placeholder-dv3it.png"],
+    image: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/scaleup%20banner.webp",
+    ],
     achievements: [
       "Managed 12-member team",
       "End-to-end project delivery",
@@ -132,15 +144,18 @@ export const journeySteps: JourneySteps[] = [
   {
     year: "2023",
     title: "Extended Leadership Recognition",
-    role: "Extended Leadership Forum Member",
+    role: "Extended Leadership  Member",
     company: "ScaleUp Ads Agency",
     description:
-      "Selected for the Extended Leadership Forum, recognizing my contribution to the company's growth and my leadership potential.",
-    image: ["/recognition-ceremony.png"],
+      "Selected for the Extended Leadership Forum, recognizing my contribution to the company's growth and leadership potential. Alongside strategic involvement, I was also responsible for growing and strengthening the Web Development Service team, ensuring its long-term scalability and impact within the company.",
+    image: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/1753513586895%20(1).jpeg",
+    ],
     achievements: [
       "Leadership forum selection",
       "Company-wide recognition",
       "Strategic decision involvement",
+      "Responsible for growing the Web Development Service team",
     ],
     type: "recognition",
   },
