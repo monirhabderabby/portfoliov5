@@ -1,3 +1,4 @@
+import GitHubActivity from "@/components/sections/github-activity";
 import { Timeline } from "@/components/ui/timeline";
 import { journeySteps } from "@/data/journeySteps";
 import type { Metadata } from "next";
@@ -66,8 +67,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div>
+      <div className="mb-20">
         <Timeline data={journeySteps} />
+        <GitHubActivity />
       </div>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">

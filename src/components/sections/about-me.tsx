@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 // Local imports
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import CVDownloadButton from "../ui/CVDownloadButton";
 import { Button } from "../ui/button";
 
@@ -101,8 +102,10 @@ const AboutMe = () => {
               </p>
               <div className="flex items-center gap-x-5">
                 <CVDownloadButton aria-label="Download CV" />
-                <Button variant="link">
-                  Learn More <ArrowRight />
+                <Button variant="link" asChild>
+                  <Link href="/about-me">
+                    Learn More <ArrowRight />
+                  </Link>
                 </Button>
               </div>
             </div>
