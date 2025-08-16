@@ -205,10 +205,10 @@ export default async function GitHubActivity() {
     <section className="w-full container ">
       {/* Header */}
       <header className="text-center mb-12">
-        <p className="text-gray-400 text-sm md:text-base font-medium tracking-wider uppercase mb-2">
+        <p className="text-gray-400  font-normal text-sm tracking-wider uppercase mb-2">
           Developer Insights
         </p>
-        <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold">
+        <h1 className="text-[30px] font-bold">
           <span className="text-white">GitHub </span>
           <span className="bg-gradient-to-r from-blue-400 via-blue-700 to-blue-400 bg-clip-text text-transparent">
             Activity

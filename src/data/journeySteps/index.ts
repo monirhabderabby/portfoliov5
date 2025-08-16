@@ -166,7 +166,9 @@ export const journeySteps: JourneySteps[] = [
     company: "ScaleUp Ads Agency",
     description:
       "Promoted to Head of Web Development, overseeing both day and night shift operations. Leading the entire web development division with strategic oversight.",
-    image: ["/executive-web-development-team.png"],
+    image: [
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/2025-07-04%20(1).webp",
+    ],
     achievements: [
       "Head of department role",
       "24/7 operations oversight",

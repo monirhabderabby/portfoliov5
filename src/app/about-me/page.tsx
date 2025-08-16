@@ -1,7 +1,9 @@
 import GitHubActivity from "@/components/sections/github-activity";
+import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { journeySteps } from "@/data/journeySteps";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Monir Hossain - From Accounting Student to Tech Leader",
@@ -67,34 +69,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="mb-20">
+      <div className="mb-20 space-y-10">
         <Timeline data={journeySteps} />
         <GitHubActivity />
       </div>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">
+          <h2 className="text-xl font-bold text-foreground mb-6">
             Ready to Work Together?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-[14px] text-muted-foreground mb-8 max-w-2xl mx-auto">
             My journey proves that with dedication and hard work, any challenge
             can be overcome. Let&apos;s bring that same commitment to your next
             project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
-            >
-              Get In Touch
-            </a>
-            <a
-              href="/projects"
-              className="inline-flex items-center justify-center px-8 py-3 border border-input text-base font-medium rounded-md text-foreground bg-background hover:bg-accent transition-colors"
-            >
-              View My Work
-            </a>
+            <Button size="sm" variant="default" asChild>
+              <Link href="/contact">Get In Touch</Link>
+            </Button>
           </div>
         </div>
       </section>
