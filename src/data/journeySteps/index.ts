@@ -69,7 +69,8 @@ export const journeySteps = [
     company: "ITCO BD",
     description:
       "Landed my first job but faced challenges due to lack of senior guidance. This failure became a valuable learning experience about software development lifecycle.",
-    image: "/startup-developers-working.png",
+    image:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/itco.webp",
     achievements: [
       "First professional role",
       "Learned from failure",
@@ -84,7 +85,8 @@ export const journeySteps = [
     company: "Learn with Sumit Platform",
     description:
       "Returned to learning with renewed focus. Completed 'Think In a Redux Way' and 'Reactive Accelerator' courses. Collaborated with fellow developers on practice projects.",
-    image: "/developer-learning-advanced-web.png",
+    image:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/reactive%20accelerator.webp",
     achievements: [
       "Mastered Redux patterns",
       "Learned Next.js & TypeScript",
