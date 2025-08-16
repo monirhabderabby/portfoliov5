@@ -38,11 +38,27 @@ export const journeySteps = [
     company: "Programming Hero",
     description:
       "Invested 5500 Taka from my father to join Programming Hero. Faced initial struggles with JavaScript but persevered and fell in love with React.js.",
-    image: "/programming-learner.png",
+    image: "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/ph.webp",
     achievements: [
       "Completed Programming Hero Batch 5",
       "Mastered React.js fundamentals",
       "Overcame JavaScript challenges",
+    ],
+    type: "learning",
+  },
+  {
+    year: "2022",
+    title: "Mastering State Management",
+    role: "Redux Learner",
+    company: "Learn with Sumit",
+    description:
+      "Enrolled in the 'Think in a Redux Way' program to enhance my expertise in state management. Achieved an average score of 79.2%, solidifying my understanding of Redux patterns and best practices.",
+    image:
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/lws.webp",
+    achievements: [
+      "Completed Think in a Redux Way program",
+      "Enhanced state management skills",
+      "Scored 79.2% average in course assessments",
     ],
     type: "learning",
   },
