@@ -41,7 +41,7 @@ const Hero = () => {
           >
             <Image
               src={profileImage}
-              alt="Monir"
+              alt="Monir Hossain Rabby"
               width="192"
               height="192"
               quality="95"
@@ -119,8 +119,8 @@ const Hero = () => {
             }`}
           >
             Hi, I’m Monir — a full-stack developer with 2+ years of experience
-            building modern, scalable apps with Next.js, Prisma & MongoDB. Let’s
-            bring your idea to life!
+            building modern, scalable web apps with Next.js, Prisma & MongoDB.
+            Let’s bring your idea to life!
           </motion.h1>
         </div>
 
@@ -158,6 +158,7 @@ const Hero = () => {
                   key={id}
                   href={href}
                   variants={fadeInStragger}
+                  rel="noopener noreferrer"
                   initial="initial"
                   animate="animate"
                   aria-label={`Link to ${id}`}
