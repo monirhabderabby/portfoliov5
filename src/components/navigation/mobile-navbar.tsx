@@ -34,6 +34,7 @@ const MobileNavbar = () => {
           size="icon"
           className="flex-shrink-0"
           onClick={() => setOpen((p) => !p)}
+          aria-label={open ? "Close menu" : "Open menu"} // <-- accessible name
         >
           <Menu />
         </Button>
