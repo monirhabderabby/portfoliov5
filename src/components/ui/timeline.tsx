@@ -50,7 +50,7 @@ export const Timeline = ({ data }: Props) => {
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <div className="flex items-center gap-2 mb-2">
-                <h1 className="font-semibold text-lg">{item.title}</h1>
+                <h2 className="font-semibold text-lg">{item.title}</h2>
                 {/* <Badge className={getTypeColor(item.type)}>{item.type}</Badge> */}
               </div>
 
@@ -74,6 +74,7 @@ export const Timeline = ({ data }: Props) => {
                       alt={item.company}
                       title={item.role}
                       className="rounded-xl"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                 ))}
