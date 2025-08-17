@@ -17,9 +17,12 @@ const Contact = () => {
         <span className="bg-[#E5E7EB]/10 text-white/90 font-light px-6 py-2 rounded-full">
           Get in Touch
         </span>
-        <h1 className="text-3xl md:text-4xl font-bold text-white mt-4 text-center">
+
+        {/* ✅ Updated <h1> with fixed font size */}
+        <h1 className="text-[30px] md:text-[36px] font-bold text-white mt-4 text-center">
           Let&apos;s Build Something Amazing Together
         </h1>
+
         <p className="text-white/70 mt-2 max-w-xl text-center text-[14px] md:text-[16px]">
           I’m Monir Hossain Rabby, a Full Stack Developer skilled in Next.js,
           TypeScript, Prisma, and MongoDB. Whether you have a project idea, want

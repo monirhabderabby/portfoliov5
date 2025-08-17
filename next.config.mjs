@@ -9,6 +9,7 @@ const nextConfig = {
       { hostname: "images.unsplash.com", protocol: "https" },
     ],
   },
+  productionBrowserSourceMaps: true,
 };
 
 // Wrap your Next.js config with the analyzer
