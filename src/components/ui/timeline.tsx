@@ -67,13 +67,14 @@ export const Timeline = ({ data }: Props) => {
               </p>
               <div className={cn(`mt-3 hidden md:grid grid-cols-3 gap-5`)}>
                 {item.image.map((img, i) => (
-                  <div className="aspect-video max-w-[300px] relative" key={i}>
+                  <div className="max-w-[300px] w-full relative" key={i}>
                     <Image
                       src={img}
-                      fill
                       alt={item.company}
                       title={item.role}
-                      className="rounded-xl"
+                      width={300}
+                      height={200} // you can dynamically calculate this based on image dimensions
+                      className="rounded-xl w-full h-auto"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
