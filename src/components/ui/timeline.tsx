@@ -67,10 +67,7 @@ export const Timeline = ({ data }: Props) => {
               </p>
               <div className={cn(`mt-3 hidden md:grid grid-cols-3 gap-5`)}>
                 {item.image.map((img, i) => (
-                  <div
-                    className="aspect-[16/11] max-w-[300px] relative"
-                    key={i}
-                  >
+                  <div className="aspect-video max-w-[300px] relative" key={i}>
                     <Image
                       src={img}
                       fill
