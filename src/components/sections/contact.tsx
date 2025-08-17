@@ -19,7 +19,7 @@ const Contact = () => {
         </span>
 
         {/* ✅ Updated <h1> with fixed font size */}
-        <h1 className="text-[30px] md:text-[36px] font-bold text-white mt-4 text-center">
+        <h1 className="text-[25px] md:text-[30px] font-bold text-white mt-4 text-center">
           Let&apos;s Build Something Amazing Together
         </h1>
 

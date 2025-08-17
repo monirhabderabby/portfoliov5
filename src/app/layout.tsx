@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navigation/navbar";
+import { socialData } from "@/data/data";
 import { BASE_URL, ogImage } from "@/lib/utils";
 import SmoothScrolling from "@/providers/smooth-scroll";
 import type { Metadata } from "next";
@@ -48,6 +49,26 @@ export const metadata: Metadata = {
     },
   },
 };
+
+export function Head() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Monir Hossain Rabby",
+            jobTitle: "Full Stack Web Developer",
+            url: BASE_URL,
+            sameAs: socialData.map((s) => s.href),
+          }),
+        }}
+      />
+    </>
+  );
+}
 
 export default function RootLayout({
   children,
