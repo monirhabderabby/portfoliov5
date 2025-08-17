@@ -27,20 +27,18 @@ const AchievementsContainer = () => {
                 },
               }}
               exit={{ opacity: 0 }}
-              className="certificate"
+              className="certificate flex justify-center"
             >
-              <Image
-                width={0}
-                height={0}
-                style={{
-                  width: "80%",
-                  height: "80%",
-                }}
-                src={certificate}
-                alt="certificate"
-                className="hover:scale-110 duration-300 blur-[.6px] hover:blur-0 rounded-md"
-                loading="lazy"
-              />
+              {/* Image wrapper with aspect ratio */}
+              <div className="relative w-4/5 aspect-[4/3]">
+                <Image
+                  src={certificate}
+                  alt={name || "certificate"}
+                  fill
+                  className="object-contain hover:scale-110 duration-300 blur-[.6px] hover:blur-0 rounded-md"
+                  loading="lazy"
+                />
+              </div>
             </motion.div>
           </Tooltip>
         );
