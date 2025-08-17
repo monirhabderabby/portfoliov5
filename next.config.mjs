@@ -12,4 +12,4 @@ const nextConfig = {
 };
 
 // Wrap your Next.js config with the analyzer
-export default bundleAnalyzer(nextConfig);
+export default nextConfig;
