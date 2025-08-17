@@ -59,7 +59,7 @@ const MobileNavbar = () => {
                 variant={getVariant("/about-me")}
                 onClick={onClose}
               >
-                <Link href="/about-me">About</Link>
+                <Link href="/about-me">My Story</Link>
               </Button>
             </li>
             <li className="hover:text-foreground/80 text-sm">

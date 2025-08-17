@@ -104,7 +104,7 @@ const AboutMe = () => {
                 <CVDownloadButton aria-label="Download CV" />
                 <Button variant="link" asChild className="text-white">
                   <Link href="/about-me">
-                    Learn More <ArrowRight />
+                    My Story <ArrowRight />
                   </Link>
                 </Button>
               </div>
