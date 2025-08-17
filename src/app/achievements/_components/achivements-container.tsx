@@ -32,7 +32,7 @@ const AchievementsContainer = () => {
                 },
               }}
               exit={{ opacity: 0 }}
-              className="certificate flex justify-center"
+              className="certificate flex justify-center p-0 opacity-0 animate-fadeIn"
             >
               <span className="sr-only">{name}</span>
               {/* Image wrapper with aspect ratio */}

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <section className="min-h-[calc(100vh-60px)] py-24 flex justify-center items-center">
+    <section className="min-h-[calc(100vh-60px)] py-24 ">
       <div className="container px-4 md:px-6">
         <div className="mb-8 flex items-center justify-between">
           <div className="h-[.5px] flex-grow bg-primary/40" />
