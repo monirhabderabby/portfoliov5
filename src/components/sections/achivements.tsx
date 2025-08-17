@@ -71,11 +71,13 @@ const Achievements = ({ isSliced }: Props) => {
           })}
         </div>
 
-        <div className="w-full mt-10 flex items-center justify-center">
-          <Button variant="ghost" asChild>
-            <Link href="/achievements">See More</Link>
-          </Button>
-        </div>
+        {isSliced && (
+          <div className="w-full mt-10 flex items-center justify-center">
+            <Button variant="ghost" asChild>
+              <Link href="/achievements">View all achievements</Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
