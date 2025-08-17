@@ -1,6 +1,4 @@
 "use client";
-import { getTypeColor } from "@/app/about-me/_components/get-type-color";
-import { Badge } from "@/components/ui/badge";
 import { JourneySteps } from "@/data/journeySteps";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -53,7 +51,7 @@ export const Timeline = ({ data }: Props) => {
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="font-semibold text-lg">{item.title}</h3>
-                <Badge className={getTypeColor(item.type)}>{item.type}</Badge>
+                {/* <Badge className={getTypeColor(item.type)}>{item.type}</Badge> */}
               </div>
 
               <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
