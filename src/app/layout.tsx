@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/navigation/navbar";
-import { socialData } from "@/data/data";
+import SchemaMarkup from "@/components/scripts/schema-markup";
 import { BASE_URL, ogImage } from "@/lib/utils";
 import SmoothScrolling from "@/providers/smooth-scroll";
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
+import Head from "next/head";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -50,26 +51,6 @@ export const metadata: Metadata = {
   },
 };
 
-export function Head() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Monir Hossain Rabby",
-            jobTitle: "Full Stack Web Developer",
-            url: BASE_URL,
-            sameAs: socialData.map((s) => s.href),
-          }),
-        }}
-      />
-    </>
-  );
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,6 +58,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+        <SchemaMarkup />
+      </Head>
       <body
         className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
       >
