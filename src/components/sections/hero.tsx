@@ -41,7 +41,7 @@ const Hero = () => {
           >
             <Image
               src={profileImage}
-              alt="Monir Hossain Rabby"
+              alt="Monir"
               width="192"
               height="192"
               quality="95"
@@ -97,21 +97,21 @@ const Hero = () => {
         </motion.button>
 
         <div className="max-w-[700px] my-7 md:my-10">
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 80,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              type: "tween",
-              duration: 1.2,
-              delay: 0.1,
-              ease: [0.25, 0.25, 0.25, 0.75],
-            }}
+          <h1
+            // initial={{
+            //   opacity: 1,
+            //   y: 0,
+            // }}
+            // animate={{
+            //   opacity: 1,
+            //   y: 0,
+            // }}
+            // transition={{
+            //   type: "tween",
+            //   duration: 1.2,
+            //   delay: 0.1,
+            //   ease: [0.25, 0.25, 0.25, 0.75],
+            // }}
             className={`${
               true
                 ? `text-[24px] md:text-[30px] lg:textxl md:!leading-snug font-medium text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent`
@@ -121,7 +121,7 @@ const Hero = () => {
             Hi, I’m Monir — a full-stack developer with 2+ years of experience
             building modern, scalable web apps with Next.js, Prisma & MongoDB.
             Let’s bring your idea to life!
-          </motion.h1>
+          </h1>
         </div>
 
         <div>
@@ -158,7 +158,6 @@ const Hero = () => {
                   key={id}
                   href={href}
                   variants={fadeInStragger}
-                  rel="noopener noreferrer"
                   initial="initial"
                   animate="animate"
                   aria-label={`Link to ${id}`}
