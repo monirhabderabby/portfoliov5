@@ -102,7 +102,7 @@ const AboutMe = () => {
               </p>
               <div className="flex items-center gap-x-5">
                 <CVDownloadButton aria-label="Download CV" />
-                <Button variant="link" asChild>
+                <Button variant="link" asChild className="text-white">
                   <Link href="/about-me">
                     Learn More <ArrowRight />
                   </Link>
