@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navigation/navbar";
 import SchemaMarkup from "@/components/scripts/schema-markup";
 import { BASE_URL, ogImage } from "@/lib/utils";
 import SmoothScrolling from "@/providers/smooth-scroll";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import Head from "next/head";
@@ -70,6 +71,8 @@ export default function RootLayout({
         </SmoothScrolling>
         <NextTopLoader showSpinner={false} color="#fcf8f7" />
         <Toaster />
+        <GoogleAnalytics gaId={process.env.GA_ID!} />
+        <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID!} />
       </body>
     </html>
   );

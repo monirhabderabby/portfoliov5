@@ -11,6 +11,7 @@
  */
 
 import { cn } from "@/lib/utils";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { ArrowRight, Github, LinkIcon, Repeat2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -150,6 +151,9 @@ export default function CardFlip({
                 )}
                 href={github}
                 target="_blank"
+                onClick={() =>
+                  sendGTMEvent({ event: "visit-github", value: title })
+                }
               >
                 <Github className="w-4 h-4 text-primary transition-all duration-300 group-hover/start:scale-110" />
                 <span className="text-sm font-medium text-zinc-900 dark:text-white group-hover/start:text-primary dark:group-hover/start:text-primary">
@@ -170,6 +174,9 @@ export default function CardFlip({
                 )}
                 href={liveLink}
                 target="_blank"
+                onClick={() =>
+                  sendGTMEvent({ event: "project-watched", value: title })
+                }
               >
                 <LinkIcon className="w-4 h-4 text-primary transition-all duration-300 group-hover/start:scale-110" />
                 <span className="text-sm font-medium text-zinc-900 dark:text-white group-hover/start:text-primary dark:group-hover/start:text-primary">
