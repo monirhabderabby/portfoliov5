@@ -168,6 +168,7 @@ export const journeySteps: JourneySteps[] = [
       "Promoted to Head of Web Development, overseeing both day and night shift operations. Leading the entire web development division with strategic oversight.",
     image: [
       "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/2025-07-04%20(1).webp",
+      "https://files.edgestore.dev/fo77r421j6yzhzmy/story/_public/web_dev_head%20(1).webp",
     ],
     achievements: [
       "Head of department role",
