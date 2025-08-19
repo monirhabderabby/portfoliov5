@@ -1,5 +1,7 @@
 import { MetadataRoute } from "next";
 
+export const contentType = "application/xml"; // 👈 ensures correct header
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.AUTH_URL || "https://www.monirhrabby.info"; // fallback if env not set
 
