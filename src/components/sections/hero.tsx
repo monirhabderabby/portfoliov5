@@ -7,22 +7,20 @@ import Image from "next/image";
 import { socialData } from "@/data/data";
 import { cn } from "@/lib/utils";
 import { fadeInStragger } from "@/lib/variant";
-import { useAiSearchStore } from "@/state/chat";
-import { useRouter } from "next/navigation";
 import profileImage from "../../../public/images/profile.webp";
 import AnimatedGradientText from "../ui/animated-gradient-text";
-import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
+import CVDownloadButton from "../ui/CVDownloadButton";
 
 const Hero = () => {
-  const router = useRouter();
-  const { setAiSearchValue } = useAiSearchStore();
-  const placeholders = [
-    "What's the first rule of Fight Club?",
-    "Who is Tyler Durden?",
-    "Where is Andrew Laeddis Hiding?",
-    "Write a Javascript method to reverse a string",
-    "How to assemble your own PC?",
-  ];
+  // const router = useRouter();
+  // const { setAiSearchValue } = useAiSearchStore();
+  // const placeholders = [
+  //   "What's the first rule of Fight Club?",
+  //   "Who is Tyler Durden?",
+  //   "Where is Andrew Laeddis Hiding?",
+  //   "Write a Javascript method to reverse a string",
+  //   "How to assemble your own PC?",
+  // ];
 
   return (
     <header className="min-h-[100vh]  w-full flex justify-center flex-col items-center relative px-4 md:px-0">
@@ -99,21 +97,21 @@ const Hero = () => {
         </motion.button>
 
         <div className="max-w-[700px] my-7 md:my-10">
-          <motion.h1
-            initial={{
-              opacity: 0,
-              y: 80,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              type: "tween",
-              duration: 1.2,
-              delay: 0.1,
-              ease: [0.25, 0.25, 0.25, 0.75],
-            }}
+          <h1
+            // initial={{
+            //   opacity: 1,
+            //   y: 0,
+            // }}
+            // animate={{
+            //   opacity: 1,
+            //   y: 0,
+            // }}
+            // transition={{
+            //   type: "tween",
+            //   duration: 1.2,
+            //   delay: 0.1,
+            //   ease: [0.25, 0.25, 0.25, 0.75],
+            // }}
             className={`${
               true
                 ? `text-[24px] md:text-[30px] lg:textxl md:!leading-snug font-medium text-center bg-clip-text bg-gradient-to-b from-gray-50 to-gray-50 text-transparent`
@@ -121,9 +119,9 @@ const Hero = () => {
             }`}
           >
             Hi, I’m Monir — a full-stack developer with 2+ years of experience
-            building modern, scalable apps with Next.js, Prisma & MongoDB. Let’s
-            bring your idea to life!
-          </motion.h1>
+            building modern, scalable web apps with Next.js, Prisma & MongoDB.
+            Let’s bring your idea to life!
+          </h1>
         </div>
 
         <div>
@@ -146,12 +144,12 @@ const Hero = () => {
             }}
             className="flex items-center gap-x-4"
           >
-            <PlaceholdersAndVanishInput
+            {/* <PlaceholdersAndVanishInput
               placeholders={placeholders}
               onChange={(e) => setAiSearchValue(e.target.value)}
               onSubmit={() => router.push(`/chat`)}
-            />
-            {/* <CVDownloadButton /> */}
+            /> */}
+            <CVDownloadButton />
           </motion.div>
           <div className="mt-10 flex justify-center">
             <div className="flex gap-x-6 max-w-max mx-auto lg:mx-0">

@@ -1,8 +1,11 @@
 "use client";
-import CardFlip from "@/components/kokonutui/card-flip";
+const CardFlip = dynamic(() => import("@/components/kokonutui/card-flip"), {
+  ssr: false,
+});
 import { projects } from "@/data/projects";
 import { fadeIn } from "@/lib/variant";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 const animateDirectionDecisionMaker = (index: number) => {
   const col = index % 3; // Determine column in a 3-column grid

@@ -1,8 +1,13 @@
 "use client";
 import certificateData from "@/data/achivements";
-import { Tooltip } from "@material-tailwind/react";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+// Instead of importing all Tooltip animations
+const Tooltip = dynamic(
+  () => import("@material-tailwind/react").then((mod) => mod.Tooltip),
+  { ssr: false }
+);
 
 const AchievementsContainer = () => {
   return (
@@ -27,20 +32,22 @@ const AchievementsContainer = () => {
                 },
               }}
               exit={{ opacity: 0 }}
-              className="certificate"
+              className="certificate flex justify-center p-0 opacity-0 animate-fadeIn"
             >
-              <Image
-                width={0}
-                height={0}
-                style={{
-                  width: "80%",
-                  height: "80%",
-                }}
-                src={certificate}
-                alt="certificate"
-                className="hover:scale-110 duration-300 blur-[.6px] hover:blur-0 rounded-md"
-                loading="lazy"
-              />
+              <span className="sr-only">{name}</span>
+              {/* Image wrapper with aspect ratio */}
+              <div className="relative w-4/5 aspect-[4/3]">
+                <Image
+                  src={certificate}
+                  alt={name || "certificate"}
+                  fill
+                  className="object-contain hover:scale-110 duration-300 blur-[.6px] hover:blur-0 rounded-md"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw,
+         (max-width: 1024px) 50vw,
+         33vw"
+                />
+              </div>
             </motion.div>
           </Tooltip>
         );

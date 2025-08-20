@@ -25,7 +25,7 @@ const Educations = () => {
               </CardHeader>
               <CardContent>
                 <h3 className="text-center">{degree}</h3>
-                <p className="text-[13px] text-white/30 text-center font-light">
+                <p className="text-[13px] text-gray-300/70 text-center font-light">
                   {school}
                 </p>
               </CardContent>

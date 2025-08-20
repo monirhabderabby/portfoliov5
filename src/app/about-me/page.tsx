@@ -1,39 +1,43 @@
+import GitHubActivity from "@/components/sections/github-activity";
+import { Button } from "@/components/ui/button";
 import { Timeline } from "@/components/ui/timeline";
 import { journeySteps } from "@/data/journeySteps";
+import { BASE_URL, ogImage } from "@/lib/utils";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Monir Hossain - From Accounting Student to Tech Leader",
+  title: "Monir Hossain Rabby - Full Stack Developer | Web Development Leader",
   description:
-    "Discover Monir Hossain's inspiring journey from accounting student to Head of Web Development. A story of dedication, perseverance, and continuous learning in the tech industry.",
+    "Monir Hossain Rabby, a professional Full Stack Developer with 2+ years of experience, transformed from an accounting student to Head of Web Development. Explore his journey, skills, and projects in Next.js, TypeScript, Prisma, and MongoDB.",
   keywords:
-    "Monir Hossain About, Career Journey, Accounting to Tech, Web Developer Story, Programming Journey, Tech Leader, Career Transformation, Self-taught Developer",
-  authors: [{ name: "Monir Hossain" }],
-  creator: "Monir Hossain",
-  publisher: "Monir Hossain",
+    "Monir Hossain Rabby, Full Stack Developer, Next.js Developer, Web Developer, TypeScript, Prisma, MongoDB, Frontend Leader, Tech Journey, Web Development Portfolio",
+  authors: [{ name: "Monir Hossain Rabby" }],
+  creator: "Monir Hossain Rabby",
+  publisher: "Monir Hossain Rabby",
   openGraph: {
-    title: "About Monir Hossain - From Accounting Student to Tech Leader",
+    title: "Monir Hossain Rabby - Full Stack Developer & Tech Leader",
     description:
-      "An inspiring transformation story: From struggling accounting student to successful Head of Web Development. Learn about dedication, hard work, and commitment to excellence.",
-    url: "https://monirhossain.dev/about",
+      "Explore Monir Hossain Rabby's inspiring journey from accounting student to Head of Web Development. Discover his skills in modern web development and leadership in tech projects.",
+    url: `${BASE_URL}/about-me`,
     siteName: "Monir Hossain Portfolio",
     images: [
       {
-        url: "/about-og-image.jpg",
+        url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Monir Hossain Career Journey - From Accounting to Tech Leadership",
+        alt: "Monir Hossain Rabby - Full Stack Developer & Web Development Leader",
       },
     ],
     locale: "en_US",
-    type: "article",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Monir Hossain - From Accounting Student to Tech Leader",
+    title: "Monir Hossain Rabby - Full Stack Developer & Tech Leader",
     description:
-      "An inspiring transformation story: From struggling accounting student to successful Head of Web Development.",
-    images: ["/about-og-image.jpg"],
+      "From accounting student to Head of Web Development: Monir Hossain Rabby's story of dedication and expertise in modern web technologies.",
+    images: [ogImage],
   },
   robots: {
     index: true,
@@ -66,33 +70,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div>
+      <div className="mb-20 space-y-10">
         <Timeline data={journeySteps} />
+        <GitHubActivity />
       </div>
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">
+          <h2 className="text-xl font-bold text-foreground mb-6">
             Ready to Work Together?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-[14px] text-muted-foreground mb-8 max-w-2xl mx-auto">
             My journey proves that with dedication and hard work, any challenge
             can be overcome. Let&apos;s bring that same commitment to your next
             project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
-            >
-              Get In Touch
-            </a>
-            <a
-              href="/projects"
-              className="inline-flex items-center justify-center px-8 py-3 border border-input text-base font-medium rounded-md text-foreground bg-background hover:bg-accent transition-colors"
-            >
-              View My Work
-            </a>
+            <Button size="sm" variant="default" asChild>
+              <Link href="/contact">Get In Touch</Link>
+            </Button>
           </div>
         </div>
       </section>

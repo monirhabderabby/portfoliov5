@@ -34,6 +34,7 @@ const MobileNavbar = () => {
           size="icon"
           className="flex-shrink-0"
           onClick={() => setOpen((p) => !p)}
+          aria-label={open ? "Close menu" : "Open menu"} // <-- accessible name
         >
           <Menu />
         </Button>
@@ -58,7 +59,7 @@ const MobileNavbar = () => {
                 variant={getVariant("/about-me")}
                 onClick={onClose}
               >
-                <Link href="/about-me">About</Link>
+                <Link href="/about-me">My Story</Link>
               </Button>
             </li>
             <li className="hover:text-foreground/80 text-sm">

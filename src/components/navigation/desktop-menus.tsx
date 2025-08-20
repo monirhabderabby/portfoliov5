@@ -12,7 +12,7 @@ const DesktopMenus = () => {
     <nav className="hidden md:flex">
       <ul className="flex items-center justify-center gap-8">
         <li className={cn("text-sm ", getActiveClass("/about-me"))}>
-          <Link href="/about-me">About Me</Link>
+          <Link href="/about-me">My Story</Link>
         </li>
         <li className={cn("text-sm ", getActiveClass("/projects"))}>
           <Link href="/projects" prefetch={false}>

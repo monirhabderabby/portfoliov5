@@ -33,10 +33,11 @@ const certificateData = [
   },
   {
     id: Math.floor(Math.random() * 100000),
-    school: "Hacker Rank",
-    certificate: hackerRank,
-    name: "CSS(BASIC)",
+    school: "LinkedIn",
+    certificate: el,
+    name: "Effective Listening",
   },
+
   {
     id: Math.floor(Math.random() * 100000),
     school: "LinkedIn",
@@ -45,9 +46,9 @@ const certificateData = [
   },
   {
     id: Math.floor(Math.random() * 100000),
-    school: "LinkedIn",
-    certificate: el,
-    name: "Effective Listening",
+    school: "Hacker Rank",
+    certificate: hackerRank,
+    name: "CSS(BASIC)",
   },
 ];
 

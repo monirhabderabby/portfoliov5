@@ -8,47 +8,72 @@ import EmailCopy from "./email-copy";
 
 const Contact = () => {
   return (
-    <div className="py-[100px] lg:min-h-[60vh]  flex flex-col justify-center gap-y-[30px]  px-[20px]">
-      <div className="flex justify-center items-center">
-        <p className="bg-[#E5E7EB]/10 text-white/90 font-light px-[20px] py-[4px] rounded-[50px] ">
-          Get in touch
+    <section
+      className="min-h-[calc(100vh-60px)] py-24 flex flex-col justify-center items-center px-4 md:px-6"
+      aria-label="Contact Section"
+    >
+      {/* Section Header */}
+      <header className="flex flex-col items-center mb-8">
+        <span className="bg-[#E5E7EB]/10 text-white/90 font-light px-6 py-2 rounded-full">
+          Get in Touch
+        </span>
+
+        {/* ✅ Updated <h1> with fixed font size */}
+        <h1 className="text-[25px] md:text-[30px] font-bold text-white mt-4 text-center">
+          Let&apos;s Build Something Amazing Together
+        </h1>
+
+        <p className="text-white/70 mt-2 max-w-xl text-center text-[14px] md:text-[16px]">
+          I’m Monir Hossain Rabby, a Full Stack Developer skilled in Next.js,
+          TypeScript, Prisma, and MongoDB. Whether you have a project idea, want
+          to collaborate, or just say hi, I’d love to hear from you!
         </p>
-      </div>
-      <p className="md:max-w-[576px] mx-auto text-center text-white/70 text-[14px] md:text-[16px]">
-        What&apos;s next? Feel free to reach out to me if you&apos;re looking
-        for a developer, have a query, or simply want to connect.
-      </p>
+      </header>
+
+      {/* Email CTA */}
       <EmailCopy />
-      <div
-        className="flex flex-col gap-y-[10px] justify-center 
-            items-center"
-      >
+
+      {/* Social Links */}
+      <div className="mt-12 flex flex-col items-center gap-2">
         <p className="text-white/60 font-light text-[12px] md:text-[14px]">
           You may also find me on these platforms
         </p>
-        <div className="flex items-center gap-[20px] mt-1">
-          <a href="https://github.com/monirhabderabby" target="_github">
-            <AiFillGithub className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+        <div className="flex items-center gap-5 mt-2">
+          <a
+            href="https://github.com/monirhabderabby"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile"
+          >
+            <AiFillGithub className="text-white/80 h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" />
           </a>
           <a
             href="https://www.linkedin.com/in/monirhabderabby/"
-            target="_linkedIN"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile"
           >
-            <AiOutlineLinkedin className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+            <AiOutlineLinkedin className="text-white/80 h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" />
           </a>
-
           <a
             href="https://www.facebook.com/monirhabderabby/"
-            target="_facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook Profile"
           >
-            <AiOutlineFacebook className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+            <AiOutlineFacebook className="text-white/80 h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" />
           </a>
-          <a href="https://leetcode.com/u/monirhrabby" target="_leetcode">
-            <AiOutlineCode className="text-white/80 h-5 w-5 hover:text-white hover:scale-110 duration-300 transition-all ease-linear" />
+          <a
+            href="https://leetcode.com/u/monirhrabby"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LeetCode Profile"
+          >
+            <AiOutlineCode className="text-white/80 h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" />
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

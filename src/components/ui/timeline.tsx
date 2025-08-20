@@ -1,7 +1,6 @@
 "use client";
-import { getTypeColor } from "@/app/about-me/_components/get-type-color";
-import { Badge } from "@/components/ui/badge";
 import { JourneySteps } from "@/data/journeySteps";
+import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
@@ -41,18 +40,18 @@ export const Timeline = ({ data }: Props) => {
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-10 items-center top-40 self-start max-w-xs lg:max-w-sm ">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-primary/50  dark:bg-black flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-primary/10 dark:bg-neutral-800 border border-primary/5 dark:border-neutral-700 p-2" />
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-primary/50   flex items-center justify-center">
+                <div className="h-4 w-4 rounded-full bg-primary/10  border border-primary/5  p-2" />
               </div>
-              <h3 className="hidden md:block  text-xl md:pl-20 md:text-2xl font-bold text-neutral-500 dark:text-neutral-500 ">
+              <div className="hidden md:block  text-xl md:pl-20 md:text-2xl font-bold text-neutral-500  ">
                 {item.role}
-              </h3>
+              </div>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <Badge className={getTypeColor(item.type)}>{item.type}</Badge>
+                <h2 className="font-semibold text-lg">{item.title}</h2>
+                {/* <Badge className={getTypeColor(item.type)}>{item.type}</Badge> */}
               </div>
 
               <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
@@ -66,14 +65,20 @@ export const Timeline = ({ data }: Props) => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {item.description}
               </p>
-              <div className="aspect-video max-w-[400px] relative mt-3 hidden md:block">
-                <Image
-                  src={item.image}
-                  fill
-                  alt={item.company}
-                  title={item.role}
-                  className="rounded-xl"
-                />
+              <div className={cn(`mt-3 hidden md:grid grid-cols-3 gap-5`)}>
+                {item.image.map((img, i) => (
+                  <div className="max-w-[300px] w-full relative" key={i}>
+                    <Image
+                      src={img}
+                      alt={item.company}
+                      title={item.role}
+                      width={300}
+                      height={200} // you can dynamically calculate this based on image dimensions
+                      className="rounded-xl w-full h-auto"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
