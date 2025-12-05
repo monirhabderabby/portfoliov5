@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/navigation/navbar";
-import Adsense, { AdsenseSiteOwnership } from "@/components/scripts/adsense";
+import Adsense from "@/components/scripts/adsense";
 import SchemaMarkup from "@/components/scripts/schema-markup";
 import { BASE_URL, ogImage } from "@/lib/utils";
 import SmoothScrolling from "@/providers/smooth-scroll";
@@ -63,7 +63,6 @@ export default function RootLayout({
       <Head>
         <SchemaMarkup />
         <Adsense pid={process.env.GOOGLE_ADSENSE_ID!} />
-        <AdsenseSiteOwnership pid={process.env.GOOGLE_ADSENSE_ID!} />
       </Head>
       <body
         className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
