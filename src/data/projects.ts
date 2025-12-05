@@ -22,7 +22,7 @@ export const projects = [
   {
     title: "The Freelance PM",
     link: "https://thefreelancepmclub.com",
-    github: "https://github.com/monirhabderabby/Biblioteca-Legal",
+    github: "https://github.com/monirhabderabby/the-freelancepm-club",
     thumbnail:
       "https://files.edgestore.dev/fo77r421j6yzhzmy/PortfolioV5/_public/the%20freelance%20pm.webp",
     short_description: "Your hub for freelance project success",
