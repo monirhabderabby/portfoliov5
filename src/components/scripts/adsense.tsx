@@ -19,14 +19,14 @@ export default Adsense;
 export const InfoLinks = () => {
   return (
     <>
-      <Script type="text/javascript">
+      <script type="text/javascript">
         {" "}
         var infolinks_pid = 3441994; var infolinks_wsid = 0;{" "}
-      </Script>{" "}
-      <Script
+      </script>{" "}
+      <script
         type="text/javascript"
         src="//resources.infolinks.com/js/infolinks_main.js"
-      ></Script>
+      ></script>
     </>
   );
 };
