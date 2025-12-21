@@ -46,3 +46,5 @@ const CVDownloadButton = () => {
 };
 
 export default CVDownloadButton;
+
+// added: resume
