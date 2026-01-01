@@ -1,12 +1,10 @@
 import { Navbar } from "@/components/navigation/navbar";
-import Adsense from "@/components/scripts/adsense";
-import SchemaMarkup from "@/components/scripts/schema-markup";
 import { BASE_URL, ogImage } from "@/lib/utils";
 import SmoothScrolling from "@/providers/smooth-scroll";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
-import Head from "next/head";
+import Script from "next/script";
 import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -60,10 +58,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-        <SchemaMarkup />
-        <Adsense pid={process.env.GOOGLE_ADSENSE_ID!} />
-      </Head>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6855691641655295"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
       >
