@@ -65,6 +65,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <meta name="google-adsense-account" content="ca-pub-6855691641655295"></meta>
       </head>
       <body
         className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
