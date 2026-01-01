@@ -1,3 +1,4 @@
+import AdsenseAd from "@/components/ads/adsenseAd";
 import Contact from "@/components/sections/contact";
 import { BASE_URL, ogImage } from "@/lib/utils";
 import { Metadata } from "next";
@@ -53,6 +54,8 @@ const Page = () => {
   return (
     <section className="min-h-[calc(100vh-60px)] py-24 flex justify-center items-center">
       <Contact />
+
+      <AdsenseAd />
     </section>
   );
 };
