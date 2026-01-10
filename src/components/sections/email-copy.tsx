@@ -1,5 +1,6 @@
 "use client";
 
+import { siteConfig } from "@/site.config";
 import { CheckCheck, Copy } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -9,14 +10,14 @@ const EmailCopy = () => {
 
   const onCopy = () => {
     setIsCopied(true);
-    navigator.clipboard.writeText("monirhrabby.personal@gmail.com");
+    navigator.clipboard.writeText(siteConfig.email);
 
     toast("Copied to clipboard", {
       description: "Email address copied successfully",
       action: {
         label: "Send Email",
         onClick: () => {
-          window.location.href = "mailto:monirhrabby.personal@gmail.com";
+          window.location.href = `mailto:${siteConfig.email}`;
         },
       },
     });
@@ -39,9 +40,7 @@ const EmailCopy = () => {
             <Copy className="h-4 w-4" />
           )}
           <p className="font-light">
-            {isCopied
-              ? "Copied to clipboard"
-              : "monirhrabby.personal@gmail.com"}
+            {isCopied ? "Copied to clipboard" : siteConfig.email}
           </p>
         </button>
       </div>
