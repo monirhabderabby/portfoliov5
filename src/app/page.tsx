@@ -21,7 +21,7 @@ export default function Home() {
         <div className="px-0  py-8 ">
           <Hero />
           <AboutMe />
-          <div className="space-y-[100px] md:space-y-[200px] mt-[200px] md:mt-0">
+          <div className="space-y-[100px] md:space-y-[200px] mt-[200px] md:mt-[100px]">
             <Skills />
             <Projects />
             <div className="py-0 md:py-[80px] bg-black">
@@ -35,7 +35,6 @@ export default function Home() {
         </div>
 
         <Contact />
-        
       </div>
     </>
   );
