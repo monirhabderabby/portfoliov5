@@ -25,8 +25,9 @@ const Contact = () => {
 
         <p className="text-white/70 mt-2 max-w-xl text-center text-[14px] md:text-[16px]">
           I’m Monir Hossain Rabby, a Full Stack Developer skilled in Next.js,
-          TypeScript, Prisma, and MongoDB. Whether you have a project idea, want
-          to collaborate, or just say hi, I’d love to hear from you!
+          TypeScript, Prisma, and MongoDB, PostgreSQL. Whether you have a
+          project idea, want to collaborate, or just say hi, I’d love to hear
+          from you!
         </p>
       </header>
 
