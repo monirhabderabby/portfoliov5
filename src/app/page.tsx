@@ -1,6 +1,7 @@
 import Contact from "@/components/sections/contact";
 import Educations from "@/components/sections/educations";
 import Experiences from "@/components/sections/experiences";
+import FeaturedProduct from "@/components/sections/featured-product";
 import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects/projects";
 import Skills from "@/components/sections/skills";
@@ -12,7 +13,7 @@ const Achievements = dynamic(
   () => import("@/components/sections/achivements"),
   {
     ssr: false,
-  }
+  },
 );
 export default function Home() {
   return (
@@ -21,7 +22,10 @@ export default function Home() {
         <div className="px-0  py-8 ">
           <Hero />
           <AboutMe />
-          <div className="space-y-[100px] md:space-y-[200px] mt-[200px] md:mt-[100px]">
+          <div className="mb-100">
+            <FeaturedProduct />
+          </div>
+          <div className="mt-24 space-y-[100px] md:mt-48 md:space-y-[400px]">
             <Skills />
             <Projects />
             <div className="py-0 md:py-[80px] bg-black">
