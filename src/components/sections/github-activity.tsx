@@ -14,6 +14,13 @@ interface GitHubStats {
   totalForks: number;
 }
 
+const EMPTY_GITHUB_STATS: GitHubStats = {
+  followers: 0,
+  publicRepos: 0,
+  totalStars: 0,
+  totalForks: 0,
+};
+
 // Contribution color based on level
 const getContributionColor = (level: number) => {
   if (level === 0) return "bg-gray-800";
@@ -24,41 +31,70 @@ const getContributionColor = (level: number) => {
 };
 
 // -------------------- Fetch GitHub Stats with ISR --------------------
-async function fetchGitHubStats(username: string, token: string) {
-  const profileRes = await fetch(`https://api.github.com/users/${username}`, {
-    headers: { Authorization: `bearer ${token}` },
-    next: { revalidate: 3600 },
-  });
-  const profileData = await profileRes.json();
-
-  const repoRes = await fetch(
-    `https://api.github.com/users/${username}/repos?per_page=100`,
-    {
-      headers: { Authorization: `bearer ${token}` },
+async function fetchGitHubStats(
+  username: string,
+  token?: string
+): Promise<GitHubStats> {
+  const request = async (url: string) => {
+    const options = {
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
       next: { revalidate: 3600 },
+    };
+    let response = await fetch(url, options);
+
+    // These endpoints are public, so an invalid token should not prevent a build.
+    if (!response.ok && token) {
+      response = await fetch(url, { next: { revalidate: 3600 } });
     }
-  );
-  const repos = await repoRes.json();
 
-  const totalStars = repos.reduce(
-    (sum: number, repo: any) => sum + repo.stargazers_count,
-    0
-  );
-  const totalForks = repos.reduce(
-    (sum: number, repo: any) => sum + repo.forks_count,
-    0
-  );
+    if (!response.ok) {
+      throw new Error(`GitHub REST API returned ${response.status}`);
+    }
 
-  return {
-    followers: profileData.followers,
-    publicRepos: profileData.public_repos,
-    totalStars,
-    totalForks,
-  } as GitHubStats;
+    return response.json();
+  };
+
+  try {
+    const [profileData, repos] = await Promise.all([
+      request(`https://api.github.com/users/${username}`),
+      request(`https://api.github.com/users/${username}/repos?per_page=100`),
+    ]);
+
+    if (!Array.isArray(repos)) {
+      throw new Error("GitHub repositories response was not an array");
+    }
+
+    return {
+      followers: Number(profileData?.followers) || 0,
+      publicRepos: Number(profileData?.public_repos) || 0,
+      totalStars: repos.reduce(
+        (sum: number, repo: any) => sum + (Number(repo?.stargazers_count) || 0),
+        0
+      ),
+      totalForks: repos.reduce(
+        (sum: number, repo: any) => sum + (Number(repo?.forks_count) || 0),
+        0
+      ),
+    };
+  } catch (error) {
+    console.warn(
+      "Unable to load GitHub stats:",
+      error instanceof Error ? error.message : error
+    );
+    return EMPTY_GITHUB_STATS;
+  }
 }
 
 // -------------------- Fetch GitHub Contributions with ISR --------------------
-async function fetchGitHubContributions(username: string, token: string) {
+async function fetchGitHubContributions(
+  username: string,
+  token?: string
+): Promise<ContributionDay[][]> {
+  if (!token) {
+    console.warn("GITHUB_TOKEN is not set; skipping GitHub contributions.");
+    return [];
+  }
+
   const today = new Date();
   const year = today.getFullYear();
 
@@ -82,40 +118,57 @@ async function fetchGitHubContributions(username: string, token: string) {
     }
   `;
 
-  const res = await fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `bearer ${token}`,
-    },
-    body: JSON.stringify({ query }),
-    next: { revalidate: 3600 },
-  });
+  let json: any;
 
-  const json = await res.json();
+  try {
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ query }),
+      next: { revalidate: 3600 },
+    });
 
-  if (!json.data?.user?.contributionsCollection?.contributionCalendar?.weeks) {
-    console.warn("No contributions found or API returned null:", json);
+    if (!res.ok) {
+      console.warn(`GitHub GraphQL API returned ${res.status}.`);
+      return [];
+    }
+
+    json = await res.json();
+  } catch (error) {
+    console.warn("Unable to load GitHub contributions:", error);
     return [];
   }
 
   const weeks =
-    json.data.user.contributionsCollection.contributionCalendar.weeks;
-  const allDays = weeks.flatMap((week: any) => week.contributionDays);
+    json.data?.user?.contributionsCollection?.contributionCalendar?.weeks;
+
+  if (!Array.isArray(weeks)) {
+    console.warn("GitHub contribution data is unavailable.");
+    return [];
+  }
+
+  const allDays = weeks.flatMap((week: any) =>
+    Array.isArray(week?.contributionDays) ? week.contributionDays : []
+  );
   const maxCount = Math.max(...allDays.map((d: any) => d.contributionCount), 1);
 
   const contributionsInWeeks = weeks.map((week: any) =>
-    week.contributionDays.map((day: any) => ({
-      date: day.date,
-      count: day.contributionCount,
-      level:
-        day.contributionCount === 0
-          ? 0
-          : Math.min(4, Math.ceil((day.contributionCount / maxCount) * 4)),
-    }))
+    (Array.isArray(week?.contributionDays) ? week.contributionDays : []).map(
+      (day: any) => ({
+        date: day.date,
+        count: day.contributionCount,
+        level:
+          day.contributionCount === 0
+            ? 0
+            : Math.min(4, Math.ceil((day.contributionCount / maxCount) * 4)),
+      })
+    )
   );
 
-  return contributionsInWeeks as ContributionDay[][];
+  return contributionsInWeeks;
 }
 
 // -------------------- Generate Dynamic Month Labels --------------------
@@ -154,7 +207,7 @@ const getMonthLabels = (contributionsInWeeks: ContributionDay[][]) => {
 // -------------------- Server Component --------------------
 export default async function GitHubActivity() {
   const username = "monirhabderabby"; // your GitHub username
-  const token = process.env.GITHUB_TOKEN!; // GitHub Personal Access Token
+  const token = process.env.GITHUB_TOKEN; // GitHub Personal Access Token
 
   const [stats, contributionsInWeeks] = await Promise.all([
     fetchGitHubStats(username, token),

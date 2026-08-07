@@ -1,0 +1,200 @@
+{
+  "version": 1,
+  "project": {
+    "name": "portfoliov5",
+    "productType": null,
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind-v3"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/app/globals.css"
+    ],
+    "components": [
+      "src/components/ui"
+    ],
+    "assets": [
+      "public/images",
+      "src/assets"
+    ],
+    "instructions": []
+  },
+  "design": {
+    "colorMode": "light-and-dark",
+    "colors": {
+      "--background": {
+        "value": "216 100% 98.04%",
+        "source": "src/app/globals.css"
+      },
+      "--foreground": {
+        "value": "213.6 100% 4.9%",
+        "source": "src/app/globals.css"
+      },
+      "--muted": {
+        "value": "213.6 100% 95.1%",
+        "source": "src/app/globals.css"
+      },
+      "--muted-foreground": {
+        "value": "0 0% 40%",
+        "source": "src/app/globals.css"
+      },
+      "--popover-foreground": {
+        "value": "213.6 100% 4.9%",
+        "source": "src/app/globals.css"
+      },
+      "--card-foreground": {
+        "value": "213.6 100% 4.9%",
+        "source": "src/app/globals.css"
+      },
+      "--border": {
+        "value": "0 0% 90.2%",
+        "source": "src/app/globals.css"
+      },
+      "--primary": {
+        "value": "214.12 100% 50%",
+        "source": "src/app/globals.css"
+      },
+      "--primary-foreground": {
+        "value": "0 0% 100%",
+        "source": "src/app/globals.css"
+      },
+      "--secondary": {
+        "value": "214.74 100% 92.55%",
+        "source": "src/app/globals.css"
+      },
+      "--secondary-foreground": {
+        "value": "216 100% 0.98%",
+        "source": "src/app/globals.css"
+      },
+      "--accent": {
+        "value": "213.6 100% 95.1%",
+        "source": "src/app/globals.css"
+      },
+      "--accent-foreground": {
+        "value": "214.12 100% 50%",
+        "source": "src/app/globals.css"
+      },
+      "--destructive": {
+        "value": "0 84.2% 60.2%",
+        "source": "src/app/globals.css"
+      },
+      "--destructive-foreground": {
+        "value": "210 40% 98%",
+        "source": "src/app/globals.css"
+      },
+      "--ring": {
+        "value": "214.12 100% 50%",
+        "source": "src/app/globals.css"
+      },
+      "--brand-foreground": {
+        "value": "210 100% 50%",
+        "source": "src/app/globals.css"
+      }
+    },
+    "typography": {},
+    "spacing": {},
+    "radius": {
+      "--radius": {
+        "value": "0.5rem",
+        "source": "src/app/globals.css"
+      }
+    },
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [
+      "animated-gradient-text",
+      "badge",
+      "button",
+      "card",
+      "container-scroll-animation",
+      "CVDownloadButton",
+      "dialog",
+      "drawer",
+      "form",
+      "herp-parallax",
+      "icons",
+      "input",
+      "label",
+      "placeholders-and-vanish-input",
+      "pointer-highlight",
+      "responsive-dialog",
+      "scroll-area",
+      "textarea",
+      "timeline",
+      "trust-check-bd-logo"
+    ],
+    "preferredPrimitives": [
+      "radix-ui"
+    ],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [
+    {
+      "scope": "TrustCheck BD founder case study",
+      "decision": "Use the portfolio's dark Lexend UI, 1200px container, blue primary accents, compact radii, translucent borders, dot texture, and restrained blur-reveal motion. Treat the product screenshot as a masked atmospheric surface in the hero rather than a standalone mockup.",
+      "reason": "The case study must feel native to the existing portfolio while communicating product ownership and founder credibility."
+    },
+    {
+      "scope": "TrustCheck BD case study hero media",
+      "decision": "Render the supplied product video as a muted, autoplaying, infinitely looping, inline atmospheric hero background with the existing mask and readability overlays.",
+      "reason": "The user explicitly selected continuous video in place of the hero screenshot."
+    },
+    {
+      "scope": "TrustCheck BD impact statistics",
+      "decision": "Use a borderless editorial metrics layout with animated numbers, live-status pulses, ghost indices, subtle glows, and whitespace instead of cards or section dividers. Keep metric numbers on the landing page's 25–40px counter scale, with compact 13px labels and 11px supporting text.",
+      "reason": "The user rejected the bordered card treatment and selected a more creative counting-focused presentation."
+    },
+    {
+      "scope": "TrustCheck BD case study hero composition",
+      "decision": "Use a cinematic split hero with concise founder-led copy on the left and the looping product video as a prominent browser-framed canvas on the right, supported by restrained perspective, glow, and product-status annotations.",
+      "reason": "The user explicitly requested a creative, pixel-focused hero redesign with stronger video placement."
+    },
+    {
+      "scope": "TrustCheck BD case study hero composition — revised",
+      "decision": "Supersede the split mockup treatment with a full-bleed, low-opacity looping video across the entire hero. Blend it into the dark portfolio background with vertical masking, directional overlays, ambient blue light, and SaaS-style foreground hierarchy. Offset the desktop video layer 100px to the right so its key product activity remains visible. Keep the hero title within a restrained 30–42px responsive scale so it aligns with the portfolio's 26–36px section-heading system.",
+      "reason": "The user explicitly preferred an immersive video background that dissolves smoothly into the page over a separate video frame."
+    }
+  ],
+  "evidence": [
+    {
+      "fact": "components.installed",
+      "source": "src/components/ui"
+    },
+    {
+      "fact": "design.colorMode:light-and-dark",
+      "source": "src/app/globals.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "src/app/globals.css"
+    },
+    {
+      "fact": "project.stack:nextjs",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:shadcn",
+      "source": "components.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v3",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-08-07T12:24:33.818Z"
+}

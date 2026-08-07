@@ -5,7 +5,14 @@ export const contentType = "application/xml"; // 👈 ensures correct header
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.AUTH_URL || "https://www.monirhrabby.com"; // fallback if env not set
 
-  const routes = ["/", "/about-me", "/projects", "/achievements", "/contact"];
+  const routes = [
+    "/",
+    "/about-me",
+    "/projects",
+    "/case-study/trust-check-bd",
+    "/achievements",
+    "/contact",
+  ];
 
   const sitemapEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${baseUrl}${route}`,
