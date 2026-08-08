@@ -14,12 +14,10 @@ import {
   BookOpen,
   BrainCircuit,
   CircleAlert,
-  Code2,
   Database,
   ExternalLink,
   Facebook,
   FileCheck2,
-  Flag,
   Github,
   Globe2,
   HeartHandshake,
@@ -27,17 +25,13 @@ import {
   LockKeyhole,
   MessageSquareWarning,
   MousePointer2,
-  Palette,
   Rocket,
   Search,
   Send,
-  ServerCog,
   ShieldCheck,
   Smartphone,
   Sparkles,
-  Target,
   Users,
-  Wrench,
   Youtube,
 } from "lucide-react";
 import Image from "next/image";
@@ -50,60 +44,38 @@ const PRODUCT_URL =
 const HERO_VIDEO_URL =
   "https://da8h6r7q9t.ufs.sh/f/qDFYtzIILml3m6NnkVw26HX73ujT1xNwFocYCGW5daALbDV9";
 
-const roles = [
+const engineeringFlow = [
   {
-    label: "Founder",
-    description:
-      "Turned a real-world problem into a product with real users and measurable impact.",
-    icon: Flag,
-  },
-  {
-    label: "Product Strategy",
-    description:
-      "Defined the product vision, core features, and long-term roadmap.",
-    icon: Target,
-  },
-  {
-    label: "UI/UX Design",
-    description:
-      "Designed simple, intuitive experiences focused on trust and usability.",
-    icon: Palette,
-  },
-  {
-    label: "Full Stack Engineering",
-    description:
-      "Built the frontend, backend, APIs, and database architecture.",
-    icon: Code2,
-  },
-  {
-    label: "System Architecture",
-    description:
-      "Designed a scalable foundation for search, reporting, and future growth.",
-    icon: ServerCog,
-  },
-  {
-    label: "SEO & Discoverability",
-    description:
-      "Optimized the platform so people can easily find trusted information.",
+    step: "01",
+    label: "Understand the query",
+    title: "Search is treated as a relevance problem.",
+    text: "I normalize Bangla and English input, recognize identifier-like values, and score matches across names, phone or payment identities, keywords, tags, and report references.",
+    detail: "Bounded to 100 candidates · scored in chunks",
     icon: Search,
   },
   {
-    label: "Deployment & Operations",
-    description:
-      "Managed production deployment, monitoring, and ongoing improvements.",
-    icon: Rocket,
+    step: "02",
+    label: "Connect the evidence",
+    title: "Related signals stay useful—and bounded.",
+    text: "Direct matches can expand through one shared identifier, connecting reports that use the same phone, account, website, or social identity without an uncontrolled relationship crawl.",
+    detail: "One-hop expansion · deduplicated results",
+    icon: Database,
   },
   {
-    label: "Product Growth",
-    description:
-      "Continuously improved the product using community feedback and real usage.",
-    icon: Wrench,
+    step: "03",
+    label: "Protect the write path",
+    title: "A submission never becomes a warning by default.",
+    text: "Reports pass schema validation, bot and rate-limit checks, evidence capture, and a permission-controlled human review flow before they can be approved for public use.",
+    detail: "Validation · abuse protection · human review",
+    icon: ShieldCheck,
   },
   {
-    label: "Community Building",
-    description:
-      "Built a community where people help protect others by sharing verified scam reports.",
-    icon: Users,
+    step: "04",
+    label: "Publish the signal",
+    title: "Approval updates more than one screen.",
+    text: "An approved report refreshes the public experience and feeds localized report pages, structured metadata, and sitemap entries. Short-lived Redis caches reduce repeat database work and fail back to live queries.",
+    detail: "Public revalidation · EN/BN SEO · resilient caching",
+    icon: Globe2,
   },
 ];
 
@@ -684,34 +656,85 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="py-24 md:py-36">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
+      <section className="relative isolate overflow-hidden py-24 md:py-36">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_45%,rgba(0,75,224,0.13),transparent_34%)]" />
+        <div className="pointer-events-none absolute inset-0 dotPattern opacity-[0.08] [mask-image:linear-gradient(to_right,black,transparent_62%)]" />
+        <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
-            eyebrow="Founder ownership"
-            title="Built from idea to production."
-            text="Building Trust Check BD meant owning every stage of the journey—from identifying the problem and designing the experience to writing code, launching the product, improving SEO, and continuously making it better."
-            align="center"
+            eyebrow="Engineering the trust layer"
+            title="I engineered the system behind every trust decision."
+            text="Trust Check BD is more than a searchable interface. I built the path that turns an uncertain search or community report into a reviewed, useful, and discoverable public signal."
           />
-          <Reveal className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {roles.map((role) => (
-              <div
-                key={role.label}
-                className="group flex items-center gap-4 rounded-md border border-white/10 bg-card/60 p-5 transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-card"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10 text-blue-300 transition group-hover:bg-primary group-hover:text-white">
-                  <role.icon className="h-5 w-5" />
-                </span>
-                <div className="min-w-0">
-                  <h3 className="text-sm font-medium text-white/80">
-                    {role.label}
-                  </h3>
-                  <p className="mt-1 text-xs font-light leading-5 text-white/50">
-                    {role.description}
+
+          <div className="mt-14 grid gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-start lg:gap-20">
+            <div className="self-start lg:sticky lg:top-24">
+              <Reveal>
+                <div className="relative">
+                <div className="pointer-events-none absolute -inset-8 rounded-full bg-primary/[0.08] blur-[70px]" />
+                <BrowserFrame className="relative rotate-[-1deg] transition-transform duration-700 hover:rotate-0" />
+
+                <div className="relative -mt-3 ml-4 mr-2 border-l border-primary/50 bg-background/90 py-4 pl-5 pr-3 backdrop-blur-md sm:ml-8 sm:mr-6">
+                  <div className="flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.18em] text-blue-300">
+                    <span className="relative flex h-2 w-2" aria-hidden="true">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60 motion-reduce:animate-none" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                    </span>
+                    The visible product is only the first layer
+                  </div>
+                  <p className="mt-2 max-w-md text-xs font-light leading-6 text-white/50">
+                    Behind one search sits query handling, relationship boundaries,
+                    moderation controls, caching, and a localized publication system.
                   </p>
                 </div>
-              </div>
-            ))}
-          </Reveal>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-y border-white/10 py-4 text-[9px] font-medium uppercase tracking-[0.16em] text-white/30">
+                  <span>Public product</span>
+                  <span className="text-primary/70">→</span>
+                  <span>Operations</span>
+                  <span className="text-primary/70">→</span>
+                  <span>Public signal</span>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="relative">
+              <div className="absolute bottom-6 left-[21px] top-6 w-px bg-gradient-to-b from-primary via-primary/45 to-blue-300/10 sm:left-[25px]" />
+              <ol className="space-y-10 md:space-y-12">
+                {engineeringFlow.map((item, index) => (
+                  <Reveal
+                    key={item.step}
+                    delay={index * 0.06}
+                    className="group relative grid grid-cols-[44px_1fr] gap-5 sm:grid-cols-[52px_1fr] sm:gap-7"
+                  >
+                    <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-primary/35 bg-background text-blue-300 shadow-[0_0_0_7px_rgba(0,75,224,0.06)] transition duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white sm:h-[52px] sm:w-[52px]">
+                      <item.icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                    </div>
+
+                    <div className="border-b border-white/10 pb-9 md:pb-11">
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <span className="font-aldrich text-[10px] text-primary">
+                          {item.step}
+                        </span>
+                        <span className="text-[9px] font-medium uppercase tracking-[0.18em] text-white/35">
+                          {item.label}
+                        </span>
+                      </div>
+                      <h3 className="mt-3 font-aldrich text-lg font-semibold leading-snug text-white/90 sm:text-xl">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 max-w-xl text-sm font-light leading-7 text-white/55">
+                        {item.text}
+                      </p>
+                      <p className="mt-4 text-[10px] font-medium uppercase tracking-[0.14em] text-blue-300/65">
+                        {item.detail}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </ol>
+            </div>
+          </div>
         </div>
       </section>
 
