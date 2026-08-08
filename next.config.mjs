@@ -6,6 +6,7 @@ const nextConfig = {
       { hostname: "aceternity.com", protocol: "https" },
       { hostname: "files.edgestore.dev", protocol: "https" },
       { hostname: "utfs.io", protocol: "https" },
+      { hostname: "da8h6r7q9t.ufs.sh", protocol: "https" },
       { hostname: "images.unsplash.com", protocol: "https" },
     ],
   },

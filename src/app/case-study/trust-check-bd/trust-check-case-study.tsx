@@ -335,9 +335,11 @@ function CountUp({ value }: { value: number }) {
 function BrowserFrame({
   className = "",
   crop = false,
+  imageSrc = "/images/trust-check-bd-homepage.png",
 }: {
   className?: string;
   crop?: boolean;
+  imageSrc?: string;
 }) {
   return (
     <div
@@ -358,7 +360,7 @@ function BrowserFrame({
         className={`overflow-hidden rounded-md bg-[#f8faff] ${crop ? "aspect-[9/16]" : ""}`}
       >
         <Image
-          src="/images/trust-check-bd-homepage.png"
+          src={imageSrc}
           alt="TrustCheck BD homepage with its scam checker search interface"
           width={1404}
           height={881}
@@ -717,7 +719,7 @@ export default function TrustCheckCaseStudy() {
         <div className="mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
             eyebrow="Core product"
-            title="Two actions form one protection loop."
+            title="Search before you pay. Report when it happens."
             text="Search helps someone avoid a risky payment today. Reporting turns a bad experience into a warning that can protect someone tomorrow."
           />
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
@@ -726,16 +728,16 @@ export default function TrustCheckCaseStudy() {
                 number: "01",
                 icon: Send,
                 title: "Report a scam",
-                text: "Users submit the suspicious identity, explain what happened, add transaction context, and attach screenshots or documents. The report then moves through review before publication.",
-                link: "https://trustcheckbd.com/en/report-scam",
+                text: "Users can report a scam, explain what happened, and add screenshots or other proof. Each report is reviewed before it becomes a public warning.",
+                link: "https://trustcheckbd.com/en/report-scam?ref=portfolio&utm_source=monirhrabby&utm_medium=case-study&utm_campaign=trustcheckbd",
                 cta: "Report a scam",
               },
               {
                 number: "02",
                 icon: Search,
                 title: "Search before you pay",
-                text: "People can look up phone numbers, bKash or Nagad accounts, websites, Facebook pages, links, businesses, and other suspicious identities before sending money.",
-                link: "https://trustcheckbd.com/en",
+                text: "People can search phone numbers, bKash or Nagad accounts, websites, Facebook pages, links, businesses, and other suspicious identities before sending money.",
+                link: "https://trustcheckbd.com/?ref=portfolio&utm_source=monirhrabby&utm_medium=case-study&utm_campaign=trustcheckbd",
                 cta: "Try the search",
               },
             ].map((feature, index) => (
@@ -774,8 +776,8 @@ export default function TrustCheckCaseStudy() {
         <div className="mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
             eyebrow="Product gallery"
-            title="A public safety product designed for clarity."
-            text="The interface puts the primary task—checking before paying—at the center, then makes the reporting and verification process visible around it."
+            title="A simple interface for safer decisions."
+            text="The product puts one decision at the center: checking before paying. Reporting and verification then turn individual experiences into information others can use."
           />
           <div className="mt-12 grid items-end gap-5 lg:grid-cols-[1fr_280px]">
             <Dialog>
@@ -813,6 +815,7 @@ export default function TrustCheckCaseStudy() {
                     <div className="mx-auto mb-2 h-1.5 w-16 rounded-full bg-white/15" />
                     <BrowserFrame
                       crop
+                      imageSrc="https://da8h6r7q9t.ufs.sh/f/qDFYtzIILml33auA3vqq9tjJcH2OfQPFYSAus8GXybNBCLir"
                       className="rounded-[20px] border-0 p-1"
                     />
                   </div>
@@ -824,8 +827,8 @@ export default function TrustCheckCaseStudy() {
               </DialogTrigger>
               <DialogContent className="max-w-6xl border-white/15 bg-[#07101f] p-2">
                 <Image
-                  src="/images/trust-check-bd-homepage.png"
-                  alt="TrustCheck BD interface shown in the gallery lightbox"
+                  src="https://da8h6r7q9t.ufs.sh/f/qDFYtzIILml33auA3vqq9tjJcH2OfQPFYSAus8GXybNBCLir"
+                  alt="TrustCheck BD mobile interface shown in the gallery lightbox"
                   width={1404}
                   height={881}
                   className="h-auto w-full rounded-md"
