@@ -9,16 +9,13 @@ import {
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
-  BarChart3,
   BookOpen,
   BrainCircuit,
-  CircleAlert,
   Database,
   Facebook,
   FileCheck2,
   Github,
   Globe2,
-  HeartHandshake,
   Linkedin,
   LockKeyhole,
   MessageSquareWarning,
@@ -35,7 +32,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { SiTiktok } from "react-icons/si";
+import { SiGoogleanalytics, SiTiktok } from "react-icons/si";
 
 const PRODUCT_URL =
   "https://trustcheckbd.com/en?utm_source=monirhrabby.com&utm_medium=referral&utm_campaign=portfolio_case_study";
@@ -142,29 +139,6 @@ const challenges = [
       "An open reporting system must remain useful as participation grows.",
     response:
       "Fake or misleading reports are removed, submissions are moderated, and repeated spam can lead to account bans.",
-  },
-];
-
-const technicalHighlights = [
-  {
-    icon: Search,
-    title: "Search as the front door",
-    text: "The main flow starts with the user’s real question: is this phone number, Facebook page, website, account, or business safe enough to pay?",
-  },
-  {
-    icon: FileCheck2,
-    title: "Proof-first data pipeline",
-    text: "Reports gather identifying details, incident context, transaction information, and supporting files before entering review.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Human verification layer",
-    text: "Moderation and admin approval sit between a user submission and a public warning, prioritizing fairness over instant publishing.",
-  },
-  {
-    icon: BarChart3,
-    title: "Derived trust signals",
-    text: "Verified facts, proof quality, community feedback frequency, and automated signals contribute to the public risk indicators.",
   },
 ];
 
@@ -976,29 +950,6 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-black py-24 md:py-36">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
-          <SectionHeading
-            eyebrow="Technical highlights"
-            title="The architecture follows the trust journey."
-            text="Implementation specifics that are not public are intentionally omitted. These are the confirmed product layers visible in TrustCheck BD’s published workflow."
-          />
-          <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 md:grid-cols-2">
-            {technicalHighlights.map((item) => (
-              <Reveal key={item.title} className="bg-[#030812] p-7 md:p-9">
-                <item.icon className="h-5 w-5 text-blue-300" />
-                <h3 className="mt-5 font-aldrich text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm font-light leading-7 text-white/55">
-                  {item.text}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-24 md:py-36">
         <div className="mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
@@ -1041,51 +992,78 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.018] py-24 md:py-36">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
+      <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.018] py-24 md:py-36">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_45%,rgba(245,158,11,0.08),transparent_28%),radial-gradient(circle_at_82%_28%,rgba(79,70,229,0.12),transparent_26%)]" />
+        <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
-            eyebrow="Results & impact"
-            title="The product is already doing real work."
-            text="Impact is measured carefully: verified public product data where available, and no invented growth claims where it is not."
-            align="center"
+            eyebrow="Proof of traction"
+            title="Built for people. Proven in the real world."
+            text="A 30-day view of real product use, supported by public launches on Product Hunt and PeerPush."
           />
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            <Reveal className="rounded-md border border-white/10 bg-card/70 p-7">
-              <CircleAlert className="h-5 w-5 text-blue-300" />
-              <p className="mt-8 font-aldrich text-4xl font-bold">
-                <CountUp value={stats.approvedReports} />+
-              </p>
-              <h3 className="mt-2 text-sm font-medium">Approved reports</h3>
-              <p className="mt-3 text-sm leading-6 text-white/45">
-                Community experiences made searchable after review.
-              </p>
+          <div className="mt-12 grid gap-4 lg:grid-cols-[1.55fr_0.75fr]">
+            <Reveal className="relative overflow-hidden rounded-xl border border-white/10 bg-[#080d18]/90 p-5 shadow-[0_30px_100px_rgba(0,0,0,.3)] sm:p-7 md:p-8">
+              <div className="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-amber-400/[0.06] blur-3xl" />
+              <div className="relative flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="grid h-11 w-11 place-items-center rounded-xl border border-amber-400/15 bg-amber-400/10 text-amber-400">
+                    <SiGoogleanalytics className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">Google Analytics</p>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-white/35">30-day traffic snapshot</p>
+                  </div>
+                </div>
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] text-white/45">1 July — 31 July</span>
+              </div>
+
+              <div className="relative mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-4">
+                {[
+                  { value: <CountUp value={716} />, label: "Total users" },
+                  { value: <CountUp value={643} />, label: "New users" },
+                  { value: "3.1K", label: "Views" },
+                  { value: "5m 25s", label: "Avg. engagement" },
+                ].map((metric) => (
+                  <div key={metric.label} className="bg-[#080d18] p-4 sm:p-5">
+                    <p className="font-aldrich text-2xl font-bold tracking-tight text-white sm:text-3xl">{metric.value}</p>
+                    <p className="mt-2 text-[10px] uppercase tracking-[0.12em] text-white/35">{metric.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="relative mt-5 overflow-hidden rounded-lg border border-white/10 bg-white/[0.025] p-4 sm:p-5">
+                <div className="flex items-center justify-between gap-4">
+                  <div><p className="text-xs font-medium text-white/70">Audience activity</p><p className="mt-1 text-[10px] text-white/30">Visits across the month</p></div>
+                  <div className="flex gap-2 text-[10px]"><span className="rounded-full bg-white/5 px-3 py-1 text-white/45">Bangladesh</span><span className="rounded-full bg-primary/10 px-3 py-1 text-blue-300">Dhaka</span></div>
+                </div>
+                <svg viewBox="0 0 620 100" className="mt-4 h-20 w-full overflow-visible" role="img" aria-label="Audience activity trend during July">
+                  <defs><linearGradient id="analytics-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#f59e0b" stopOpacity=".22" /><stop offset="100%" stopColor="#f59e0b" stopOpacity="0" /></linearGradient></defs>
+                  <path d="M0 78 C45 72 62 80 104 61 C148 41 173 68 215 52 C258 36 276 54 316 40 C361 24 379 47 420 34 C465 20 492 31 526 17 C560 4 585 19 620 8 L620 100 L0 100 Z" fill="url(#analytics-area)" />
+                  <motion.path d="M0 78 C45 72 62 80 104 61 C148 41 173 68 215 52 C258 36 276 54 316 40 C361 24 379 47 420 34 C465 20 492 31 526 17 C560 4 585 19 620 8" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true, amount: 0.6 }} transition={{ duration: 1.2, ease: "easeOut" }} />
+                </svg>
+              </div>
             </Reveal>
-            <Reveal
-              delay={0.07}
-              className="rounded-md border border-white/10 bg-card/70 p-7"
-            >
-              <Search className="h-5 w-5 text-blue-300" />
-              <p className="mt-8 font-aldrich text-4xl font-bold">
-                <CountUp value={stats.searchDone} />+
-              </p>
-              <h3 className="mt-2 text-sm font-medium">Searches completed</h3>
-              <p className="mt-3 text-sm leading-6 text-white/45">
-                Moments where someone chose to check before trusting.
-              </p>
-            </Reveal>
-            <Reveal
-              delay={0.14}
-              className="rounded-md border border-white/10 bg-card/70 p-7"
-            >
-              <HeartHandshake className="h-5 w-5 text-blue-300" />
-              <p className="mt-8 font-aldrich text-4xl font-bold">Live</p>
-              <h3 className="mt-2 text-sm font-medium">
-                Founder-led operation
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-white/45">
-                A launched product under continued maintenance and improvement.
-              </p>
-            </Reveal>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              <Reveal delay={0.08} className="group relative overflow-hidden rounded-xl border border-[#FF6154]/20 bg-[#110c0d] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#FF6154]/40">
+                <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#FF6154]/10 blur-3xl" />
+                <p className="relative text-[10px] font-medium uppercase tracking-[0.16em] text-[#ff8a80]">Public launch</p>
+                <h3 className="relative mt-3 font-aldrich text-xl font-semibold">Featured on Product Hunt</h3>
+                <p className="relative mt-3 text-sm leading-6 text-white/45">Shared with a global community of product makers and early users.</p>
+                <Link href="https://www.producthunt.com/products/trust-check-bd?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-trust-check-bd" target="_blank" rel="noopener noreferrer" aria-label="View Trust Check BD on Product Hunt (opens in a new tab)" className="relative mt-7 block w-fit rounded-lg outline-none transition hover:drop-shadow-[0_8px_18px_rgba(255,97,84,.18)] focus-visible:ring-4 focus-visible:ring-[#FF6154]/20">
+                  <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1209925&theme=light&t=1785917093450" alt="Trust Check BD featured on Product Hunt" width={250} height={54} unoptimized className="h-auto w-[220px] max-w-full" />
+                </Link>
+              </Reveal>
+
+              <Reveal delay={0.14} className="group relative overflow-hidden rounded-xl border border-indigo-400/20 bg-[#0c0c18] p-6 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40">
+                <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-indigo-500/10 blur-3xl" />
+                <p className="relative text-[10px] font-medium uppercase tracking-[0.16em] text-indigo-300">Builder community</p>
+                <h3 className="relative mt-3 font-aldrich text-xl font-semibold">Launched on PeerPush</h3>
+                <p className="relative mt-3 text-sm leading-6 text-white/45">A public product page for discovery, feedback, and support from other builders.</p>
+                <Link href="https://peerpush.com/p/trust-check-bd" target="_blank" rel="noopener noreferrer" aria-label="View Trust Check BD on PeerPush (opens in a new tab)" className="relative mt-7 block w-fit rounded-lg outline-none transition hover:drop-shadow-[0_8px_18px_rgba(79,70,229,.22)] focus-visible:ring-4 focus-visible:ring-[#4F46E5]/20">
+                  <Image src="https://peerpush.com/p/trust-check-bd/badge.png" alt="Trust Check BD on PeerPush" width={230} height={65} className="h-auto w-[210px] max-w-full" />
+                </Link>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
