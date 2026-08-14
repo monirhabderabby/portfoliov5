@@ -32,7 +32,19 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { SiGoogleanalytics, SiTiktok } from "react-icons/si";
+import {
+  SiGoogleanalytics,
+  SiMongodb,
+  SiNextdotjs,
+  SiPrisma,
+  SiReact,
+  SiRedis,
+  SiShadcnui,
+  SiSocketdotio,
+  SiTailwindcss,
+  SiTiktok,
+  SiTypescript,
+} from "react-icons/si";
 
 const PRODUCT_URL =
   "https://trustcheckbd.com/en?utm_source=monirhrabby.com&utm_medium=referral&utm_campaign=portfolio_case_study";
@@ -110,50 +122,101 @@ const roadmap = [
 const challenges = [
   {
     icon: FileCheck2,
-    title: "Fair, evidence-led reporting",
+    title: "Checking reports fairly",
     challenge:
-      "A public warning can protect users, but an unverified claim can also cause harm.",
+      "A warning can keep people safe. But a false report can hurt an innocent person or business.",
     response:
-      "Reports move through proof checks, moderator review, final admin approval, and structured verification before warning badges go live.",
+      "We check the proof, review the report, and ask an admin to approve it before showing a public warning.",
   },
   {
     icon: Database,
-    title: "Useful signals, not false certainty",
+    title: "Giving clear but honest answers",
     challenge:
-      "People need a fast answer while the underlying evidence can be nuanced.",
+      "People want a quick answer, but the available proof may not tell the full story.",
     response:
-      "The product presents trust scores and risk indicators as guidance, keeps the verification limitations visible, and asks users to apply judgment.",
+      "We show trust scores and risk signs as helpful guides, not final answers. We also explain what we could not verify.",
   },
   {
     icon: LockKeyhole,
-    title: "Protecting people who report",
+    title: "Keeping reporters safe",
     challenge:
-      "Contributors need to share evidence without exposing their identity.",
+      "People may be afraid to report a scam if others can see who they are.",
     response:
-      "The public product states that reporter identities stay private and that screenshots, files, and personal data are held behind strict access controls.",
+      "We keep the reporter's identity private. Only approved team members can access their screenshots, files, and personal information.",
   },
   {
     icon: MessageSquareWarning,
     title: "Spam and misleading reports",
     challenge:
-      "An open reporting system must remain useful as participation grows.",
+      "Some people may send fake reports or spam, making the platform less useful for everyone.",
     response:
-      "Fake or misleading reports are removed, submissions are moderated, and repeated spam can lead to account bans.",
+      "We review every report and remove fake or misleading ones. If someone keeps sending spam, we can block their IP address.",
   },
 ];
 
-const lessons = [
+const technologyLayers = [
   {
-    title: "Start with the moment of risk",
-    text: "The product became clearer when every decision worked backward from one high-stakes moment: the seconds before someone sends money.",
+    number: "01",
+    label: "Experience",
+    description: "Fast, clear, and responsive on every screen.",
+    tools: [
+      { name: "React", icon: SiReact },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "shadcn/ui", icon: SiShadcnui },
+    ],
   },
   {
-    title: "Trust needs visible process",
-    text: "A safety product cannot ask users to trust a black box. Review stages, limitations, disputes, and evidence standards have to be understandable.",
+    number: "02",
+    label: "Application",
+    description: "The secure core that runs the product.",
+    tools: [
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Better Auth", mark: "BA" },
+      { name: "Socket.IO", icon: SiSocketdotio },
+    ],
   },
   {
-    title: "Launching creates a different job",
-    text: "Shipping the first version was only the start. Moderation, maintenance, search quality, public communication, and roadmap discipline became part of product ownership.",
+    number: "03",
+    label: "Data & files",
+    description: "Reports stay searchable, quick, and safe.",
+    tools: [
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Redis", icon: SiRedis },
+      { name: "UploadThing", mark: "UT" },
+    ],
+  },
+];
+
+const futurePhases = [
+  {
+    year: "2026",
+    status: "In progress",
+    items: [
+      "Public reporting platform",
+      "Proof-based manual review",
+      "Community scam search",
+    ],
+  },
+  {
+    year: "2027",
+    status: "Planned",
+    items: ["Android and iOS apps", "AI scam detection", "Trust analytics"],
+  },
+  {
+    year: "2028",
+    status: "Planned",
+    items: ["Browser extension", "Public verification API", "Instant alerts"],
+  },
+  {
+    year: "Future",
+    status: "Vision",
+    items: [
+      "Global trust network",
+      "Verified business program",
+      "Cross-border fraud data",
+    ],
   },
 ];
 
@@ -485,6 +548,239 @@ function ProductGallery() {
       </div>
       <div className="grid grid-cols-2 border-t border-white/10 sm:grid-cols-4">{galleryPages.map((page, index) => <button key={page.id} onClick={() => setActive(index)} aria-pressed={active === index} className={`group relative border-r border-white/10 px-4 py-4 text-left last:border-r-0 transition sm:px-5 ${active === index ? "bg-white/[0.06] text-white" : "text-white/35 hover:bg-white/[0.03] hover:text-white/65"}`}><span className="text-[9px] font-medium">{page.number}</span><span className="ml-3 text-xs font-medium sm:text-sm">{page.label}</span>{active === index ? <motion.span layoutId="gallery-progress" className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-300" /> : null}</button>)}</div>
     </div>
+  );
+}
+
+function TechnologyStack() {
+  return (
+    <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-20">
+      <Reveal>
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue-300">
+          Technology used
+        </p>
+        <h2 className="mt-3 max-w-lg font-aldrich text-[26px] font-bold leading-tight tracking-tight sm:text-[30px] md:text-[36px]">
+          The tools behind TrustCheck BD.
+        </h2>
+        <p className="mt-5 max-w-lg text-sm font-light leading-7 text-white/60 md:text-base">
+          I built the full product—from the website and database to secure
+          sign-in, evidence uploads, fast searches, and live updates.
+        </p>
+        <div className="mt-8 flex items-center gap-3 text-xs text-white/35">
+          <span className="h-px w-10 bg-blue-300/60" />
+          <span>One connected full-stack system</span>
+        </div>
+      </Reveal>
+
+      <Reveal className="relative">
+        <div className="pointer-events-none absolute -inset-12 bg-[radial-gradient(circle,rgba(59,130,246,.13),transparent_62%)] blur-2xl" />
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070c16]/90 shadow-[0_35px_100px_rgba(0,0,0,.35)]">
+          <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_12px_rgba(147,197,253,.8)]" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">
+                trustcheckbd / system
+              </span>
+            </div>
+            <span className="font-mono text-[9px] uppercase tracking-widest text-emerald-300/60">
+              Live
+            </span>
+          </div>
+
+          <div className="relative p-5 sm:p-7">
+            <div className="absolute bottom-10 left-[42px] top-10 w-px bg-gradient-to-b from-blue-300/0 via-blue-300/50 to-blue-300/0 sm:left-[42px]" />
+            {technologyLayers.map((layer, layerIndex) => (
+              <div
+                key={layer.label}
+                className={`relative grid gap-4 py-6 pl-14 sm:pl-16 md:grid-cols-[150px_1fr] md:items-center ${
+                  layerIndex ? "border-t border-white/[0.07]" : ""
+                }`}
+              >
+                <div className="absolute left-0 top-7 z-10 grid h-9 w-9 place-items-center rounded-full border border-blue-300/30 bg-[#0b1423] font-mono text-[10px] text-blue-300">
+                  {layer.number}
+                </div>
+                <div>
+                  <h3 className="font-aldrich text-sm font-semibold text-white">
+                    {layer.label}
+                  </h3>
+                  <p className="mt-1 text-xs leading-5 text-white/35">
+                    {layer.description}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-x-5 gap-y-4">
+                  {layer.tools.map((tool) => {
+                    const ToolIcon = tool.icon;
+                    return (
+                      <div
+                        key={tool.name}
+                        className="group flex items-center gap-2.5 text-white/60 transition hover:text-white"
+                      >
+                        <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/[0.055] text-white/80 transition group-hover:bg-blue-300/10 group-hover:text-blue-300">
+                          {ToolIcon ? (
+                            <ToolIcon className="h-4 w-4" aria-hidden="true" />
+                          ) : (
+                            <span className="font-aldrich text-[8px] font-bold text-blue-300">
+                              {tool.mark}
+                            </span>
+                          )}
+                        </span>
+                        <span className="text-xs font-medium">{tool.name}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 border-t border-white/10 bg-white/[0.02] px-5 py-3 font-mono text-[9px] uppercase tracking-[0.14em] text-white/25">
+            <ShieldCheck className="h-3.5 w-3.5 text-blue-300/60" />
+            Built for trust, speed, and real-time action
+          </div>
+        </div>
+      </Reveal>
+    </div>
+  );
+}
+
+function FutureVision() {
+  const reduce = useReducedMotion();
+
+  return (
+    <section className="relative overflow-hidden border-y border-white/10 bg-[#050a13] py-24 md:py-36">
+      <div className="pointer-events-none absolute inset-0 dotPattern opacity-[0.08] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
+      <div className="pointer-events-none absolute -right-40 top-0 h-[620px] w-[620px] rounded-full bg-blue-600/10 blur-[140px]" />
+
+      <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
+        <div className="grid gap-14 lg:grid-cols-[0.78fr_1.22fr] lg:items-center lg:gap-20">
+          <Reveal>
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue-300">
+              Future vision
+            </p>
+            <h2 className="mt-4 max-w-xl font-aldrich text-[30px] font-bold leading-[1.12] tracking-tight sm:text-[38px] md:text-[48px]">
+              Local signal.
+              <br />
+              <span className="text-white/35">Global protection.</span>
+            </h2>
+            <p className="mt-6 max-w-lg text-sm font-light leading-7 text-white/55 md:text-base">
+              TrustCheck BD starts in Bangladesh. The long-term goal is to help
+              people spot fraud earlier, wherever a payment or conversation
+              begins.
+            </p>
+            <div className="mt-9 flex items-center gap-4">
+              <div className="grid h-11 w-11 place-items-center rounded-full border border-blue-300/25 bg-blue-300/10">
+                <Rocket className="h-4 w-4 text-blue-300" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-white">Bangladesh first</p>
+                <p className="mt-1 text-xs text-white/35">Built to grow beyond borders</p>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal className="relative mx-auto aspect-square w-full max-w-[570px]">
+            <div className="absolute inset-[8%] rounded-full border border-white/[0.06]" />
+            <motion.div
+              className="absolute inset-[17%] rounded-full border border-dashed border-blue-300/20"
+              animate={reduce ? undefined : { rotate: 360 }}
+              transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+              className="absolute inset-[29%] rounded-full border border-white/10"
+              animate={reduce ? undefined : { rotate: -360 }}
+              transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+            />
+
+            <div className="absolute inset-[34%] grid place-items-center rounded-full border border-blue-300/25 bg-[#0a1424] shadow-[0_0_80px_rgba(59,130,246,.2)]">
+              <motion.div
+                animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="grid h-16 w-16 place-items-center rounded-full bg-blue-400/10"
+              >
+                <ShieldCheck className="h-7 w-7 text-blue-300" />
+              </motion.div>
+              <div className="absolute top-[68%] text-center">
+                <p className="font-aldrich text-[11px] font-semibold text-white">TRUSTCHECK BD</p>
+                <p className="mt-1 font-mono text-[8px] uppercase tracking-widest text-blue-300/60">Origin signal</p>
+              </div>
+            </div>
+
+            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 570 570" fill="none" aria-hidden="true">
+              <motion.path
+                d="M84 332C142 116 390 60 493 238C583 395 390 526 220 467C87 421 73 271 174 177"
+                stroke="url(#vision-line)"
+                strokeWidth="1.5"
+                strokeDasharray="5 8"
+                initial={reduce ? false : { pathLength: 0, opacity: 0 }}
+                whileInView={reduce ? undefined : { pathLength: 1, opacity: 1 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 2.2, ease: "easeInOut" }}
+              />
+              <defs>
+                <linearGradient id="vision-line" x1="80" y1="170" x2="500" y2="430">
+                  <stop stopColor="#60A5FA" stopOpacity="0" />
+                  <stop offset=".45" stopColor="#93C5FD" />
+                  <stop offset="1" stopColor="#34D399" stopOpacity=".35" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {[
+              { label: "Mobile apps", icon: Smartphone, position: "left-[2%] top-[52%]" },
+              { label: "Browser extension", icon: MousePointer2, position: "left-[12%] top-[13%]" },
+              { label: "AI detection", icon: BrainCircuit, position: "right-[4%] top-[28%]" },
+              { label: "Public API", icon: Globe2, position: "bottom-[5%] right-[20%]" },
+              { label: "Verified business", icon: BadgeCheck, position: "bottom-[13%] left-[7%]" },
+            ].map((node, index) => (
+              <motion.div
+                key={node.label}
+                className={`absolute ${node.position} flex items-center gap-2.5 rounded-full border border-white/10 bg-[#08101c]/90 px-3 py-2 shadow-xl backdrop-blur`}
+                animate={reduce ? undefined : { y: [0, index % 2 ? 7 : -7, 0] }}
+                transition={{ duration: 4 + index, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <node.icon className="h-3.5 w-3.5 text-blue-300" />
+                <span className="text-[10px] font-medium text-white/65">{node.label}</span>
+              </motion.div>
+            ))}
+          </Reveal>
+        </div>
+
+        <Reveal className="mt-16 pt-10 md:mt-20 md:pt-12">
+          <div className="relative grid gap-10 md:grid-cols-4 md:gap-6">
+            <motion.div
+              className="absolute left-0 right-0 top-[7px] hidden h-px origin-left bg-gradient-to-r from-blue-400 via-blue-300 to-emerald-300/30 md:block"
+              initial={reduce ? false : { scaleX: 0 }}
+              whileInView={reduce ? undefined : { scaleX: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+            />
+            {futurePhases.map((phase, index) => (
+              <motion.div
+                key={phase.year}
+                initial={reduce ? false : { opacity: 0, y: 18 }}
+                whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.25 + index * 0.12, duration: 0.55 }}
+                className="relative border-l border-white/10 pl-6 md:border-l-0 md:pl-0 md:pt-8"
+              >
+                <span className={`absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full border-2 border-[#050a13] md:left-0 md:top-[2px] ${index === 0 ? "bg-blue-300 shadow-[0_0_14px_rgba(147,197,253,.8)]" : "bg-white/25"}`} />
+                <div className="flex items-center gap-3">
+                  <h3 className="font-aldrich text-xl font-bold text-white">{phase.year}</h3>
+                  <span className="rounded-full bg-white/[0.055] px-2 py-1 text-[8px] font-medium uppercase tracking-wider text-white/40">{phase.status}</span>
+                </div>
+                <ul className="mt-4 space-y-2.5">
+                  {phase.items.map((item) => (
+                    <li key={item} className="flex gap-2 text-xs leading-5 text-white/45">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-blue-300/60" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
   );
 }
 
@@ -950,12 +1246,19 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.018] py-24 md:py-36">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(59,130,246,.08),transparent_34%)]" />
+        <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
+          <TechnologyStack />
+        </div>
+      </section>
+
       <section className="py-24 md:py-36">
         <div className="mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
             eyebrow="Challenges & responses"
-            title="Trust products carry consequences."
-            text="The hard parts were not only screens and endpoints. They were product decisions about evidence, fairness, privacy, and how to communicate risk responsibly."
+            title="Building trust means making careful choices."
+            text="The biggest challenges were not only about design or code. We also had to check proof, treat people fairly, protect private information, and explain risks clearly."
           />
           <div className="mt-12 space-y-4">
             {challenges.map((item, index) => (
@@ -1159,82 +1462,7 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="py-24 md:py-36">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
-          <SectionHeading
-            eyebrow="Lessons learned"
-            title="A real product changes how you think."
-            text="TrustCheck BD reinforced lessons that only become concrete once people depend on what you ship."
-          />
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {lessons.map((lesson, index) => (
-              <Reveal
-                key={lesson.title}
-                delay={index * 0.07}
-                className="rounded-md border border-white/10 bg-card/60 p-7"
-              >
-                <span className="font-aldrich text-sm text-primary">
-                  0{index + 1}
-                </span>
-                <h3 className="mt-10 font-aldrich text-lg font-semibold">
-                  {lesson.title}
-                </h3>
-                <p className="mt-4 text-sm font-light leading-7 text-white/50">
-                  {lesson.text}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative border-y border-white/10 bg-white/[0.018] py-24 md:py-36">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(0,75,224,0.16),transparent_34%)]" />
-        <div className="relative mx-auto grid max-w-[1200px] gap-14 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-20">
-          <SectionHeading
-            eyebrow="Future vision"
-            title="From a Bangladesh-first product to a broader trust network."
-            text="The north star is a free, accessible system that helps people act on better information before fraud happens—not only document losses afterward."
-          />
-          <Reveal className="grid gap-3 sm:grid-cols-2">
-            {[
-              {
-                icon: Smartphone,
-                title: "Mobile access",
-                text: "Android and iOS apps are planned for 2027.",
-              },
-              {
-                icon: BrainCircuit,
-                title: "Smarter detection",
-                text: "AI-powered detection and advanced trust analytics are on the published roadmap.",
-              },
-              {
-                icon: Globe2,
-                title: "Verification infrastructure",
-                text: "A browser extension, public API, and instant messaging alerts are planned for 2028.",
-              },
-              {
-                icon: ShieldCheck,
-                title: "Global network",
-                text: "The long-term vision is cross-border trust intelligence and fraud-data collaboration.",
-              },
-            ].map((vision) => (
-              <div
-                key={vision.title}
-                className="rounded-md border border-white/10 bg-background/70 p-6"
-              >
-                <vision.icon className="h-5 w-5 text-blue-300" />
-                <h3 className="mt-5 font-aldrich text-base font-semibold">
-                  {vision.title}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-white/50">
-                  {vision.text}
-                </p>
-              </div>
-            ))}
-          </Reveal>
-        </div>
-      </section>
+      <FutureVision />
 
       <section className="py-24 md:py-36">
         <Reveal className="relative mx-auto max-w-[1168px] overflow-hidden rounded-lg border border-primary/20 bg-card/70 px-6 py-16 text-center shadow-[0_30px_100px_rgba(0,75,224,0.12)] md:px-12 md:py-24">
