@@ -68,7 +68,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-6855691641655295"></meta>
       </head>
       <body
-        className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-hidden`}
+        className={`${lexend.className} antialiased min-h-screen bg-background text-foreground max-w-full overflow-x-clip`}
       >
         <SmoothScrolling>
           <Navbar />

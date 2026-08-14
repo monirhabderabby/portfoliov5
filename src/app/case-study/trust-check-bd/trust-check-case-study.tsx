@@ -1,9 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Logo } from "@/components/ui/trust-check-bd-logo";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
   ArrowLeft,
@@ -15,7 +14,6 @@ import {
   BrainCircuit,
   CircleAlert,
   Database,
-  ExternalLink,
   Facebook,
   FileCheck2,
   Github,
@@ -348,6 +346,174 @@ function BrowserFrame({
   );
 }
 
+const galleryPages = [
+  {
+    id: "discover",
+    number: "01",
+    label: "Discover",
+    title: "Stay safer before you pay",
+    text: "TrustCheck BD helps people check suspicious details before sending money and learn from reports shared by others.",
+    accent: "Know before you pay",
+  },
+  {
+    id: "search",
+    number: "02",
+    label: "Search",
+    title: "Search any detail in one place",
+    text: "Search a bKash, Nagad or Rocket number, phone number, website, business name, Facebook page, or other suspicious detail.",
+    accent: "One simple search",
+  },
+  {
+    id: "results",
+    number: "03",
+    label: "Search results",
+    title: "See the reports behind the risk",
+    text: "See the total reported loss, number of reports, and real experiences shared by people about the searched detail.",
+    accent: "Clear and useful results",
+  },
+  {
+    id: "report",
+    number: "04",
+    label: "Report a scam",
+    title: "Help warn the next person",
+    text: "Explain what happened and add screenshots or other proof. Every report is reviewed before it becomes a public warning.",
+    accent: "Share your experience",
+  },
+] as const;
+
+function GalleryVideo({
+  start,
+  end,
+  onComplete,
+}: {
+  start: number;
+  end?: number;
+  onComplete: () => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const completedRef = useRef(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    completedRef.current = false;
+    const playSegment = () => {
+      video.currentTime = start;
+      void video.play().catch(() => undefined);
+    };
+    if (video.readyState >= 1) playSegment();
+    else video.addEventListener("loadedmetadata", playSegment, { once: true });
+    return () => video.removeEventListener("loadedmetadata", playSegment);
+  }, [start]);
+
+  const complete = () => {
+    const video = videoRef.current;
+    if (!video || completedRef.current) return;
+    completedRef.current = true;
+    video.pause();
+    onComplete();
+  };
+
+  return (
+    <video
+      ref={videoRef}
+      src={HERO_VIDEO_URL}
+      muted
+      playsInline
+      autoPlay
+      preload="metadata"
+      aria-label={end ? "TrustCheck BD search demo" : "TrustCheck BD search results demo"}
+      className="h-full w-full bg-[#f7f8fc] object-cover object-top"
+      onTimeUpdate={(event) => {
+        if (end && event.currentTarget.currentTime >= end) complete();
+      }}
+      onEnded={complete}
+    />
+  );
+}
+
+function ProductSurface({
+  page,
+  onComplete,
+}: {
+  page: (typeof galleryPages)[number]["id"];
+  onComplete: () => void;
+}) {
+  if (page === "discover") {
+    return (
+      <Image
+        src="/images/trust-check-bd-homepage.png"
+        alt="TrustCheck BD search-first homepage"
+        width={1404}
+        height={881}
+        priority={false}
+        className="h-full w-full object-cover object-top"
+      />
+    );
+  }
+
+  if (page === "search") {
+    return <GalleryVideo start={1} end={15} onComplete={onComplete} />;
+  }
+
+  if (page === "results") {
+    return <GalleryVideo start={15} onComplete={onComplete} />;
+  }
+
+  if (page === "report") {
+    return (
+      <Image
+        src="https://da8h6r7q9t.ufs.sh/f/qDFYtzIILml3SHf1UOPp945jt61u32oCNRmavzPbwlDTYscQ"
+        alt="TrustCheck BD report a scam form"
+        width={1404}
+        height={881}
+        sizes="(max-width: 768px) 92vw, 850px"
+        className="h-full w-full bg-[#f8f9fd] object-contain object-top"
+      />
+    );
+  }
+
+  return null;
+}
+
+function ProductGallery() {
+  const [active, setActive] = useState(0);
+  const reduce = useReducedMotion();
+  const item = galleryPages[active];
+  const go = (direction: number) => setActive((current) => (current + direction + galleryPages.length) % galleryPages.length);
+
+  useEffect(() => {
+    if (item.id === "search" || item.id === "results") return;
+    const timer = window.setTimeout(
+      () => setActive((current) => (current + 1) % galleryPages.length),
+      item.id === "discover" ? 5000 : 6000,
+    );
+    return () => window.clearTimeout(timer);
+  }, [item.id]);
+
+  return (
+    <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-[#070b14] shadow-[0_40px_120px_rgba(0,0,0,.45)]">
+      <div className="grid lg:grid-cols-[310px_1fr]">
+        <div className="flex flex-col border-b border-white/10 p-4 sm:p-5 lg:border-b-0 lg:border-r lg:p-6">
+          <div className="flex items-center justify-between text-[10px] font-medium uppercase tracking-[0.18em] text-white/35"><span>Product tour</span><span>{item.number} / 04</span></div>
+          <AnimatePresence mode="wait" initial={false}><motion.div key={item.id} initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reduce ? undefined : { opacity: 0, y: -8 }} transition={{ duration: 0.28 }} className="mt-7 lg:mt-12"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-300">{item.accent}</p><h3 className="mt-3 font-aldrich text-2xl font-semibold leading-tight md:text-3xl">{item.title}</h3><p className="mt-4 text-sm font-light leading-6 text-white/50">{item.text}</p></motion.div></AnimatePresence>
+          <div className="mt-7 flex gap-2 lg:mt-auto"><button onClick={() => go(-1)} aria-label="Previous product screen" className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white/60 transition hover:border-white/30 hover:text-white"><ArrowLeft className="h-4 w-4" /></button><button onClick={() => go(1)} aria-label="Next product screen" className="grid h-10 w-10 place-items-center rounded-full bg-white text-black transition hover:bg-blue-200"><ArrowRight className="h-4 w-4" /></button></div>
+        </div>
+        <div className="relative min-w-0 bg-[radial-gradient(circle_at_60%_20%,rgba(88,101,242,.18),transparent_42%)] p-2.5 sm:p-4 lg:p-5">
+          <div className="mb-2.5 flex h-9 items-center gap-2 rounded-lg border border-white/[0.06] bg-[#111725] px-3 shadow-inner">
+            <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true"><span className="h-2.5 w-2.5 rounded-full bg-red-400/90" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300/90" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-400/90" /></div>
+            <div className="ml-1 hidden items-center gap-1 text-white/25 sm:flex" aria-hidden="true"><ArrowLeft className="h-3.5 w-3.5" /><ArrowRight className="h-3.5 w-3.5 opacity-40" /></div>
+            <div className="mx-auto flex h-6 w-full max-w-md items-center justify-center gap-1.5 rounded-md border border-white/[0.04] bg-[#090e19] px-3 text-[8px] text-white/45 shadow-inner sm:text-[9px]"><LockKeyhole className="h-2.5 w-2.5 text-emerald-400/70" /><span>trustcheckbd.com</span><span className="text-white/20">/</span><span className="text-white/35">{item.id}</span></div>
+            <div className="hidden w-[52px] sm:block" aria-hidden="true" />
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/10 bg-white shadow-2xl"><AnimatePresence mode="wait" initial={false}><motion.div key={item.id} initial={reduce ? false : { opacity: 0, scale: .985, x: 18 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={reduce ? undefined : { opacity: 0, scale: .99, x: -18 }} transition={{ duration: .35, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0"><ProductSurface page={item.id} onComplete={() => go(1)} /></motion.div></AnimatePresence></div>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 border-t border-white/10 sm:grid-cols-4">{galleryPages.map((page, index) => <button key={page.id} onClick={() => setActive(index)} aria-pressed={active === index} className={`group relative border-r border-white/10 px-4 py-4 text-left last:border-r-0 transition sm:px-5 ${active === index ? "bg-white/[0.06] text-white" : "text-white/35 hover:bg-white/[0.03] hover:text-white/65"}`}><span className="text-[9px] font-medium">{page.number}</span><span className="ml-3 text-xs font-medium sm:text-sm">{page.label}</span>{active === index ? <motion.span layoutId="gallery-progress" className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-300" /> : null}</button>)}</div>
+    </div>
+  );
+}
+
 export default function TrustCheckCaseStudy() {
   const [stats, setStats] = useState<{
     approvedReports: number;
@@ -380,7 +546,7 @@ export default function TrustCheckCaseStudy() {
   }, []);
 
   return (
-    <main className="overflow-hidden bg-background text-white">
+    <main className="overflow-x-clip bg-background text-white">
       <section className="relative isolate flex min-h-screen items-center overflow-hidden pb-16 pt-24 md:pb-20 md:pt-28">
         <div className="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_82%,transparent_100%)]">
           <video
@@ -656,7 +822,7 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden py-24 md:py-36">
+      <section className="relative isolate overflow-x-clip py-24 md:py-36">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_45%,rgba(0,75,224,0.13),transparent_34%)]" />
         <div className="pointer-events-none absolute inset-0 dotPattern opacity-[0.08] [mask-image:linear-gradient(to_right,black,transparent_62%)]" />
         <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
@@ -666,26 +832,30 @@ export default function TrustCheckCaseStudy() {
             text="Trust Check BD is more than a searchable interface. I built the path that turns an uncertain search or community report into a reviewed, useful, and discoverable public signal."
           />
 
-          <div className="mt-14 grid gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-start lg:gap-20">
-            <div className="self-start lg:sticky lg:top-24">
+          <div className="mt-14 grid gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-start lg:gap-20 relative">
+            <div className=" lg:sticky lg:top-0">
               <Reveal>
                 <div className="relative">
-                <div className="pointer-events-none absolute -inset-8 rounded-full bg-primary/[0.08] blur-[70px]" />
-                <BrowserFrame className="relative rotate-[-1deg] transition-transform duration-700 hover:rotate-0" />
+                  <div className="pointer-events-none absolute -inset-8 rounded-full bg-primary/[0.08] blur-[70px]" />
+                  <BrowserFrame className="relative rotate-[-1deg] transition-transform duration-700 hover:rotate-0" />
 
-                <div className="relative -mt-3 ml-4 mr-2 border-l border-primary/50 bg-background/90 py-4 pl-5 pr-3 backdrop-blur-md sm:ml-8 sm:mr-6">
-                  <div className="flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.18em] text-blue-300">
-                    <span className="relative flex h-2 w-2" aria-hidden="true">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60 motion-reduce:animate-none" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                    </span>
-                    The visible product is only the first layer
+                  <div className="relative -mt-3 ml-4 mr-2 border-l border-primary/50 bg-background/90 py-4 pl-5 pr-3 backdrop-blur-md sm:ml-8 sm:mr-6">
+                    <div className="flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.18em] text-blue-300">
+                      <span
+                        className="relative flex h-2 w-2"
+                        aria-hidden="true"
+                      >
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60 motion-reduce:animate-none" />
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                      </span>
+                      The visible product is only the first layer
+                    </div>
+                    <p className="mt-2 max-w-md text-xs font-light leading-6 text-white/50">
+                      Behind one search sits query handling, relationship
+                      boundaries, moderation controls, caching, and a localized
+                      publication system.
+                    </p>
                   </div>
-                  <p className="mt-2 max-w-md text-xs font-light leading-6 text-white/50">
-                    Behind one search sits query handling, relationship boundaries,
-                    moderation controls, caching, and a localized publication system.
-                  </p>
-                </div>
                 </div>
 
                 <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 border-y border-white/10 py-4 text-[9px] font-medium uppercase tracking-[0.16em] text-white/30">
@@ -741,7 +911,7 @@ export default function TrustCheckCaseStudy() {
       <section className="border-y border-white/10 bg-white/[0.018] py-24 md:py-36">
         <div className="mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
-            eyebrow="Core product"
+            eyebrow="Core features"
             title="Search before you pay. Report when it happens."
             text="Search helps someone avoid a risky payment today. Reporting turns a bad experience into a warning that can protect someone tomorrow."
           />
@@ -799,66 +969,10 @@ export default function TrustCheckCaseStudy() {
         <div className="mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
             eyebrow="Product gallery"
-            title="A simple interface for safer decisions."
-            text="The product puts one decision at the center: checking before paying. Reporting and verification then turn individual experiences into information others can use."
+            title="One decision. Four connected moments."
+            text="Explore the product as a journey—from the first safety check to the human review that makes a public warning trustworthy."
           />
-          <div className="mt-12 grid items-end gap-5 lg:grid-cols-[1fr_280px]">
-            <Dialog>
-              <DialogTrigger asChild>
-                <button
-                  className="group text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  aria-label="Open desktop product screenshot"
-                >
-                  <BrowserFrame />
-                  <span className="mt-3 flex items-center justify-between text-xs text-white/40">
-                    <span>Desktop product view</span>
-                    <span className="flex items-center gap-1 transition group-hover:text-white/70">
-                      Open image <ExternalLink className="h-3 w-3" />
-                    </span>
-                  </span>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-w-6xl border-white/15 bg-[#07101f] p-2">
-                <Image
-                  src="/images/trust-check-bd-homepage.png"
-                  alt="Full TrustCheck BD homepage screenshot"
-                  width={1404}
-                  height={881}
-                  className="h-auto w-full rounded-md"
-                />
-              </DialogContent>
-            </Dialog>
-            <Dialog>
-              <DialogTrigger asChild>
-                <button
-                  className="group mx-auto w-[250px] text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  aria-label="Open mobile product crop"
-                >
-                  <div className="rounded-[28px] border border-white/15 bg-[#070b14] p-2 shadow-2xl">
-                    <div className="mx-auto mb-2 h-1.5 w-16 rounded-full bg-white/15" />
-                    <BrowserFrame
-                      crop
-                      imageSrc="https://da8h6r7q9t.ufs.sh/f/qDFYtzIILml33auA3vqq9tjJcH2OfQPFYSAus8GXybNBCLir"
-                      className="rounded-[20px] border-0 p-1"
-                    />
-                  </div>
-                  <span className="mt-3 flex items-center justify-between text-xs text-white/40">
-                    <span>Mobile preview</span>
-                    <ExternalLink className="h-3 w-3 transition group-hover:text-white/70" />
-                  </span>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-w-6xl border-white/15 bg-[#07101f] p-2">
-                <Image
-                  src="https://da8h6r7q9t.ufs.sh/f/qDFYtzIILml33auA3vqq9tjJcH2OfQPFYSAus8GXybNBCLir"
-                  alt="TrustCheck BD mobile interface shown in the gallery lightbox"
-                  width={1404}
-                  height={881}
-                  className="h-auto w-full rounded-md"
-                />
-              </DialogContent>
-            </Dialog>
-          </div>
+          <ProductGallery />
         </div>
       </section>
 
