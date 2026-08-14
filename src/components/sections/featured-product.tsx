@@ -148,7 +148,7 @@ export default function FeaturedProduct() {
                 locale="en"
                 brand="TrustCheck BD"
                 showTagline
-                tagline="Check before you pay"
+                tagline="Search before you pay"
                 href="https://trustcheckbd.com/en?utm_source=https%3A%2F%2Fmonirhrabby.com%2F&utm_medium=referral&utm_campaign=portfolio&utm_content=trustcheckbd_logo"
                 target="_blank"
                 rel="noopener noreferrer"

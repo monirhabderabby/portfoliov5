@@ -164,6 +164,21 @@
       "scope": "TrustCheck BD case study hero composition — revised",
       "decision": "Supersede the split mockup treatment with a full-bleed, low-opacity looping video across the entire hero. Blend it into the dark portfolio background with vertical masking, directional overlays, ambient blue light, and SaaS-style foreground hierarchy. Offset the desktop video layer 100px to the right so its key product activity remains visible. Keep the hero title within a restrained 30–42px responsive scale so it aligns with the portfolio's 26–36px section-heading system.",
       "reason": "The user explicitly preferred an immersive video background that dissolves smoothly into the page over a separate video frame."
+    },
+    {
+      "scope": "TrustCheck BD technology stack",
+      "decision": "Present the technology stack as a sparse, staggered mosaic of compact square logo tiles with intentional gaps, distinct colorful accents, restrained per-tile glow, hover labels, and reduced-motion-safe floating movement. Blend the section into its neighbors with a transparent vertical background transition and masked ambient light instead of hard top and bottom borders.",
+      "reason": "The user selected a scattered reference composition and explicitly requested a colorful, creative, animated treatment for the right side of the technology section."
+    },
+    {
+      "scope": "TrustCheck BD product timeline",
+      "decision": "Keep the vertical editorial timeline, add a reduced-motion-safe line draw, a restrained moving blue ambient glow, soft dot texture, and a live pulse on the current milestone.",
+      "reason": "The user requested corrected launch milestones, simple English, and a small creative animation and background enhancement."
+    },
+    {
+      "scope": "TrustCheck BD social links and closing footer",
+      "decision": "Remove the standalone social-presence section and place compact social icons beside the Back home link in the closing footer. Keep verified Facebook, TikTok, and LinkedIn links active with portfolio referral tracking, and show the unpublished YouTube channel as a muted coming-soon icon. Remove the Connect with me and GitHub actions.",
+      "reason": "The user requested a shorter page ending with social access consolidated into the footer."
     }
   ],
   "evidence": [

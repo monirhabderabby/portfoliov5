@@ -2,7 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/trust-check-bd-logo";
-import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useInView,
+  useReducedMotion,
+} from "framer-motion";
 import {
   ArrowDown,
   ArrowLeft,
@@ -14,7 +19,6 @@ import {
   Database,
   Facebook,
   FileCheck2,
-  Github,
   Globe2,
   Linkedin,
   LockKeyhole,
@@ -93,14 +97,14 @@ const roadmap = [
     text: "A 900 BDT online purchase ended with an instant block—and a sharper question: where can someone verify a seller before paying?",
   },
   {
-    year: "2026",
-    title: "Research and product framing",
-    text: "The idea became a free, proof-first platform where people could search suspicious identities and share reports that help others.",
+    year: "May - Jun 2026",
+    title: "Research & Development",
+    text: "We studied how online scams happen and planned a free platform where people could search suspicious details and share reports.",
   },
   {
-    year: "2026",
-    title: "Build and launch",
-    text: "TrustCheck BD launched as a public reporting platform with manual verification and community scam-database search.",
+    year: "July 2026",
+    title: "Official launch",
+    text: "TrustCheck BD officially launched with scam search, public reporting, and manual review.",
   },
   {
     year: "Now",
@@ -109,13 +113,13 @@ const roadmap = [
   },
   {
     year: "2027",
-    title: "Detection and mobile",
-    text: "The published roadmap includes Android and iOS apps, AI-powered scam detection, and advanced trust analytics.",
+    title: "Mobile, AI, and global launch",
+    text: "We plan to open TrustCheck BD worldwide, launch mobile apps, add AI scam detection, and provide better trust insights.",
   },
   {
     year: "2028+",
     title: "Trust infrastructure",
-    text: "Browser extensions, a public verification API, instant alerts, and a long-term global trust intelligence network are planned.",
+    text: "We plan to add browser extensions, a public verification API, instant alerts, and a global trust network.",
   },
 ];
 
@@ -154,38 +158,94 @@ const challenges = [
   },
 ];
 
-const technologyLayers = [
+const technologyTiles = [
   {
-    number: "01",
-    label: "Experience",
-    description: "Fast, clear, and responsive on every screen.",
-    tools: [
-      { name: "React", icon: SiReact },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "Tailwind", icon: SiTailwindcss },
-      { name: "shadcn/ui", icon: SiShadcnui },
-    ],
+    name: "React",
+    group: "Experience",
+    icon: SiReact,
+    color: "#61DAFB",
+    glow: "rgba(97,218,251,.28)",
+    position: "col-start-2 row-start-1 sm:col-start-2 sm:row-start-1",
   },
   {
-    number: "02",
-    label: "Application",
-    description: "The secure core that runs the product.",
-    tools: [
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Better Auth", mark: "BA" },
-      { name: "Socket.IO", icon: SiSocketdotio },
-    ],
+    name: "Next.js",
+    group: "Application",
+    icon: SiNextdotjs,
+    color: "#FFFFFF",
+    glow: "rgba(255,255,255,.18)",
+    position: "col-start-4 row-start-1 sm:col-start-4 sm:row-start-1",
   },
   {
-    number: "03",
-    label: "Data & files",
-    description: "Reports stay searchable, quick, and safe.",
-    tools: [
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "Prisma", icon: SiPrisma },
-      { name: "Redis", icon: SiRedis },
-      { name: "UploadThing", mark: "UT" },
-    ],
+    name: "TypeScript",
+    group: "Experience",
+    icon: SiTypescript,
+    color: "#3178C6",
+    glow: "rgba(49,120,198,.36)",
+    position: "col-start-1 row-start-2 sm:col-start-1 sm:row-start-2",
+  },
+  {
+    name: "Tailwind CSS",
+    group: "Experience",
+    icon: SiTailwindcss,
+    color: "#38BDF8",
+    glow: "rgba(56,189,248,.32)",
+    position: "col-start-3 row-start-2 sm:col-start-3 sm:row-start-2",
+  },
+  {
+    name: "shadcn/ui",
+    group: "Experience",
+    icon: SiShadcnui,
+    color: "#D8B4FE",
+    glow: "rgba(216,180,254,.28)",
+    position: "col-start-2 row-start-3 sm:col-start-5 sm:row-start-2",
+  },
+  {
+    name: "Better Auth",
+    group: "Application",
+    mark: "BA",
+    color: "#FBBF24",
+    glow: "rgba(251,191,36,.3)",
+    position: "col-start-4 row-start-3 sm:col-start-2 sm:row-start-3",
+  },
+  {
+    name: "Socket.IO",
+    group: "Application",
+    icon: SiSocketdotio,
+    color: "#F472B6",
+    glow: "rgba(244,114,182,.3)",
+    position: "col-start-1 row-start-4 sm:col-start-4 sm:row-start-3",
+  },
+  {
+    name: "MongoDB",
+    group: "Data & files",
+    icon: SiMongodb,
+    color: "#47A248",
+    glow: "rgba(71,162,72,.34)",
+    position: "col-start-3 row-start-4 sm:col-start-1 sm:row-start-4",
+  },
+  {
+    name: "Prisma",
+    group: "Data & files",
+    icon: SiPrisma,
+    color: "#A78BFA",
+    glow: "rgba(167,139,250,.3)",
+    position: "col-start-2 row-start-5 sm:col-start-3 sm:row-start-4",
+  },
+  {
+    name: "Redis",
+    group: "Data & files",
+    icon: SiRedis,
+    color: "#FF4438",
+    glow: "rgba(255,68,56,.32)",
+    position: "col-start-4 row-start-5 sm:col-start-5 sm:row-start-4",
+  },
+  {
+    name: "UploadThing",
+    group: "Data & files",
+    mark: "UT",
+    color: "#EC4899",
+    glow: "rgba(236,72,153,.3)",
+    position: "col-start-3 row-start-6 sm:col-start-2 sm:row-start-5",
   },
 ];
 
@@ -220,35 +280,27 @@ const futurePhases = [
   },
 ];
 
-const socialCards = [
+const socialLinks = [
   {
     name: "Facebook",
-    description:
-      "Community warnings, product updates, and scam-awareness content.",
-    href: "https://www.facebook.com/trustcheckbd.official",
+    href: "https://www.facebook.com/trustcheckbd.official?ref=monirhrabby.com&utm_source=monirhrabby.com&utm_medium=referral&utm_campaign=trustcheckbd_case_study",
     icon: Facebook,
     available: true,
   },
   {
     name: "TikTok",
-    description:
-      "Short-form safety education for people navigating online transactions.",
-    href: "https://www.tiktok.com/@trustcheckbd.official",
+    href: "https://www.tiktok.com/@trustcheckbd.official?ref=monirhrabby.com&utm_source=monirhrabby.com&utm_medium=referral&utm_campaign=trustcheckbd_case_study",
     icon: SiTiktok,
     available: true,
   },
   {
     name: "LinkedIn",
-    description:
-      "A dedicated TrustCheck BD company page is not publicly listed yet.",
-    href: "",
+    href: "https://www.linkedin.com/company/trustcheckbd-official?ref=monirhrabby.com&utm_source=monirhrabby.com&utm_medium=referral&utm_campaign=trustcheckbd_case_study",
     icon: Linkedin,
-    available: false,
+    available: true,
   },
   {
     name: "YouTube",
-    description:
-      "A dedicated TrustCheck BD channel is not publicly listed yet.",
     href: "",
     icon: Youtube,
     available: false,
@@ -459,7 +511,9 @@ function GalleryVideo({
       playsInline
       autoPlay
       preload="metadata"
-      aria-label={end ? "TrustCheck BD search demo" : "TrustCheck BD search results demo"}
+      aria-label={
+        end ? "TrustCheck BD search demo" : "TrustCheck BD search results demo"
+      }
       className="h-full w-full bg-[#f7f8fc] object-cover object-top"
       onTimeUpdate={(event) => {
         if (end && event.currentTarget.currentTime >= end) complete();
@@ -517,7 +571,11 @@ function ProductGallery() {
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
   const item = galleryPages[active];
-  const go = (direction: number) => setActive((current) => (current + direction + galleryPages.length) % galleryPages.length);
+  const go = (direction: number) =>
+    setActive(
+      (current) =>
+        (current + direction + galleryPages.length) % galleryPages.length,
+    );
 
   useEffect(() => {
     if (item.id === "search" || item.id === "results") return;
@@ -532,26 +590,116 @@ function ProductGallery() {
     <div className="mt-12 overflow-hidden rounded-2xl border border-white/10 bg-[#070b14] shadow-[0_40px_120px_rgba(0,0,0,.45)]">
       <div className="grid lg:grid-cols-[310px_1fr]">
         <div className="flex flex-col border-b border-white/10 p-4 sm:p-5 lg:border-b-0 lg:border-r lg:p-6">
-          <div className="flex items-center justify-between text-[10px] font-medium uppercase tracking-[0.18em] text-white/35"><span>Product tour</span><span>{item.number} / 04</span></div>
-          <AnimatePresence mode="wait" initial={false}><motion.div key={item.id} initial={reduce ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reduce ? undefined : { opacity: 0, y: -8 }} transition={{ duration: 0.28 }} className="mt-7 lg:mt-12"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-300">{item.accent}</p><h3 className="mt-3 font-aldrich text-2xl font-semibold leading-tight md:text-3xl">{item.title}</h3><p className="mt-4 text-sm font-light leading-6 text-white/50">{item.text}</p></motion.div></AnimatePresence>
-          <div className="mt-7 flex gap-2 lg:mt-auto"><button onClick={() => go(-1)} aria-label="Previous product screen" className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white/60 transition hover:border-white/30 hover:text-white"><ArrowLeft className="h-4 w-4" /></button><button onClick={() => go(1)} aria-label="Next product screen" className="grid h-10 w-10 place-items-center rounded-full bg-white text-black transition hover:bg-blue-200"><ArrowRight className="h-4 w-4" /></button></div>
+          <div className="flex items-center justify-between text-[10px] font-medium uppercase tracking-[0.18em] text-white/35">
+            <span>Product tour</span>
+            <span>{item.number} / 04</span>
+          </div>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={item.id}
+              initial={reduce ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduce ? undefined : { opacity: 0, y: -8 }}
+              transition={{ duration: 0.28 }}
+              className="mt-7 lg:mt-12"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-300">
+                {item.accent}
+              </p>
+              <h3 className="mt-3 font-aldrich text-2xl font-semibold leading-tight md:text-3xl">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-sm font-light leading-6 text-white/50">
+                {item.text}
+              </p>
+            </motion.div>
+          </AnimatePresence>
+          <div className="mt-7 flex gap-2 lg:mt-auto">
+            <button
+              onClick={() => go(-1)}
+              aria-label="Previous product screen"
+              className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white/60 transition hover:border-white/30 hover:text-white"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => go(1)}
+              aria-label="Next product screen"
+              className="grid h-10 w-10 place-items-center rounded-full bg-white text-black transition hover:bg-blue-200"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
         </div>
         <div className="relative min-w-0 bg-[radial-gradient(circle_at_60%_20%,rgba(88,101,242,.18),transparent_42%)] p-2.5 sm:p-4 lg:p-5">
           <div className="mb-2.5 flex h-9 items-center gap-2 rounded-lg border border-white/[0.06] bg-[#111725] px-3 shadow-inner">
-            <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true"><span className="h-2.5 w-2.5 rounded-full bg-red-400/90" /><span className="h-2.5 w-2.5 rounded-full bg-amber-300/90" /><span className="h-2.5 w-2.5 rounded-full bg-emerald-400/90" /></div>
-            <div className="ml-1 hidden items-center gap-1 text-white/25 sm:flex" aria-hidden="true"><ArrowLeft className="h-3.5 w-3.5" /><ArrowRight className="h-3.5 w-3.5 opacity-40" /></div>
-            <div className="mx-auto flex h-6 w-full max-w-md items-center justify-center gap-1.5 rounded-md border border-white/[0.04] bg-[#090e19] px-3 text-[8px] text-white/45 shadow-inner sm:text-[9px]"><LockKeyhole className="h-2.5 w-2.5 text-emerald-400/70" /><span>trustcheckbd.com</span><span className="text-white/20">/</span><span className="text-white/35">{item.id}</span></div>
+            <div
+              className="flex shrink-0 items-center gap-1.5"
+              aria-hidden="true"
+            >
+              <span className="h-2.5 w-2.5 rounded-full bg-red-400/90" />
+              <span className="h-2.5 w-2.5 rounded-full bg-amber-300/90" />
+              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/90" />
+            </div>
+            <div
+              className="ml-1 hidden items-center gap-1 text-white/25 sm:flex"
+              aria-hidden="true"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3.5 w-3.5 opacity-40" />
+            </div>
+            <div className="mx-auto flex h-6 w-full max-w-md items-center justify-center gap-1.5 rounded-md border border-white/[0.04] bg-[#090e19] px-3 text-[8px] text-white/45 shadow-inner sm:text-[9px]">
+              <LockKeyhole className="h-2.5 w-2.5 text-emerald-400/70" />
+              <span>trustcheckbd.com</span>
+              <span className="text-white/20">/</span>
+              <span className="text-white/35">{item.id}</span>
+            </div>
             <div className="hidden w-[52px] sm:block" aria-hidden="true" />
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/10 bg-white shadow-2xl"><AnimatePresence mode="wait" initial={false}><motion.div key={item.id} initial={reduce ? false : { opacity: 0, scale: .985, x: 18 }} animate={{ opacity: 1, scale: 1, x: 0 }} exit={reduce ? undefined : { opacity: 0, scale: .99, x: -18 }} transition={{ duration: .35, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0"><ProductSurface page={item.id} onComplete={() => go(1)} /></motion.div></AnimatePresence></div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/10 bg-white shadow-2xl">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={item.id}
+                initial={reduce ? false : { opacity: 0, scale: 0.985, x: 18 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={reduce ? undefined : { opacity: 0, scale: 0.99, x: -18 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0"
+              >
+                <ProductSurface page={item.id} onComplete={() => go(1)} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 border-t border-white/10 sm:grid-cols-4">{galleryPages.map((page, index) => <button key={page.id} onClick={() => setActive(index)} aria-pressed={active === index} className={`group relative border-r border-white/10 px-4 py-4 text-left last:border-r-0 transition sm:px-5 ${active === index ? "bg-white/[0.06] text-white" : "text-white/35 hover:bg-white/[0.03] hover:text-white/65"}`}><span className="text-[9px] font-medium">{page.number}</span><span className="ml-3 text-xs font-medium sm:text-sm">{page.label}</span>{active === index ? <motion.span layoutId="gallery-progress" className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-300" /> : null}</button>)}</div>
+      <div className="grid grid-cols-2 border-t border-white/10 sm:grid-cols-4">
+        {galleryPages.map((page, index) => (
+          <button
+            key={page.id}
+            onClick={() => setActive(index)}
+            aria-pressed={active === index}
+            className={`group relative border-r border-white/10 px-4 py-4 text-left last:border-r-0 transition sm:px-5 ${active === index ? "bg-white/[0.06] text-white" : "text-white/35 hover:bg-white/[0.03] hover:text-white/65"}`}
+          >
+            <span className="text-[9px] font-medium">{page.number}</span>
+            <span className="ml-3 text-xs font-medium sm:text-sm">
+              {page.label}
+            </span>
+            {active === index ? (
+              <motion.span
+                layoutId="gallery-progress"
+                className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-300"
+              />
+            ) : null}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
 
 function TechnologyStack() {
+  const reduce = useReducedMotion();
+
   return (
     <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-20">
       <Reveal>
@@ -572,70 +720,121 @@ function TechnologyStack() {
       </Reveal>
 
       <Reveal className="relative">
-        <div className="pointer-events-none absolute -inset-12 bg-[radial-gradient(circle,rgba(59,130,246,.13),transparent_62%)] blur-2xl" />
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070c16]/90 shadow-[0_35px_100px_rgba(0,0,0,.35)]">
-          <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-blue-300 shadow-[0_0_12px_rgba(147,197,253,.8)]" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">
-                trustcheckbd / system
-              </span>
-            </div>
-            <span className="font-mono text-[9px] uppercase tracking-widest text-emerald-300/60">
-              Live
-            </span>
-          </div>
+        <div className="pointer-events-none absolute inset-x-[12%] inset-y-[8%] rounded-full bg-blue-500/15 blur-[80px]" />
+        <div className="pointer-events-none absolute left-[18%] top-[16%] h-24 w-24 rounded-full bg-cyan-400/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[12%] right-[12%] h-28 w-28 rounded-full bg-fuchsia-500/10 blur-3xl" />
 
-          <div className="relative p-5 sm:p-7">
-            <div className="absolute bottom-10 left-[42px] top-10 w-px bg-gradient-to-b from-blue-300/0 via-blue-300/50 to-blue-300/0 sm:left-[42px]" />
-            {technologyLayers.map((layer, layerIndex) => (
-              <div
-                key={layer.label}
-                className={`relative grid gap-4 py-6 pl-14 sm:pl-16 md:grid-cols-[150px_1fr] md:items-center ${
-                  layerIndex ? "border-t border-white/[0.07]" : ""
-                }`}
+        <motion.div
+          initial={reduce ? false : "hidden"}
+          whileInView={reduce ? undefined : "visible"}
+          viewport={{ once: true, amount: 0.25 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.07 } },
+          }}
+          className="relative mx-auto grid w-full max-w-lg grid-cols-4 grid-rows-[repeat(6,68px)] gap-2.5 sm:grid-cols-5 sm:grid-rows-[repeat(5,78px)] sm:gap-3 lg:grid-rows-[repeat(5,84px)]"
+          aria-label="Technology stack used to build TrustCheck BD"
+        >
+          <div className="pointer-events-none absolute inset-[8%] rounded-[40%] border border-dashed border-blue-300/[0.12]" />
+
+          {technologyTiles.map((tool, index) => {
+            const ToolIcon = tool.icon;
+            return (
+              <motion.div
+                key={tool.name}
+                variants={{
+                  hidden: {
+                    opacity: 0,
+                    y: 18,
+                    scale: 0.72,
+                    rotate: index % 2 ? 4 : -4,
+                  },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    rotate: 0,
+                    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
+                className={`group relative z-10 ${tool.position}`}
               >
-                <div className="absolute left-0 top-7 z-10 grid h-9 w-9 place-items-center rounded-full border border-blue-300/30 bg-[#0b1423] font-mono text-[10px] text-blue-300">
-                  {layer.number}
-                </div>
-                <div>
-                  <h3 className="font-aldrich text-sm font-semibold text-white">
-                    {layer.label}
-                  </h3>
-                  <p className="mt-1 text-xs leading-5 text-white/35">
-                    {layer.description}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-x-5 gap-y-4">
-                  {layer.tools.map((tool) => {
-                    const ToolIcon = tool.icon;
-                    return (
-                      <div
-                        key={tool.name}
-                        className="group flex items-center gap-2.5 text-white/60 transition hover:text-white"
-                      >
-                        <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/[0.055] text-white/80 transition group-hover:bg-blue-300/10 group-hover:text-blue-300">
-                          {ToolIcon ? (
-                            <ToolIcon className="h-4 w-4" aria-hidden="true" />
-                          ) : (
-                            <span className="font-aldrich text-[8px] font-bold text-blue-300">
-                              {tool.mark}
-                            </span>
-                          )}
-                        </span>
-                        <span className="text-xs font-medium">{tool.name}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
+                <motion.div
+                  animate={reduce ? undefined : { y: [0, -5, 0] }}
+                  transition={{
+                    duration: 4 + (index % 3) * 0.7,
+                    delay: index * 0.12,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  whileHover={reduce ? undefined : { y: -7 }}
+                  className="relative grid h-full w-full place-items-center rounded-xl border border-white/[0.11] bg-[#0a101d]/95 shadow-[0_16px_40px_rgba(0,0,0,.3)] backdrop-blur-sm transition-colors duration-300 hover:border-white/25 hover:bg-[#0d1626]"
+                  style={{
+                    boxShadow: `0 16px 40px rgba(0,0,0,.3), 0 0 26px ${tool.glow}`,
+                  }}
+                >
+                  <span
+                    className="pointer-events-none absolute inset-1 rounded-[9px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{
+                      background: `radial-gradient(circle at 50% 45%, ${tool.glow}, transparent 68%)`,
+                    }}
+                  />
+                  <span
+                    className="pointer-events-none absolute right-2 top-2 h-1 w-1 rounded-full opacity-50"
+                    style={{
+                      backgroundColor: tool.color,
+                      boxShadow: `0 0 8px ${tool.color}`,
+                    }}
+                  />
+                  {ToolIcon ? (
+                    <ToolIcon
+                      className="relative h-[27px] w-[27px] sm:h-8 sm:w-8"
+                      style={{
+                        color: tool.color,
+                        filter: `drop-shadow(0 0 8px ${tool.glow})`,
+                      }}
+                      aria-hidden="true"
+                    />
+                  ) : (
+                    <span
+                      className="relative font-aldrich text-[13px] font-bold tracking-[-0.04em] sm:text-sm"
+                      style={{
+                        color: tool.color,
+                        textShadow: `0 0 12px ${tool.glow}`,
+                      }}
+                      aria-hidden="true"
+                    >
+                      {tool.mark}
+                    </span>
+                  )}
 
-          <div className="flex items-center gap-3 border-t border-white/10 bg-white/[0.02] px-5 py-3 font-mono text-[9px] uppercase tracking-[0.14em] text-white/25">
-            <ShieldCheck className="h-3.5 w-3.5 text-blue-300/60" />
-            Built for trust, speed, and real-time action
-          </div>
+                  <span className="pointer-events-none absolute -bottom-8 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-md border border-white/10 bg-[#050914] px-2 py-1 text-[9px] font-medium text-white opacity-0 shadow-xl transition-[bottom,opacity] duration-200 group-hover:-bottom-7 group-hover:opacity-100">
+                    {tool.name}
+                    <span className="ml-1 text-white/35">/ {tool.group}</span>
+                  </span>
+                  <span className="sr-only">
+                    {tool.name}, {tool.group}
+                  </span>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[10px] uppercase tracking-[0.13em] text-white/35">
+          {[
+            ["#38BDF8", "Experience"],
+            ["#FBBF24", "Application"],
+            ["#47A248", "Data & files"],
+          ].map(([color, label]) => (
+            <span key={label} className="flex items-center gap-2">
+              <span
+                className="h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: color }}
+              />
+              {label}
+            </span>
+          ))}
         </div>
       </Reveal>
     </div>
@@ -671,8 +870,12 @@ function FutureVision() {
                 <Rocket className="h-4 w-4 text-blue-300" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-white">Bangladesh first</p>
-                <p className="mt-1 text-xs text-white/35">Built to grow beyond borders</p>
+                <p className="text-xs font-semibold text-white">
+                  Bangladesh first
+                </p>
+                <p className="mt-1 text-xs text-white/35">
+                  Built to grow beyond borders
+                </p>
               </div>
             </div>
           </Reveal>
@@ -693,18 +896,31 @@ function FutureVision() {
             <div className="absolute inset-[34%] grid place-items-center rounded-full border border-blue-300/25 bg-[#0a1424] shadow-[0_0_80px_rgba(59,130,246,.2)]">
               <motion.div
                 animate={reduce ? undefined : { scale: [1, 1.08, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="grid h-16 w-16 place-items-center rounded-full bg-blue-400/10"
               >
                 <ShieldCheck className="h-7 w-7 text-blue-300" />
               </motion.div>
               <div className="absolute top-[68%] text-center">
-                <p className="font-aldrich text-[11px] font-semibold text-white">TRUSTCHECK BD</p>
-                <p className="mt-1 font-mono text-[8px] uppercase tracking-widest text-blue-300/60">Origin signal</p>
+                <p className="font-aldrich text-[11px] font-semibold text-white">
+                  TRUSTCHECK BD
+                </p>
+                <p className="mt-1 font-mono text-[8px] uppercase tracking-widest text-blue-300/60">
+                  Origin signal
+                </p>
               </div>
             </div>
 
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 570 570" fill="none" aria-hidden="true">
+            <svg
+              className="absolute inset-0 h-full w-full"
+              viewBox="0 0 570 570"
+              fill="none"
+              aria-hidden="true"
+            >
               <motion.path
                 d="M84 332C142 116 390 60 493 238C583 395 390 526 220 467C87 421 73 271 174 177"
                 stroke="url(#vision-line)"
@@ -716,7 +932,13 @@ function FutureVision() {
                 transition={{ duration: 2.2, ease: "easeInOut" }}
               />
               <defs>
-                <linearGradient id="vision-line" x1="80" y1="170" x2="500" y2="430">
+                <linearGradient
+                  id="vision-line"
+                  x1="80"
+                  y1="170"
+                  x2="500"
+                  y2="430"
+                >
                   <stop stopColor="#60A5FA" stopOpacity="0" />
                   <stop offset=".45" stopColor="#93C5FD" />
                   <stop offset="1" stopColor="#34D399" stopOpacity=".35" />
@@ -725,20 +947,46 @@ function FutureVision() {
             </svg>
 
             {[
-              { label: "Mobile apps", icon: Smartphone, position: "left-[2%] top-[52%]" },
-              { label: "Browser extension", icon: MousePointer2, position: "left-[12%] top-[13%]" },
-              { label: "AI detection", icon: BrainCircuit, position: "right-[4%] top-[28%]" },
-              { label: "Public API", icon: Globe2, position: "bottom-[5%] right-[20%]" },
-              { label: "Verified business", icon: BadgeCheck, position: "bottom-[13%] left-[7%]" },
+              {
+                label: "Mobile apps",
+                icon: Smartphone,
+                position: "left-[2%] top-[52%]",
+              },
+              {
+                label: "Browser extension",
+                icon: MousePointer2,
+                position: "left-[12%] top-[13%]",
+              },
+              {
+                label: "AI detection",
+                icon: BrainCircuit,
+                position: "right-[4%] top-[28%]",
+              },
+              {
+                label: "Public API",
+                icon: Globe2,
+                position: "bottom-[5%] right-[20%]",
+              },
+              {
+                label: "Verified business",
+                icon: BadgeCheck,
+                position: "bottom-[13%] left-[7%]",
+              },
             ].map((node, index) => (
               <motion.div
                 key={node.label}
                 className={`absolute ${node.position} flex items-center gap-2.5 rounded-full border border-white/10 bg-[#08101c]/90 px-3 py-2 shadow-xl backdrop-blur`}
                 animate={reduce ? undefined : { y: [0, index % 2 ? 7 : -7, 0] }}
-                transition={{ duration: 4 + index, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4 + index,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <node.icon className="h-3.5 w-3.5 text-blue-300" />
-                <span className="text-[10px] font-medium text-white/65">{node.label}</span>
+                <span className="text-[10px] font-medium text-white/65">
+                  {node.label}
+                </span>
               </motion.div>
             ))}
           </Reveal>
@@ -762,14 +1010,23 @@ function FutureVision() {
                 transition={{ delay: 0.25 + index * 0.12, duration: 0.55 }}
                 className="relative border-l border-white/10 pl-6 md:border-l-0 md:pl-0 md:pt-8"
               >
-                <span className={`absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full border-2 border-[#050a13] md:left-0 md:top-[2px] ${index === 0 ? "bg-blue-300 shadow-[0_0_14px_rgba(147,197,253,.8)]" : "bg-white/25"}`} />
+                <span
+                  className={`absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full border-2 border-[#050a13] md:left-0 md:top-[2px] ${index === 0 ? "bg-blue-300 shadow-[0_0_14px_rgba(147,197,253,.8)]" : "bg-white/25"}`}
+                />
                 <div className="flex items-center gap-3">
-                  <h3 className="font-aldrich text-xl font-bold text-white">{phase.year}</h3>
-                  <span className="rounded-full bg-white/[0.055] px-2 py-1 text-[8px] font-medium uppercase tracking-wider text-white/40">{phase.status}</span>
+                  <h3 className="font-aldrich text-xl font-bold text-white">
+                    {phase.year}
+                  </h3>
+                  <span className="rounded-full bg-white/[0.055] px-2 py-1 text-[8px] font-medium uppercase tracking-wider text-white/40">
+                    {phase.status}
+                  </span>
                 </div>
                 <ul className="mt-4 space-y-2.5">
                   {phase.items.map((item) => (
-                    <li key={item} className="flex gap-2 text-xs leading-5 text-white/45">
+                    <li
+                      key={item}
+                      className="flex gap-2 text-xs leading-5 text-white/45"
+                    >
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-blue-300/60" />
                       {item}
                     </li>
@@ -785,6 +1042,8 @@ function FutureVision() {
 }
 
 export default function TrustCheckCaseStudy() {
+  const reduce = useReducedMotion();
+
   const [stats, setStats] = useState<{
     approvedReports: number;
     searchDone: number;
@@ -845,7 +1104,7 @@ export default function TrustCheckCaseStudy() {
             <Logo
               locale="en"
               brand="TrustCheck BD"
-              tagline="Check before you pay"
+              tagline="Search before you pay"
               showTagline
               brandClassName="text-white"
               taglineClassName="text-white/45"
@@ -1246,8 +1505,8 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-white/10 bg-white/[0.018] py-24 md:py-36">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(59,130,246,.08),transparent_34%)]" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-transparent via-white/[0.018] to-transparent py-24 md:py-36">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(59,130,246,.08),transparent_34%)] [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)]" />
         <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
           <TechnologyStack />
         </div>
@@ -1312,11 +1571,17 @@ export default function TrustCheckCaseStudy() {
                     <SiGoogleanalytics className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Google Analytics</p>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-white/35">30-day traffic snapshot</p>
+                    <p className="text-sm font-semibold text-white">
+                      Google Analytics
+                    </p>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-white/35">
+                      30-day traffic snapshot
+                    </p>
                   </div>
                 </div>
-                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] text-white/45">1 July — 31 July</span>
+                <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] text-white/45">
+                  1 July — 31 July
+                </span>
               </div>
 
               <div className="relative mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-white/10 bg-white/10 sm:grid-cols-4">
@@ -1327,43 +1592,135 @@ export default function TrustCheckCaseStudy() {
                   { value: "5m 25s", label: "Avg. engagement" },
                 ].map((metric) => (
                   <div key={metric.label} className="bg-[#080d18] p-4 sm:p-5">
-                    <p className="font-aldrich text-2xl font-bold tracking-tight text-white sm:text-3xl">{metric.value}</p>
-                    <p className="mt-2 text-[10px] uppercase tracking-[0.12em] text-white/35">{metric.label}</p>
+                    <p className="font-aldrich text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                      {metric.value}
+                    </p>
+                    <p className="mt-2 text-[10px] uppercase tracking-[0.12em] text-white/35">
+                      {metric.label}
+                    </p>
                   </div>
                 ))}
               </div>
 
               <div className="relative mt-5 overflow-hidden rounded-lg border border-white/10 bg-white/[0.025] p-4 sm:p-5">
                 <div className="flex items-center justify-between gap-4">
-                  <div><p className="text-xs font-medium text-white/70">Audience activity</p><p className="mt-1 text-[10px] text-white/30">Visits across the month</p></div>
-                  <div className="flex gap-2 text-[10px]"><span className="rounded-full bg-white/5 px-3 py-1 text-white/45">Bangladesh</span><span className="rounded-full bg-primary/10 px-3 py-1 text-blue-300">Dhaka</span></div>
+                  <div>
+                    <p className="text-xs font-medium text-white/70">
+                      Audience activity
+                    </p>
+                    <p className="mt-1 text-[10px] text-white/30">
+                      Visits across the month
+                    </p>
+                  </div>
+                  <div className="flex gap-2 text-[10px]">
+                    <span className="rounded-full bg-white/5 px-3 py-1 text-white/45">
+                      Bangladesh
+                    </span>
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-blue-300">
+                      Dhaka
+                    </span>
+                  </div>
                 </div>
-                <svg viewBox="0 0 620 100" className="mt-4 h-20 w-full overflow-visible" role="img" aria-label="Audience activity trend during July">
-                  <defs><linearGradient id="analytics-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#f59e0b" stopOpacity=".22" /><stop offset="100%" stopColor="#f59e0b" stopOpacity="0" /></linearGradient></defs>
-                  <path d="M0 78 C45 72 62 80 104 61 C148 41 173 68 215 52 C258 36 276 54 316 40 C361 24 379 47 420 34 C465 20 492 31 526 17 C560 4 585 19 620 8 L620 100 L0 100 Z" fill="url(#analytics-area)" />
-                  <motion.path d="M0 78 C45 72 62 80 104 61 C148 41 173 68 215 52 C258 36 276 54 316 40 C361 24 379 47 420 34 C465 20 492 31 526 17 C560 4 585 19 620 8" fill="none" stroke="#f59e0b" strokeWidth="2.5" strokeLinecap="round" initial={{ pathLength: 0, opacity: 0 }} whileInView={{ pathLength: 1, opacity: 1 }} viewport={{ once: true, amount: 0.6 }} transition={{ duration: 1.2, ease: "easeOut" }} />
+                <svg
+                  viewBox="0 0 620 100"
+                  className="mt-4 h-20 w-full overflow-visible"
+                  role="img"
+                  aria-label="Audience activity trend during July"
+                >
+                  <defs>
+                    <linearGradient
+                      id="analytics-area"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="1"
+                    >
+                      <stop offset="0%" stopColor="#f59e0b" stopOpacity=".22" />
+                      <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M0 78 C45 72 62 80 104 61 C148 41 173 68 215 52 C258 36 276 54 316 40 C361 24 379 47 420 34 C465 20 492 31 526 17 C560 4 585 19 620 8 L620 100 L0 100 Z"
+                    fill="url(#analytics-area)"
+                  />
+                  <motion.path
+                    d="M0 78 C45 72 62 80 104 61 C148 41 173 68 215 52 C258 36 276 54 316 40 C361 24 379 47 420 34 C465 20 492 31 526 17 C560 4 585 19 620 8"
+                    fill="none"
+                    stroke="#f59e0b"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    whileInView={{ pathLength: 1, opacity: 1 }}
+                    viewport={{ once: true, amount: 0.6 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                  />
                 </svg>
               </div>
             </Reveal>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <Reveal delay={0.08} className="group relative overflow-hidden rounded-xl border border-[#FF6154]/20 bg-[#110c0d] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#FF6154]/40">
+              <Reveal
+                delay={0.08}
+                className="group relative overflow-hidden rounded-xl border border-[#FF6154]/20 bg-[#110c0d] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#FF6154]/40"
+              >
                 <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#FF6154]/10 blur-3xl" />
-                <p className="relative text-[10px] font-medium uppercase tracking-[0.16em] text-[#ff8a80]">Public launch</p>
-                <h3 className="relative mt-3 font-aldrich text-xl font-semibold">Featured on Product Hunt</h3>
-                <p className="relative mt-3 text-sm leading-6 text-white/45">Shared with a global community of product makers and early users.</p>
-                <Link href="https://www.producthunt.com/products/trust-check-bd?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-trust-check-bd" target="_blank" rel="noopener noreferrer" aria-label="View Trust Check BD on Product Hunt (opens in a new tab)" className="relative mt-7 block w-fit rounded-lg outline-none transition hover:drop-shadow-[0_8px_18px_rgba(255,97,84,.18)] focus-visible:ring-4 focus-visible:ring-[#FF6154]/20">
-                  <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1209925&theme=light&t=1785917093450" alt="Trust Check BD featured on Product Hunt" width={250} height={54} unoptimized className="h-auto w-[220px] max-w-full" />
+                <p className="relative text-[10px] font-medium uppercase tracking-[0.16em] text-[#ff8a80]">
+                  Public launch
+                </p>
+                <h3 className="relative mt-3 font-aldrich text-xl font-semibold">
+                  Featured on Product Hunt
+                </h3>
+                <p className="relative mt-3 text-sm leading-6 text-white/45">
+                  Shared with a global community of product makers and early
+                  users.
+                </p>
+                <Link
+                  href="https://www.producthunt.com/products/trust-check-bd?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-trust-check-bd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Trust Check BD on Product Hunt (opens in a new tab)"
+                  className="relative mt-7 block w-fit rounded-lg outline-none transition hover:drop-shadow-[0_8px_18px_rgba(255,97,84,.18)] focus-visible:ring-4 focus-visible:ring-[#FF6154]/20"
+                >
+                  <Image
+                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1209925&theme=light&t=1785917093450"
+                    alt="Trust Check BD featured on Product Hunt"
+                    width={250}
+                    height={54}
+                    unoptimized
+                    className="h-auto w-[220px] max-w-full"
+                  />
                 </Link>
               </Reveal>
 
-              <Reveal delay={0.14} className="group relative overflow-hidden rounded-xl border border-indigo-400/20 bg-[#0c0c18] p-6 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40">
+              <Reveal
+                delay={0.14}
+                className="group relative overflow-hidden rounded-xl border border-indigo-400/20 bg-[#0c0c18] p-6 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40"
+              >
                 <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-indigo-500/10 blur-3xl" />
-                <p className="relative text-[10px] font-medium uppercase tracking-[0.16em] text-indigo-300">Builder community</p>
-                <h3 className="relative mt-3 font-aldrich text-xl font-semibold">Launched on PeerPush</h3>
-                <p className="relative mt-3 text-sm leading-6 text-white/45">A public product page for discovery, feedback, and support from other builders.</p>
-                <Link href="https://peerpush.com/p/trust-check-bd" target="_blank" rel="noopener noreferrer" aria-label="View Trust Check BD on PeerPush (opens in a new tab)" className="relative mt-7 block w-fit rounded-lg outline-none transition hover:drop-shadow-[0_8px_18px_rgba(79,70,229,.22)] focus-visible:ring-4 focus-visible:ring-[#4F46E5]/20">
-                  <Image src="https://peerpush.com/p/trust-check-bd/badge.png" alt="Trust Check BD on PeerPush" width={230} height={65} className="h-auto w-[210px] max-w-full" />
+                <p className="relative text-[10px] font-medium uppercase tracking-[0.16em] text-indigo-300">
+                  Builder community
+                </p>
+                <h3 className="relative mt-3 font-aldrich text-xl font-semibold">
+                  Launched on PeerPush
+                </h3>
+                <p className="relative mt-3 text-sm leading-6 text-white/45">
+                  A public product page for discovery, feedback, and support
+                  from other builders.
+                </p>
+                <Link
+                  href="https://peerpush.com/p/trust-check-bd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View Trust Check BD on PeerPush (opens in a new tab)"
+                  className="relative mt-7 block w-fit rounded-lg outline-none transition hover:drop-shadow-[0_8px_18px_rgba(79,70,229,.22)] focus-visible:ring-4 focus-visible:ring-[#4F46E5]/20"
+                >
+                  <Image
+                    src="https://peerpush.com/p/trust-check-bd/badge.png"
+                    alt="Trust Check BD on PeerPush"
+                    width={230}
+                    height={65}
+                    className="h-auto w-[210px] max-w-full"
+                  />
                 </Link>
               </Reveal>
             </div>
@@ -1371,76 +1728,44 @@ export default function TrustCheckCaseStudy() {
         </div>
       </section>
 
-      <section className="py-24 md:py-36">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
-          <SectionHeading
-            eyebrow="Social presence"
-            title="Safety education beyond the product."
-            text="TrustCheck BD’s official channels extend the mission into awareness content, community alerts, and product updates."
-          />
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {socialCards.map((social, index) =>
-              social.available ? (
-                <Reveal key={social.name} delay={index * 0.05}>
-                  <Link
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group block h-full rounded-md border border-white/10 bg-card/60 p-6 transition duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-card"
-                  >
-                    <div className="flex items-start justify-between">
-                      <social.icon className="h-6 w-6 text-blue-300" />
-                      <ArrowUpRight className="h-4 w-4 text-white/25 transition group-hover:text-white" />
-                    </div>
-                    <h3 className="mt-12 font-aldrich text-lg font-semibold">
-                      {social.name}
-                    </h3>
-                    <p className="mt-3 text-sm leading-6 text-white/50">
-                      {social.description}
-                    </p>
-                  </Link>
-                </Reveal>
-              ) : (
-                <Reveal
-                  key={social.name}
-                  delay={index * 0.05}
-                  className="h-full rounded-md border border-dashed border-white/10 bg-white/[0.018] p-6"
-                >
-                  <div className="flex items-start justify-between">
-                    <social.icon className="h-6 w-6 text-white/30" />
-                    <span className="rounded bg-white/5 px-2 py-1 text-[9px] uppercase tracking-wider text-white/30">
-                      Not listed
-                    </span>
-                  </div>
-                  <h3 className="mt-12 font-aldrich text-lg font-semibold text-white/60">
-                    {social.name}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/35">
-                    {social.description}
-                  </p>
-                </Reveal>
-              ),
-            )}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-black py-24 md:py-36">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
+      <section className="relative overflow-hidden border-y border-white/10 bg-black py-24 md:py-36">
+        <div className="pointer-events-none absolute inset-0 dotPattern opacity-[0.07] [mask-image:linear-gradient(to_bottom,transparent,black_15%,black_85%,transparent)]" />
+        <motion.div
+          className="pointer-events-none absolute -right-40 top-[18%] h-80 w-80 rounded-full bg-blue-500/[0.09] blur-[110px]"
+          animate={
+            reduce
+              ? undefined
+              : { x: [0, -55, 0], y: [0, 45, 0], opacity: [0.45, 0.85, 0.45] }
+          }
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <div className="relative mx-auto max-w-[1200px] px-4 md:px-6">
           <SectionHeading
             eyebrow="Product timeline"
             title="From one question to trust infrastructure."
             text="Past milestones and future items are taken from TrustCheck BD’s published founder story and roadmap."
           />
           <div className="relative mt-14 md:ml-5">
-            <div className="absolute bottom-0 left-[5px] top-0 w-px bg-gradient-to-b from-primary via-primary/40 to-white/10" />
+            <motion.div
+              className="absolute bottom-0 left-[5px] top-0 w-px origin-top bg-gradient-to-b from-primary via-primary/40 to-white/10"
+              initial={reduce ? false : { scaleY: 0 }}
+              whileInView={reduce ? undefined : { scaleY: 1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            />
             <div className="space-y-10">
               {roadmap.map((item, index) => (
                 <Reveal
                   key={`${item.year}-${item.title}`}
                   className="relative grid gap-3 pl-10 md:grid-cols-[140px_1fr] md:gap-8"
                 >
-                  <span className="absolute left-0 top-1 h-[11px] w-[11px] rounded-full border-2 border-primary bg-black shadow-[0_0_0_6px_rgba(0,75,224,0.12)]" />
+                  <span
+                    className={`absolute left-0 top-1 h-[11px] w-[11px] rounded-full border-2 ${item.year === "Now" ? "border-emerald-300 bg-emerald-300 shadow-[0_0_0_6px_rgba(110,231,183,0.12),0_0_18px_rgba(110,231,183,0.55)]" : "border-primary bg-black shadow-[0_0_0_6px_rgba(0,75,224,0.12)]"}`}
+                  >
+                    {item.year === "Now" ? (
+                      <span className="absolute inset-0 animate-ping rounded-full bg-emerald-300/50 motion-reduce:animate-none" />
+                    ) : null}
+                  </span>
                   <p className="text-xs font-medium uppercase tracking-[0.14em] text-blue-300">
                     {item.year}
                   </p>
@@ -1470,15 +1795,14 @@ export default function TrustCheckCaseStudy() {
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[100px]" />
           <div className="relative">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue-300">
-              Check before you pay
+              Search before you pay
             </p>
             <h2 className="mx-auto mt-4 max-w-3xl font-aldrich text-[28px] font-bold leading-tight sm:text-[34px] md:text-[44px]">
-              A safer transaction can start with one search.
+              Check before you pay. Help others to stay safe.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-sm font-light leading-7 text-white/55 md:text-base">
-              Explore the live product, learn more about the mission, or connect
-              with me to talk about building useful products with real-world
-              ownership.
+              Search a phone number, page, website, or business before you send
+              money. If you find a scam, report it so others can avoid it.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
               <Button asChild size="lg">
@@ -1497,41 +1821,52 @@ export default function TrustCheckCaseStudy() {
                 className="border-white/15 bg-white/[0.03] text-white hover:bg-white/10 hover:text-white"
               >
                 <Link
-                  href="https://trustcheckbd.com/en/about"
+                  href="https://trustcheckbd.com/en/about?ref=monirhrabby.com&utm_source=monirhrabby.com&utm_medium=referral&utm_campaign=trustcheckbd_case_study"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <BookOpen className="mr-2 h-4 w-4" /> Read the founder story
                 </Link>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="ghost"
-                className="text-white/70 hover:bg-white/10 hover:text-white"
-              >
-                <Link href="/contact">
-                  Connect with me <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
             </div>
           </div>
         </Reveal>
-        <div className="mx-auto mt-8 flex max-w-[1168px] justify-between px-1 text-xs text-white/35">
+        <div className="mx-auto mt-8 flex max-w-[1168px] items-center justify-between gap-5 px-1 text-xs text-white/35">
           <Link
             href="/"
             className="flex items-center gap-2 transition hover:text-white"
           >
             <ArrowLeft className="h-3.5 w-3.5" /> Back home
           </Link>
-          <Link
-            href="https://github.com/monirhabderabby"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 transition hover:text-white"
+          <div
+            className="flex items-center gap-2"
+            aria-label="TrustCheck BD social channels"
           >
-            <Github className="h-3.5 w-3.5" /> GitHub
-          </Link>
+            {socialLinks.map((social) => {
+              const SocialIcon = social.icon;
+              return social.available ? (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow TrustCheck BD on ${social.name}`}
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/[0.025] text-white/45 transition duration-300 hover:-translate-y-0.5 hover:border-blue-300/30 hover:bg-blue-300/10 hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60"
+                >
+                  <SocialIcon className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              ) : (
+                <span
+                  key={social.name}
+                  aria-label={`${social.name} coming soon`}
+                  title={`${social.name} — coming soon`}
+                  className="grid h-9 w-9 cursor-not-allowed place-items-center rounded-full border border-dashed border-white/[0.08] text-white/20"
+                >
+                  <SocialIcon className="h-4 w-4" aria-hidden="true" />
+                </span>
+              );
+            })}
+          </div>
         </div>
       </section>
     </main>
