@@ -6,7 +6,6 @@ import { Logo } from "@/components/ui/trust-check-bd-logo";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
-  Check,
   Code2,
   Flag,
   TrendingUp,
@@ -43,15 +42,6 @@ const featureCards = [
     description:
       "Continuous product releases, community contributions, SEO improvements, and a long-term vision.",
   },
-];
-
-const highlights = [
-  "Founder-Led Product",
-  "Production Ready",
-  "Community Driven",
-  "SEO Optimized",
-  "Full Stack Architecture",
-  "Continuously Improving",
 ];
 
 const reveal = {
@@ -310,22 +300,6 @@ export default function FeaturedProduct() {
           ))}
         </motion.div>
 
-        <motion.div
-          variants={reveal}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.4 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 rounded-md border border-white/10 bg-white/[0.025] px-5 py-5"
-        >
-          {highlights.map((highlight) => (
-            <span
-              key={highlight}
-              className="flex items-center gap-2 text-xs text-white/60"
-            >
-              <Check className="h-3.5 w-3.5 text-primary" /> {highlight}
-            </span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

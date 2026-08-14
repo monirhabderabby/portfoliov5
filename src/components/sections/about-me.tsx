@@ -56,7 +56,7 @@ const AboutMe = () => {
 
             <p className={cn("mb-6 text-white/95")}>
               I’m a results-oriented Full-Stack Developer with{" "}
-              <strong>3+ years of hands-on experience</strong> building fast,
+              <strong>4+ years of hands-on experience</strong> building fast,
               scalable, and user-friendly applications using{" "}
               <strong>Next.js, Prisma, MongoDB</strong>, and modern UI
               frameworks.
@@ -70,7 +70,7 @@ const AboutMe = () => {
             <div className="flex gap-x-6 lg:gap-x-10 mb-12">
               <div>
                 <div className="text-[25px] lg:text-[40px] font-aldrich text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={3} duration={3} /> : null}+
+                  {inView ? <CountUp start={0} end={4} duration={4} /> : null}+
                 </div>
                 <div className="text-sm tracking-[2px] text-white/90">
                   Years of <br />

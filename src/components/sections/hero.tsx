@@ -88,7 +88,7 @@ const Hero = () => {
             ✨ <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
             <span
               className={cn(
-                `inline animate-gradient bg-gradient-to-r from-[#FFAA40] via-[#9C40FF] to-[#FFAA40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+                `inline animate-gradient bg-gradient-to-r from-[#FFAA40] via-[#9C40FF] to-[#FFAA40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
               )}
             >
               Introducing Me
@@ -118,7 +118,7 @@ const Hero = () => {
                 : `text-base md:text-lg text-foreground/80 mt-6 text-center`
             }`}
           >
-            Hi, I’m Monir — a full-stack developer with 3+ years of experience
+            Hi, I’m Monir — a full-stack developer with 4+ years of experience
             building modern, scalable web apps with Next.js, Prisma & MongoDB.
             Let’s bring your idea to life!
           </h1>
