@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     authors: ["Monir Hossain Rabby"],
     images: [
       {
-        url: "https://monirhrabby.com/images/trust-check-bd-homepage.png",
+        url: "https://monirhrabby.com/images/founder post.png",
         width: 1404,
         height: 881,
         alt: "Trust Check BD scam reporting and verification platform",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["https://monirhrabby.com/images/trust-check-bd-homepage.png"],
+    images: ["https://monirhrabby.com/images/founder post.png"],
   },
 };
 
