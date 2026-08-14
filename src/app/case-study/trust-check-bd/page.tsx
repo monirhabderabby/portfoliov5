@@ -1,36 +1,59 @@
-import TrustCheckCaseStudy from "./trust-check-case-study";
 import type { Metadata } from "next";
+import TrustCheckCaseStudy from "./trust-check-case-study";
 
-const title = "TrustCheck BD Founder Case Study | Monir Hossain Rabby";
+const title = "Trust Check BD Founder Case Study | Monir Hossain Rabby";
 const description =
-  "How Monir Hossain Rabby identified an online-scam problem, founded TrustCheck BD, and built a community-powered trust platform for Bangladesh.";
+  "A founder case study on how Monir Hossain Rabby identified an online scam problem in Bangladesh and built Trust Check BD, a community-powered scam reporting and verification platform.";
 
 export const metadata: Metadata = {
   title,
   description,
+
   keywords: [
+    "Trust Check BD",
     "TrustCheck BD",
-    "founder case study",
+    "Trust Check BD founder",
+    "Trust Check BD case study",
+    "Trust Check BD founder case study",
     "Bangladesh scam checker",
-    "product builder",
-    "full stack engineer",
+    "scam checker Bangladesh",
+    "scam reporting platform Bangladesh",
+    "online scam checker Bangladesh",
     "Monir Hossain Rabby",
   ],
-  alternates: { canonical: "https://monirhrabby.com/case-study/trust-check-bd" },
+
+  authors: [
+    {
+      name: "Monir Hossain Rabby",
+      url: "https://monirhrabby.com",
+    },
+  ],
+
+  creator: "Monir Hossain Rabby",
+  publisher: "Monir Hossain Rabby",
+
+  alternates: {
+    canonical: "https://monirhrabby.com/case-study/trust-check-bd",
+  },
+
   openGraph: {
     title,
     description,
     type: "article",
     url: "https://monirhrabby.com/case-study/trust-check-bd",
+    siteName: "Monir Hossain Rabby",
+    publishedTime: "2026-07-01",
+    authors: ["Monir Hossain Rabby"],
     images: [
       {
         url: "https://monirhrabby.com/images/trust-check-bd-homepage.png",
         width: 1404,
         height: 881,
-        alt: "TrustCheck BD scam and fraud checker homepage",
+        alt: "Trust Check BD scam reporting and verification platform",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title,
@@ -42,31 +65,133 @@ export const metadata: Metadata = {
 export default function TrustCheckBDCaseStudyPage() {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Building TrustCheck BD: A Founder Case Study",
-    description,
-    author: {
-      "@type": "Person",
-      name: "Monir Hossain Rabby",
-      url: "https://monirhrabby.com",
-    },
-    about: {
-      "@type": "SoftwareApplication",
-      name: "TrustCheck BD",
-      applicationCategory: "SecurityApplication",
-      operatingSystem: "Web",
-      url: "https://trustcheckbd.com/en",
-    },
-    datePublished: "2026",
-    image: "https://monirhrabby.com/images/trust-check-bd-homepage.png",
+
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://monirhrabby.com/#person",
+        name: "Monir Hossain Rabby",
+        url: "https://monirhrabby.com",
+        jobTitle: "Founder of Trust Check BD",
+        sameAs: ["https://trustcheckbd.com/en"],
+      },
+
+      {
+        "@type": "Organization",
+        "@id": "https://trustcheckbd.com/#organization",
+        name: "Trust Check BD",
+        url: "https://trustcheckbd.com/en",
+        description:
+          "Trust Check BD is a community-powered scam reporting and trust verification platform for Bangladesh.",
+      },
+
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://trustcheckbd.com/#software",
+        name: "Trust Check BD",
+        url: "https://trustcheckbd.com/en",
+        applicationCategory: "SecurityApplication",
+        operatingSystem: "Web",
+        description:
+          "A community-powered scam reporting and trust verification platform that helps people check suspicious phone numbers, payment accounts, websites, and Facebook pages before sending money.",
+        creator: {
+          "@id": "https://monirhrabby.com/#person",
+        },
+        publisher: {
+          "@id": "https://trustcheckbd.com/#organization",
+        },
+      },
+
+      {
+        "@type": "Article",
+        "@id": "https://monirhrabby.com/case-study/trust-check-bd#article",
+
+        url: "https://monirhrabby.com/case-study/trust-check-bd",
+
+        headline: "Building Trust Check BD: A Founder Case Study",
+
+        alternativeHeadline:
+          "How Monir Hossain Rabby Built Trust Check BD to Help People Check Online Scams in Bangladesh",
+
+        description,
+
+        image: {
+          "@type": "ImageObject",
+          url: "https://monirhrabby.com/images/trust-check-bd-homepage.png",
+          width: 1404,
+          height: 881,
+        },
+
+        author: {
+          "@id": "https://monirhrabby.com/#person",
+        },
+
+        creator: {
+          "@id": "https://monirhrabby.com/#person",
+        },
+
+        publisher: {
+          "@id": "https://monirhrabby.com/#person",
+        },
+
+        datePublished: "2026-07-01",
+        dateModified: "2026-08-14",
+
+        mainEntity: {
+          "@id": "https://trustcheckbd.com/#organization",
+        },
+
+        about: [
+          {
+            "@id": "https://trustcheckbd.com/#organization",
+          },
+          {
+            "@id": "https://trustcheckbd.com/#software",
+          },
+          {
+            "@id": "https://monirhrabby.com/#person",
+          },
+        ],
+
+        keywords: [
+          "Trust Check BD",
+          "TrustCheck BD",
+          "Trust Check BD founder",
+          "Trust Check BD case study",
+          "Bangladesh scam checker",
+          "scam reporting platform Bangladesh",
+          "online scam checker Bangladesh",
+          "Monir Hossain Rabby",
+        ],
+
+        isPartOf: {
+          "@type": "WebPage",
+          "@id": "https://monirhrabby.com/case-study/trust-check-bd",
+          url: "https://monirhrabby.com/case-study/trust-check-bd",
+          name: title,
+        },
+
+        mentions: [
+          {
+            "@id": "https://trustcheckbd.com/#organization",
+          },
+          {
+            "@id": "https://trustcheckbd.com/#software",
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
       />
+
       <TrustCheckCaseStudy />
     </>
   );
