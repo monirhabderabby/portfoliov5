@@ -3,6 +3,8 @@ import { Download } from "lucide-react";
 import { Button } from "./button";
 
 const CVDownloadButton = () => {
+  const currentYear = new Date().getFullYear();
+
   const onDownloadClick = async () => {
     const userAgent = navigator.userAgent;
     const pageUrl = window.location.href;
@@ -36,7 +38,7 @@ const CVDownloadButton = () => {
       <a
         target="_blank"
         href="https://drive.google.com/uc?export=download&id=1e-1vgUY1l5Zy7DPHkVRJ4vBC811JEidn"
-        download="Monir_Hossain_Resume_2025.pdf"
+        download={`Monir_Hossain_Resume_${currentYear}.pdf`}
       >
         Download CV
         <Download className="w-4 h-4 ml-1" />

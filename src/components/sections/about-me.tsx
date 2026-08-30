@@ -79,7 +79,7 @@ const AboutMe = () => {
               </div>
               <div>
                 <div className="text-[25px] lg:text-[40px] font-aldrich text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={10} duration={3} /> : null}
+                  {inView ? <CountUp start={0} end={105} duration={3} /> : null}
                 </div>
                 <div className="font-orbitron text-sm text-white/90 tracking-[2px]">
                   Projects <br />
@@ -88,7 +88,7 @@ const AboutMe = () => {
               </div>
               <div>
                 <div className="text-[25px] lg:text-[40px] font-aldrich text-gradient mb-2">
-                  {inView ? <CountUp start={0} end={5} duration={3} /> : null}+
+                  {inView ? <CountUp start={0} end={70} duration={3} /> : null}+
                 </div>
                 <div className="font-orbitron text-sm text-white/90 tracking-[2px]">
                   Satisfied <br />
