@@ -248,7 +248,13 @@ function PortalFrame({
 }
 
 /** A small pill that names a department, with its color dot. */
-function DeptTag({ dept, className = "" }: { dept: DeptKey; className?: string }) {
+function DeptTag({
+  dept,
+  className = "",
+}: {
+  dept: DeptKey;
+  className?: string;
+}) {
   const d = DEPT[dept];
   return (
     <span
@@ -316,7 +322,11 @@ function DepartmentMap() {
             initial={reduce ? false : { pathLength: 0, opacity: 0 }}
             whileInView={reduce ? undefined : { pathLength: 1, opacity: 1 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 1.1, delay: 0.2 + i * 0.15, ease: "easeInOut" }}
+            transition={{
+              duration: 1.1,
+              delay: 0.2 + i * 0.15,
+              ease: "easeInOut",
+            }}
           />
         ))}
       </svg>
@@ -620,8 +630,7 @@ function FeatureSection({
   visual: ReactNode;
   layout?: "left" | "right" | "full";
 }) {
-  const accentText =
-    dept === "admin" ? "text-emerald-300" : DEPT[dept].text;
+  const accentText = dept === "admin" ? "text-emerald-300" : DEPT[dept].text;
   const accentBg = dept === "admin" ? "bg-emerald-400/10" : DEPT[dept].bg;
   const accentBorder =
     dept === "admin" ? "border-emerald-400/25" : DEPT[dept].border;
@@ -681,11 +690,7 @@ function FeatureSection({
 
   return (
     <Reveal className="mt-16 first:mt-0">
-      <div
-        className={cn(
-          "grid items-center gap-10 lg:grid-cols-2 lg:gap-16",
-        )}
-      >
+      <div className={cn("grid items-center gap-10 lg:grid-cols-2 lg:gap-16")}>
         <div className={layout === "left" ? "lg:order-2" : ""}>{copy}</div>
         <div className={layout === "left" ? "lg:order-1" : ""}>{visual}</div>
       </div>
@@ -1159,7 +1164,9 @@ function DashboardMock() {
                   key={item}
                   className="flex items-center gap-2 text-[11px] text-white/65"
                 >
-                  <span className={cn("h-1.5 w-1.5 rounded-full", accent.dot)} />
+                  <span
+                    className={cn("h-1.5 w-1.5 rounded-full", accent.dot)}
+                  />
                   {item}
                 </div>
               ))}
@@ -1377,16 +1384,18 @@ export default function SaaPortalCaseStudy() {
               </div>
 
               <div className="mt-9 flex flex-wrap gap-2">
-                {["Product design", "Full-stack development", "Internal tooling"].map(
-                  (role) => (
-                    <span
-                      key={role}
-                      className="rounded-md border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-white/70"
-                    >
-                      {role}
-                    </span>
-                  ),
-                )}
+                {[
+                  "Product design",
+                  "Full-stack development",
+                  "Internal tooling",
+                ].map((role) => (
+                  <span
+                    key={role}
+                    className="rounded-md border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-white/70"
+                  >
+                    {role}
+                  </span>
+                ))}
               </div>
             </Reveal>
 
@@ -1425,9 +1434,24 @@ export default function SaaPortalCaseStudy() {
           <Reveal className="overflow-hidden rounded-2xl border border-white/10 bg-card/50">
             <div className="grid divide-white/10 sm:grid-cols-3 sm:divide-x">
               {[
-                { value: 300, suffix: "+", label: "People on the platform", note: "Across the whole agency" },
-                { value: 3, suffix: "", label: "Departments connected", note: "Sales · Operations · Biz Dev" },
-                { value: 6, suffix: "", label: "Systems in one portal", note: "From issues to dashboards" },
+                {
+                  value: 300,
+                  suffix: "+",
+                  label: "People on the platform",
+                  note: "Across the whole agency",
+                },
+                {
+                  value: 3,
+                  suffix: "",
+                  label: "Departments connected",
+                  note: "Sales · Operations · Biz Dev",
+                },
+                {
+                  value: 6,
+                  suffix: "",
+                  label: "Systems in one portal",
+                  note: "From issues to dashboards",
+                },
               ].map((stat) => (
                 <div key={stat.label} className="p-7 md:p-9">
                   <p className="font-aldrich text-[34px] font-bold leading-none tracking-tight text-white md:text-[44px]">
@@ -1461,12 +1485,12 @@ export default function SaaPortalCaseStudy() {
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {[
-                    "Websites",
-                    "Mobile apps",
-                    "SEO",
+                    "FSD",
+                    "Mobile App",
+                    "CMS",
                     "Google Ads",
                     "Meta Ads",
-                    "Digital marketing",
+                    "SEO",
                   ].map((s) => (
                     <span
                       key={s}
@@ -1588,10 +1612,7 @@ export default function SaaPortalCaseStudy() {
             ].map((loop) => (
               <div
                 key={loop.title}
-                className={cn(
-                  "rounded-xl border bg-card/60 p-6",
-                  loop.border,
-                )}
+                className={cn("rounded-xl border bg-card/60 p-6", loop.border)}
               >
                 <div className="flex items-center justify-between">
                   <loop.icon className={cn("h-5 w-5", loop.accent)} />
@@ -1833,8 +1854,8 @@ export default function SaaPortalCaseStudy() {
             </p>
             <blockquote className="-mt-8 font-aldrich text-2xl font-semibold leading-relaxed md:text-3xl">
               The best internal tools disappear into the work. Nobody applauds
-              them — the team just stops asking “who owns this?” and gets on with
-              the job.
+              them — the team just stops asking “who owns this?” and gets on
+              with the job.
             </blockquote>
             <p className="mt-8 text-sm font-light leading-7 text-white/55">
               Building for people who use a product every day is different from
