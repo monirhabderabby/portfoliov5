@@ -3,24 +3,12 @@
   "project": {
     "name": "portfoliov5",
     "productType": null,
-    "stack": [
-      "nextjs",
-      "react",
-      "shadcn",
-      "tailwind-v3"
-    ]
+    "stack": ["nextjs", "react", "shadcn", "tailwind-v3"]
   },
   "sources": {
-    "tokens": [
-      "src/app/globals.css"
-    ],
-    "components": [
-      "src/components/ui"
-    ],
-    "assets": [
-      "public/images",
-      "src/assets"
-    ],
+    "tokens": ["src/app/globals.css"],
+    "components": ["src/components/ui"],
+    "assets": ["public/images", "src/assets"],
     "instructions": []
   },
   "design": {
@@ -130,9 +118,7 @@
       "timeline",
       "trust-check-bd-logo"
     ],
-    "preferredPrimitives": [
-      "radix-ui"
-    ],
+    "preferredPrimitives": ["radix-ui"],
     "patterns": []
   },
   "constraints": {
@@ -179,6 +165,16 @@
       "scope": "TrustCheck BD social links and closing footer",
       "decision": "Remove the standalone social-presence section and place compact social icons beside the Back home link in the closing footer. Keep verified Facebook, TikTok, and LinkedIn links active with portfolio referral tracking, and show the unpublished YouTube channel as a muted coming-soon icon. Remove the Connect with me and GitHub actions.",
       "reason": "The user requested a shorter page ending with social access consolidated into the footer."
+    },
+    {
+      "scope": "SAA Portal management recognition",
+      "decision": "Place a premium, code-native award certificate immediately after the hero, using the case study's emerald and amber identity, editorial evidence copy, August 2025 date context, and reduced-motion-safe paper, seal, glow, and light-sweep animation.",
+      "reason": "The user wants hiring managers and founders to understand immediately that SAA Portal created meaningful operational impact and earned formal recognition from ScaleUp management."
+    },
+    {
+      "scope": "SAA Portal outcomes",
+      "decision": "Replace the uniform four-card outcome grid with one responsive operational command map: four color-coded outcomes connect through animated paths to a central SAA Portal source-of-truth hub, with a compact before-now-result footer and a linear connected mobile layout.",
+      "reason": "The user explicitly requested a more unique and creative UI/UX treatment for the outcome section."
     }
   ],
   "evidence": [

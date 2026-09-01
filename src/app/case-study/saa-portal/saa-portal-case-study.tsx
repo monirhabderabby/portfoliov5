@@ -14,10 +14,12 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  Award,
   Bell,
   Boxes,
   Briefcase,
   Building2,
+  CalendarDays,
   CheckCircle2,
   ChevronRight,
   Clock,
@@ -32,6 +34,7 @@ import {
   Network,
   Paperclip,
   Plus,
+  Quote,
   Route,
   Search,
   Send,
@@ -1320,6 +1323,451 @@ const OUTCOMES = [
   },
 ];
 
+const OUTCOME_ACCENTS = [
+  {
+    text: "text-emerald-200",
+    border: "border-emerald-400/25",
+    bg: "bg-emerald-400/10",
+    dot: "bg-emerald-400",
+    hex: "#34D399",
+    position: "left-[4%] top-[9%]",
+  },
+  {
+    text: "text-amber-200",
+    border: "border-amber-300/25",
+    bg: "bg-amber-300/10",
+    dot: "bg-amber-300",
+    hex: "#FBBF24",
+    position: "right-[4%] top-[9%]",
+  },
+  {
+    text: "text-sky-200",
+    border: "border-sky-300/25",
+    bg: "bg-sky-300/10",
+    dot: "bg-sky-300",
+    hex: "#38BDF8",
+    position: "bottom-[9%] left-[4%]",
+  },
+  {
+    text: "text-violet-200",
+    border: "border-violet-300/25",
+    bg: "bg-violet-300/10",
+    dot: "bg-violet-300",
+    hex: "#C4B5FD",
+    position: "bottom-[9%] right-[4%]",
+  },
+];
+
+const OUTCOME_PATHS = [
+  "M31 28 C40 28 41 39 50 50",
+  "M69 28 C60 28 59 39 50 50",
+  "M31 72 C40 72 41 61 50 50",
+  "M69 72 C60 72 59 61 50 50",
+];
+
+function OutcomeSystem() {
+  const reduce = useReducedMotion();
+
+  return (
+    <div className="relative mt-12 lg:mt-0">
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#070c14] shadow-[0_40px_120px_rgba(0,0,0,0.45)]">
+        <div className="pointer-events-none absolute inset-0 dotPattern opacity-[0.12] [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-400/[0.08] blur-[80px]" />
+
+        <div className="relative flex items-center justify-between border-b border-white/[0.07] bg-white/[0.02] px-4 py-3 sm:px-5">
+          <span className="flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.18em] text-white/35">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+            Outcome map
+          </span>
+          <span className="flex items-center gap-1.5 text-[9px] text-white/30">
+            <Users className="h-3 w-3" /> 300+ people · one workflow
+          </span>
+        </div>
+
+        <div className="relative space-y-3 p-4 sm:p-5 md:hidden">
+          <div className="absolute bottom-10 left-[37px] top-10 w-px bg-gradient-to-b from-emerald-400/50 via-amber-300/30 to-violet-300/40" />
+          {OUTCOMES.map((item, i) => {
+            const accent = OUTCOME_ACCENTS[i];
+            const Icon = item.icon;
+            return (
+              <motion.article
+                key={item.title}
+                initial={reduce ? false : { opacity: 0, x: 18 }}
+                whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.45, delay: i * 0.09 }}
+                className="relative flex gap-4 rounded-xl border border-white/[0.08] bg-[#0a111c]/95 p-4"
+              >
+                <span
+                  className={cn(
+                    "relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border",
+                    accent.border,
+                    accent.bg,
+                    accent.text,
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                </span>
+                <div>
+                  <h3 className="font-aldrich text-sm font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1.5 text-xs font-light leading-5 text-white/50">
+                    {item.text}
+                  </p>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <div className="relative hidden h-[590px] md:block">
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="pointer-events-none absolute inset-0 h-full w-full"
+            aria-hidden="true"
+          >
+            {OUTCOME_PATHS.map((path, i) => (
+              <g key={path}>
+                <path
+                  d={path}
+                  fill="none"
+                  stroke={OUTCOME_ACCENTS[i].hex}
+                  strokeOpacity="0.1"
+                  strokeWidth="1.2"
+                  vectorEffect="non-scaling-stroke"
+                />
+                <motion.path
+                  d={path}
+                  fill="none"
+                  stroke={OUTCOME_ACCENTS[i].hex}
+                  strokeOpacity="0.52"
+                  strokeWidth="1.4"
+                  strokeLinecap="round"
+                  strokeDasharray="2 7"
+                  vectorEffect="non-scaling-stroke"
+                  initial={reduce ? false : { pathLength: 0, opacity: 0 }}
+                  whileInView={
+                    reduce ? undefined : { pathLength: 1, opacity: 1 }
+                  }
+                  viewport={{ once: true, amount: 0.45 }}
+                  transition={{ duration: 1, delay: 0.15 + i * 0.12 }}
+                />
+              </g>
+            ))}
+          </svg>
+
+          {!reduce &&
+            OUTCOME_ACCENTS.map((accent, i) => (
+              <motion.span
+                key={accent.hex}
+                className={cn(
+                  "pointer-events-none absolute left-1/2 top-1/2 z-20 h-2 w-2 rounded-full",
+                  accent.dot,
+                )}
+                style={{ boxShadow: `0 0 12px ${accent.hex}` }}
+                animate={
+                  i === 0
+                    ? {
+                        x: [0, -145, -225],
+                        y: [0, -90, -128],
+                        opacity: [0, 1, 0],
+                      }
+                    : i === 1
+                      ? {
+                          x: [0, 145, 225],
+                          y: [0, -90, -128],
+                          opacity: [0, 1, 0],
+                        }
+                      : i === 2
+                        ? {
+                            x: [0, -145, -225],
+                            y: [0, 90, 128],
+                            opacity: [0, 1, 0],
+                          }
+                        : {
+                            x: [0, 145, 225],
+                            y: [0, 90, 128],
+                            opacity: [0, 1, 0],
+                          }
+                }
+                transition={{
+                  duration: 2.8,
+                  repeat: Infinity,
+                  delay: i * 0.65,
+                  ease: "easeInOut",
+                }}
+              />
+            ))}
+
+          <div className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2">
+            <motion.div
+              animate={reduce ? undefined : { scale: [1, 1.035, 1] }}
+              transition={{
+                duration: 3.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative flex h-40 w-40 flex-col items-center justify-center rounded-full border border-emerald-300/25 bg-[#091723]/95 text-center shadow-[0_0_0_10px_rgba(52,211,153,0.025),0_0_70px_rgba(52,211,153,0.15)] backdrop-blur"
+            >
+              <motion.span
+                aria-hidden="true"
+                animate={reduce ? undefined : { rotate: 360 }}
+                transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+                className="absolute -inset-3 rounded-full border border-dashed border-emerald-300/15"
+              />
+              <Network className="h-6 w-6 text-emerald-300" />
+              <span className="mt-3 font-aldrich text-sm font-bold text-white">
+                SAA Portal
+              </span>
+              <span className="mt-1 text-[9px] font-medium uppercase tracking-[0.16em] text-emerald-200/55">
+                Source of truth
+              </span>
+            </motion.div>
+          </div>
+
+          {OUTCOMES.map((item, i) => {
+            const accent = OUTCOME_ACCENTS[i];
+            const Icon = item.icon;
+            return (
+              <motion.article
+                key={item.title}
+                initial={reduce ? false : { opacity: 0, y: 16, scale: 0.96 }}
+                whileInView={
+                  reduce ? undefined : { opacity: 1, y: 0, scale: 1 }
+                }
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.55, delay: 0.08 * i }}
+                whileHover={reduce ? undefined : { y: -4 }}
+                className={cn(
+                  "absolute w-[230px] rounded-xl border bg-[#0a111c]/95 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.3)] backdrop-blur-sm",
+                  accent.position,
+                  accent.border,
+                )}
+              >
+                <div className="flex items-center justify-between">
+                  <span
+                    className={cn(
+                      "flex h-9 w-9 items-center justify-center rounded-lg",
+                      accent.bg,
+                      accent.text,
+                    )}
+                  >
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <span className="font-aldrich text-xl font-bold text-white/[0.07]">
+                    0{i + 1}
+                  </span>
+                </div>
+                <h3 className="mt-3 font-aldrich text-sm font-semibold text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-[11px] font-light leading-5 text-white/45">
+                  {item.text}
+                </p>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        <div className="relative grid grid-cols-3 divide-x divide-white/[0.07] border-t border-white/[0.07] bg-white/[0.015]">
+          {[
+            ["Before", "Scattered chats"],
+            ["Now", "Structured handoffs"],
+            ["Result", "Visible ownership"],
+          ].map(([label, value], i) => (
+            <div key={label} className="px-2 py-3 text-center sm:px-4 sm:py-4">
+              <p className="text-[8px] font-medium uppercase tracking-[0.16em] text-white/25">
+                {label}
+              </p>
+              <p
+                className={cn(
+                  "mt-1 text-[9px] sm:text-[11px]",
+                  i === 2 ? "text-emerald-200/80" : "text-white/55",
+                )}
+              >
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RecognitionSection() {
+  const reduce = useReducedMotion();
+
+  return (
+    <section
+      id="recognition"
+      aria-labelledby="recognition-title"
+      className="relative isolate overflow-hidden border-y border-amber-300/10 bg-[#080b10] py-20 md:py-28"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_76%_48%,rgba(251,191,36,0.12),transparent_32%),radial-gradient(circle_at_20%_42%,rgba(52,211,153,0.08),transparent_40%)]" />
+      <div className="pointer-events-none absolute inset-0 dotPattern opacity-[0.08] [mask-image:linear-gradient(to_right,transparent,black_30%,black_75%,transparent)]" />
+
+      <div className="relative mx-auto grid max-w-[1200px] items-center gap-14 px-4 md:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <Reveal>
+          <div className="flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.2em] text-amber-200/80">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-amber-300/20 bg-amber-300/[0.08] text-amber-200">
+              <Award className="h-4 w-4" />
+            </span>
+            Management recognition
+          </div>
+
+          <h2
+            id="recognition-title"
+            className="mt-7 max-w-xl font-aldrich text-[28px] font-bold leading-[1.18] tracking-[-0.02em] text-white sm:text-[34px] md:text-[40px]"
+          >
+            The software did not just ship.
+            <span className="mt-2 block text-amber-200">
+              It changed how the agency worked.
+            </span>
+          </h2>
+
+          <p className="mt-6 max-w-xl text-sm font-light leading-7 text-white/60 md:text-base md:leading-8">
+            ScaleUp management recognized my work on SAA Portal with the
+            Outstanding Contribution Award. The platform became an essential
+            part of daily operations, bringing scattered work into one shared
+            system for the agency.
+          </p>
+
+          <blockquote className="relative mt-8 max-w-xl border-l border-amber-300/30 pl-6">
+            <Quote className="absolute -left-3 -top-2 h-6 w-6 bg-[#080b10] p-1 text-amber-300/70" />
+            <p className="text-sm italic leading-7 text-white/75 md:text-[15px]">
+              “A transformative organizational portal that streamlines
+              processes, enhances collaboration, and improves organizational
+              efficiency.”
+            </p>
+            <footer className="mt-3 text-[10px] font-medium uppercase tracking-[0.17em] text-white/35">
+              ScaleUp IT Ltd. management
+            </footer>
+          </blockquote>
+
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-amber-300/15 bg-amber-300/[0.06] px-3.5 py-2 text-xs text-amber-100/85">
+              <Award className="h-3.5 w-3.5" /> Outstanding Contribution Award
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs text-white/55">
+              <CalendarDays className="h-3.5 w-3.5 text-emerald-300/70" /> Built
+              August 2025
+            </span>
+          </div>
+        </Reveal>
+
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: 36, rotate: 1.8 }}
+          whileInView={reduce ? undefined : { opacity: 1, y: 0, rotate: -0.6 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.9, ease: [0.25, 0.25, 0.25, 0.75] }}
+          className="relative mx-auto w-full max-w-[560px] lg:mr-0"
+        >
+          <motion.div
+            aria-hidden="true"
+            animate={
+              reduce
+                ? undefined
+                : { opacity: [0.4, 0.8, 0.4], scale: [0.96, 1.04, 0.96] }
+            }
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -inset-8 -z-10 rounded-full bg-amber-300/[0.08] blur-3xl"
+          />
+
+          <div className="relative overflow-hidden rounded-[18px] border border-amber-200/20 bg-[#f7f5ef] p-2 shadow-[0_35px_100px_rgba(0,0,0,0.65),0_0_0_1px_rgba(251,191,36,0.06)] sm:p-3">
+            <div className="relative min-h-[500px] overflow-hidden rounded-[12px] border border-[#173a2a]/10 bg-[#fbfaf6] px-7 py-8 text-[#101714] sm:min-h-[560px] sm:px-11 sm:py-10">
+              <div className="pointer-events-none absolute -right-16 top-28 h-72 w-72 rounded-full border-[52px] border-amber-300/[0.09]" />
+              <div className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full border-[64px] border-emerald-700/[0.07]" />
+              <motion.span
+                aria-hidden="true"
+                animate={reduce ? undefined : { x: ["-160%", "240%"] }}
+                transition={{
+                  duration: 3.8,
+                  repeat: Infinity,
+                  repeatDelay: 2.5,
+                  ease: "easeInOut",
+                }}
+                className="pointer-events-none absolute inset-y-0 w-24 -skew-x-12 bg-gradient-to-r from-transparent via-white/60 to-transparent blur-xl"
+              />
+
+              <div className="relative flex items-start justify-between gap-5">
+                <ScaleUpLogo
+                  showProduct={false}
+                  plateClassName="bg-transparent p-0 shadow-none ring-0"
+                />
+                <span className="text-right text-[8px] font-semibold uppercase tracking-[0.2em] text-[#173a2a]/45 sm:text-[9px]">
+                  Certificate of
+                  <br />
+                  recognition
+                </span>
+              </div>
+
+              <div className="relative mt-16 text-center sm:mt-20">
+                <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#173a2a]/50">
+                  Certificate of recognition &amp; appreciation
+                </p>
+                <h3 className="mt-3 font-aldrich text-[20px] font-bold leading-tight text-[#0a1710] sm:text-[25px]">
+                  Outstanding Contribution Award
+                </h3>
+                <span className="mx-auto mt-5 block h-px w-14 bg-amber-500/60" />
+              </div>
+
+              <div className="relative mx-auto mt-9 max-w-[390px] text-center">
+                <p className="text-[11px] font-medium leading-5 text-[#142019]/65 sm:text-xs sm:leading-6">
+                  Presented in recognition of the exceptional contribution made
+                  through the successful development of a transformative
+                  organizational portal.
+                </p>
+                <p className="mt-4 text-[10px] leading-5 text-[#142019]/48 sm:text-[11px]">
+                  Technical excellence, initiative, and dedication created a
+                  lasting impact across daily operations.
+                </p>
+              </div>
+
+              <div className="relative mt-10 flex items-end justify-between gap-6 sm:mt-12">
+                <div>
+                  <span className="font-aldrich text-lg italic text-[#0d1711]">
+                    Management
+                  </span>
+                  <span className="mt-1 block h-px w-28 bg-[#173a2a]/20" />
+                  <p className="mt-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#173a2a]/55">
+                    ScaleUp IT Ltd.
+                  </p>
+                </div>
+
+                <motion.div
+                  animate={reduce ? undefined : { rotate: [-2, 2, -2] }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-amber-600/35 bg-amber-300/10 p-2 text-center shadow-[inset_0_0_0_4px_rgba(180,120,20,0.08)] sm:h-24 sm:w-24"
+                >
+                  <span className="font-aldrich text-[8px] font-bold uppercase leading-4 tracking-[0.12em] text-amber-800/80 sm:text-[9px]">
+                    Recognized
+                    <br />
+                    for lasting
+                    <br />
+                    impact
+                  </span>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute -bottom-4 left-5 flex items-center gap-2 rounded-full border border-white/10 bg-[#0c1119]/95 px-3 py-2 text-[10px] text-white/55 shadow-2xl backdrop-blur-md sm:left-8">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]" />
+            Awarded by company management
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 export default function SaaPortalCaseStudy() {
   return (
     <main className="overflow-x-clip bg-background text-white">
@@ -1406,13 +1854,13 @@ export default function SaaPortalCaseStudy() {
 
           <div className="mt-14 flex items-end justify-between md:mt-20">
             <a
-              href="#overview"
+              href="#recognition"
               className="flex w-fit items-center gap-3 text-[10px] uppercase tracking-[0.18em] text-white/30 transition-colors hover:text-white/60"
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/[0.04] backdrop-blur-sm">
                 <ArrowDown className="h-3.5 w-3.5" />
               </span>
-              Explore the system
+              See the recognition
             </a>
             <div className="hidden text-right md:block">
               <p className="text-[9px] font-medium uppercase tracking-[0.2em] text-white/25">
@@ -1425,6 +1873,8 @@ export default function SaaPortalCaseStudy() {
           </div>
         </div>
       </section>
+
+      <RecognitionSection />
 
       {/* ------------------------------------------------------------------ */}
       {/* At a glance                                                        */}
@@ -1814,30 +2264,40 @@ export default function SaaPortalCaseStudy() {
       {/* ------------------------------------------------------------------ */}
       {/* Outcome                                                            */}
       {/* ------------------------------------------------------------------ */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1200px] px-4 md:px-6">
-          <SectionHeading
-            eyebrow="The outcome"
-            title="Clear ownership. Fewer lost requests. One source of truth."
-            text="Sales and Operations now share one system instead of scattered threads. Every request has an owner and a status, handoffs are structured, and anyone can see where the work stands — for more than 300 people, every day."
-          />
-          <Reveal className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {OUTCOMES.map((item) => (
-              <article
-                key={item.title}
-                className="group rounded-xl border border-white/10 bg-card/60 p-6 transition duration-300 hover:-translate-y-1 hover:border-emerald-400/30"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 transition-colors group-hover:bg-emerald-400 group-hover:text-black">
-                  <item.icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-5 font-aldrich text-base font-semibold">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm font-light leading-6 text-white/55">
-                  {item.text}
+      <section className="relative overflow-hidden py-20 md:py-28">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_50%,rgba(52,211,153,0.07),transparent_34%)]" />
+        <div className="relative mx-auto grid max-w-[1200px] gap-12 px-4 md:px-6 lg:grid-cols-[0.72fr_1.28fr] lg:items-center lg:gap-14">
+          <div className="lg:sticky lg:top-28">
+            <SectionHeading
+              eyebrow="The outcome"
+              title={
+                <>
+                  Clear ownership. Fewer lost requests.
+                  <span className="mt-2 block text-emerald-300">
+                    One source of truth.
+                  </span>
+                </>
+              }
+              text="Sales and Operations now share one system instead of scattered threads. Every request has an owner and a status, handoffs are structured, and anyone can see where the work stands — for more than 300 people, every day."
+            />
+            <Reveal delay={0.1} className="mt-8 flex items-center gap-4">
+              <span className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-emerald-300/20 bg-emerald-300/[0.07] text-emerald-200">
+                <CheckCircle2 className="h-5 w-5" />
+                <span className="absolute -inset-1 rounded-full border border-emerald-300/10" />
+              </span>
+              <div>
+                <p className="font-aldrich text-sm font-semibold text-white">
+                  Built into the daily workflow
                 </p>
-              </article>
-            ))}
+                <p className="mt-1 text-xs text-white/40">
+                  Not another dashboard to check—one system to work from.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.12}>
+            <OutcomeSystem />
           </Reveal>
         </div>
       </section>

@@ -94,6 +94,8 @@ export default function SaaPortalCaseStudyPage() {
         name: "SAA Portal",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
+        dateCreated: "2025-08",
+        award: "Outstanding Contribution Award — ScaleUp IT Ltd. management",
         description:
           "An internal operations portal used by 300+ people at ScaleUp Ads Agency. It connects Sales, Operations, and Business Development through issues, updates, a routing queue, a live station board, admin management, and role-based dashboards.",
         creator: {
