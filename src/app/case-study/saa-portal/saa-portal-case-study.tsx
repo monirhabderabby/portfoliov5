@@ -46,6 +46,7 @@ import {
   Users,
   Workflow,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   useEffect,
@@ -1677,7 +1678,39 @@ function RecognitionSection() {
           />
 
           <div className="relative overflow-hidden rounded-[18px] border border-amber-200/20 bg-[#f7f5ef] p-2 shadow-[0_35px_100px_rgba(0,0,0,0.65),0_0_0_1px_rgba(251,191,36,0.06)] sm:p-3">
-            <div className="relative min-h-[500px] overflow-hidden rounded-[12px] border border-[#173a2a]/10 bg-[#fbfaf6] px-7 py-8 text-[#101714] sm:min-h-[560px] sm:px-11 sm:py-10">
+            <a
+              href="/certificates/oca.jpeg"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open the original Outstanding Contribution Award certificate"
+              className="group/certificate relative block overflow-hidden rounded-[12px] bg-white outline-none ring-offset-2 ring-offset-[#080b10] focus-visible:ring-2 focus-visible:ring-amber-300"
+            >
+              <Image
+                src="/certificates/oca.jpeg"
+                alt="Outstanding Contribution Award certificate presented by ScaleUp IT Ltd. management for developing the organizational portal"
+                width={1017}
+                height={1500}
+                sizes="(max-width: 1024px) 90vw, 560px"
+                className="h-auto w-full transition duration-700 group-hover/certificate:scale-[1.015]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-amber-200/[0.04] via-transparent to-emerald-200/[0.05]" />
+              <motion.span
+                aria-hidden="true"
+                animate={reduce ? undefined : { x: ["-180%", "520%"] }}
+                transition={{
+                  duration: 2.8,
+                  repeat: Infinity,
+                  repeatDelay: 4.5,
+                  ease: "easeInOut",
+                }}
+                className="pointer-events-none absolute inset-y-0 left-0 w-16 -skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent blur-xl"
+              />
+              <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.13em] text-black/65 opacity-0 shadow-lg backdrop-blur-sm transition group-hover/certificate:opacity-100 group-focus-visible/certificate:opacity-100">
+                View original <ArrowUpRight className="h-3 w-3" />
+              </span>
+            </a>
+
+            <div className="hidden">
               <div className="pointer-events-none absolute -right-16 top-28 h-72 w-72 rounded-full border-[52px] border-amber-300/[0.09]" />
               <div className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full border-[64px] border-emerald-700/[0.07]" />
               <motion.span
