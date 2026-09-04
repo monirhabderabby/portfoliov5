@@ -3,8 +3,8 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 const STAT_KEYS = {
-  approvedReports: "stats:approved_reports",
-  searchDone: "stats:search_done",
+  approvedReports: "stats:v2:approved_reports:database_count",
+  searchDone: "stats:v2:search_done:database_count",
 } as const;
 
 async function readRedisNumber(key: string): Promise<number> {
@@ -25,6 +25,11 @@ async function readRedisNumber(key: string): Promise<number> {
   }
 
   const payload = (await response.json()) as { result?: number | string | null };
+
+  if (payload.result === null || payload.result === undefined) {
+    throw new Error(`Redis key ${key} does not exist`);
+  }
+
   const value = Number(payload.result);
 
   if (!Number.isFinite(value)) {
