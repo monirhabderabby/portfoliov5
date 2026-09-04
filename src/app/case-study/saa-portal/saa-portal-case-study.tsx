@@ -1690,6 +1690,7 @@ function RecognitionSection() {
                 alt="Outstanding Contribution Award certificate presented by ScaleUp IT Ltd. management for developing the organizational portal"
                 width={1017}
                 height={1500}
+                unoptimized
                 sizes="(max-width: 1024px) 90vw, 560px"
                 className="h-auto w-full transition duration-700 group-hover/certificate:scale-[1.015]"
               />
